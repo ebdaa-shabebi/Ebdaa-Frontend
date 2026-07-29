@@ -1,0 +1,176 @@
+/* Reset default margin */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* text starts top */
+  min-height: 530px;
+  padding: 90px;
+  direction: rtl;
+  color: #626262;
+
+  background: url("/vecteezy_the-sky-is-blue-and-cloudy_44592778.png") no-repeat center;
+  background-size: cover;
+  overflow: hidden; /* hides overflow of the image if needed */
+}
+
+.hero-text p {
+  white-space: pre-line;
+  margin-inline-start: 50px;
+}
+
+
+
+/* Overlay for contrast */
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+/* Left side text */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  max-width: 50%;
+  text-align: right;
+  padding-top: 20px; /* spacing from top */
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-logo {
+  max-width: 500px;
+  margin: 15px 0;
+}
+
+.hero-text p {
+  font-size: 28px;
+  line-height: 1.6;
+}
+
+/* Right side image: bottom-right */
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  z-index: 2;
+}
+
+/* iPad responsive styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 400px;
+    padding: 60px;
+  }
+  
+  .hero-text {
+    max-width: 45%;
+    padding-top: 10px;
+  }
+  
+  .hero-text h1 {
+    font-size: 32px;
+  }
+  
+  .hero-logo {
+    max-width: 350px;
+  }
+  
+  .hero-text p {
+    font-size: 22px;
+    margin-inline-start: 30px;
+  }
+  
+  .hero-image {
+    max-width: 550px;
+    left: -30px;
+  }
+}
+
+/* Mobile responsive styles (up to 767px) */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 350px;
+    padding: 30px 40px;
+  }
+  
+  .hero-text {
+    max-width: 80%;
+    padding-top: 5px;
+  }
+  
+  .hero-text h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  
+  .hero-logo {
+    max-width: 200px;
+    margin: 8px 0;
+  }
+  
+  .hero-text p {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-inline-start: 15px;
+  }
+  
+  .hero-image {
+    max-width: 300px;
+    left: -40px;
+  }
+}
+/* Extra small mobile devices (up to 430px) - ULTRA COMPACT */
+@media (max-width: 430px) {
+  .hero-section {
+    min-height: 280px;   /* much smaller */
+    padding: 15px 10px;  /* compact padding */
+  }
+
+  .hero-text {
+    max-width: 90%;
+    padding-top: 2px;
+  }
+
+  .hero-text h1 {
+    font-size: 19px;     /* very small heading */
+    margin-bottom: 5px;
+  }
+
+  .hero-logo {
+    max-width: 180px;    /* shrink logo */
+    margin: 5px 0;
+  }
+
+  .hero-text p {
+    font-size: 13px;     /* very small text */
+    line-height: 1.1;
+    margin-inline-start: 5px;
+  }
+
+  .hero-image {
+    max-width: 250px;    /* much smaller image */
+    left: -1px;
+  }
+}
+

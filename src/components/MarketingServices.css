@@ -1,0 +1,104 @@
+.hero {
+  position: relative;
+  height: 660px;
+  background-image: url("/emily-bernal-v9vII5gV8Lw-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: bold;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+.hero p {
+  font-size: 39px;
+  margin-top: 15px;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+/* iPad responsive styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    height: 500px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 30px;
+    margin-top: 12px;
+  }
+}
+
+/* Mobile responsive styles (up to 767px) */
+@media (max-width: 767px) {
+  .hero {
+    height: 400px;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .hero p {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+}
+/* Extra extra small mobile devices (up to 430px) - ULTRA COMPACT */
+@media (max-width: 430px) {
+  .hero {
+    height: 280px;  /* much smaller hero */
+  }
+
+  .hero-content {
+    padding: 0 10px;  /* tighter padding */
+  }
+
+  .hero h1 {
+    font-size: 18px;  /* very small heading */
+  }
+
+  .hero p {
+    font-size: 14px;  /* very small paragraph */
+    margin-top: 5px;
+  }
+}

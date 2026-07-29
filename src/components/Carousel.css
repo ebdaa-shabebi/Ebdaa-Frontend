@@ -1,0 +1,176 @@
+/* Carousel container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 670px; 
+  overflow: hidden;
+  background-color: #b9b9b9;
+  margin-bottom: 0;
+}
+
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 580px; 
+}
+
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+/* Navigation buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* keep vertically centered */
+  background: none;   /* remove white circle */
+  border: none;       /* remove border */
+  padding: 0;         /* remove padding */
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button-prev {
+  left: 20px;
+}
+
+.carousel-button-next {
+  right: 20px;
+}
+
+/* Arrow image styling */
+.arrow-img {
+  width: 85px;   /* adjust size */
+  height: 85px;
+  object-fit: contain;
+  pointer-events: none; /* clicks go to button */
+}
+
+.prev-arrow {
+  transform: rotate(180deg);
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 50px; /* move indicators higher */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px; /* bigger spacing */
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 16px;  /* bigger dots */
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+  background-color: white;
+}
+
+.carousel-indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* iPad responsive styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .carousel-container {
+    height: 500px;
+  }
+  
+  .carousel-track {
+    height: 420px;
+  }
+  
+  .arrow-img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .carousel-indicators {
+    bottom: 40px;
+  }
+  
+  .carousel-indicator {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Mobile responsive styles (up to 767px) */
+@media (max-width: 767px) {
+  .carousel-container {
+    height: 350px;
+  }
+  
+  .carousel-track {
+    height: 300px;
+  }
+  
+  .arrow-img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .carousel-button-prev {
+    left: 10px;
+  }
+  
+  .carousel-button-next {
+    right: 10px;
+  }
+  
+  .carousel-indicators {
+    bottom: 25px;
+  }
+  
+  .carousel-indicator {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Small phone responsive styles (up to 430px) */
+@media (max-width: 430px) {
+  .carousel-container {
+    height: 280px;  /* smaller height */
+  }
+  
+  .carousel-track {
+    height: 240px;  /* adjust track height */
+  }
+  
+  .arrow-img {
+    width: 35px;    /* smaller arrows */
+    height: 35px;
+  }
+  
+  .carousel-button-prev {
+    left: 8px;
+  }
+  
+  .carousel-button-next {
+    right: 8px;
+  }
+  
+  .carousel-indicators {
+    bottom: 20px;   /* move indicators closer */
+    gap: 8px;       /* smaller gap */
+  }
+  
+  .carousel-indicator {
+    width: 10px;    /* smaller dots */
+    height: 10px;
+  }
+}
+

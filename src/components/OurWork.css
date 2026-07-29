@@ -1,0 +1,123 @@
+.ourwork-section {
+  background-color: #b9b9b9;
+  text-align: center;
+  padding: 1px 0;
+  font-family: "RH-Zak", sans-serif;
+  direction: rtl;
+  padding-bottom: 100px; /* ✅ Space below the section */
+  box-shadow: 0px -6px 15px rgba(0, 0, 0, 0.25),
+              0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* ✅ Inner container with darker background and shadow */
+.ourwork-container {
+  background-color: #a0a0a0; /* slightly darker */
+  padding: 40px 0;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ourwork-title {
+  color: #0aa3bf;
+  font-size: 38px;
+  padding-bottom: 25px;
+}
+
+.ourwork-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 65px;
+}
+
+.ourwork-button {
+  height: 50px;
+  width:370px;
+  background-color: #fff;
+  color: #333;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 12px 50px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ourwork-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .ourwork-title {
+    font-size: 32px;
+  }
+
+  .ourwork-buttons {
+    gap: 25px;
+    padding-bottom: 55px;
+  }
+
+  .ourwork-button {
+    width: 320px;
+    height: 45px;
+    font-size: 20px;
+    padding: 10px 40px;
+  }
+
+  .ourwork-container {
+    padding: 35px 0;
+  }
+}
+
+/* Phones (up to 768px) */
+@media (max-width: 768px) {
+  .ourwork-title {
+    font-size: 26px;
+    padding-bottom: 20px;
+  }
+
+  .ourwork-buttons {
+    flex-direction: column; /* ✅ stack buttons vertically */
+    gap: 20px;
+    padding-bottom: 45px;
+  }
+
+  .ourwork-button {
+    width: 270px;
+    height: 42px;
+    font-size: 18px;
+    padding: 8px 30px;
+  }
+
+  .ourwork-container {
+    padding: 30px 0;
+  }
+}
+
+/* Small Phones (up to 480px) */
+@media (max-width: 480px) {
+  .ourwork-title {
+    font-size: 22px;
+    padding-bottom: 15px;
+  }
+
+  .ourwork-buttons {
+    gap: 15px;
+  }
+
+  .ourwork-button {
+    width: 230px;
+    height: 38px;
+    font-size: 16px;
+    padding: 6px 25px;
+  }
+
+  .ourwork-container {
+    padding: 25px 0;
+  }
+}

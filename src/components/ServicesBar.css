@@ -1,0 +1,194 @@
+*{
+  font-family: RH-Zak, sans-serif;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 150px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.5);
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: -20px; /* pushes it upward to overlap the section */
+  position: relative;
+  z-index: 10; /* ensures it's above the section */
+  padding: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; /* icon on right, text on left */
+  text-align: right;
+  gap: 15px;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.icon-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding-left: 10px;
+}
+
+.icon-circle img {
+  width: 100px;
+  height: 100px;
+}
+
+.service-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-text h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00a6b9;
+  margin: 0;
+}
+
+.service-text p {
+  font-size: 15px;
+  color: #444;
+  margin: 5px 0 0;
+}
+
+.background {
+  background-color: #b9b9b9; /* Solid grey background */
+  height: 80px;
+  width: 100%;
+  z-index: 5;
+}
+
+/* iPad responsive styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .services-container {
+    max-width: 90%;
+    padding: 15px;
+    padding-right: 80px;
+    border-radius: 70px;
+    margin-top: -15px;
+  }
+  
+  .service-item {
+    gap: 12px;
+  }
+  
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon-circle img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .service-text h3 {
+    font-size: 18px;
+  }
+  
+  .service-text p {
+    font-size: 14px;
+  }
+  
+  .background {
+    height: 100px;
+  }
+}
+
+/* Mobile responsive styles (up to 767px) */
+@media (max-width: 767px) {
+  .services-container {
+    padding: 8px;
+    padding-right: 30px;
+    border-radius: 30px;
+  }
+  
+  .icon-circle {
+    width: 35px;
+    height: 25px;
+  }
+  
+  .icon-circle img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .service-text h3 {
+    font-size: 8px;
+  }
+  
+  .service-text p {
+    font-size: 7px;
+  }
+  
+  .background {
+    height: 85px;
+  }
+}
+@media (max-width: 480px) {
+  .services-container {
+    flex-direction: column;     /* stack items */
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px;         /* smaller, even padding */
+    padding-right: 14px;        /* override the 150px from base */
+    border-radius: 20px;
+    width: 92%;
+    max-width: 360px;           /* smaller container */
+    margin: 0 auto;
+  }
+
+  .service-item {
+    flex: 0 1 auto;             /* stop stretching each row */
+    display: flex;
+    flex-direction: row-reverse; /* icon on the right */
+    align-items: center;
+    justify-content: flex-start; /* keep text close to icon */
+    gap: 8px;                    /* this is the ONLY spacing */
+    padding: 6px 0;
+    text-align: right;           /* RTL-friendly */
+    width: 100%;
+  }
+
+  .icon-circle {
+    width: 86px;
+    height: 56px;
+    padding: 0;                  /* no extra space in the circle */
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .icon-circle img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;         /* keep the check mark contained */
+  }
+
+  .service-text h3 {
+    font-size: 19px;
+    margin: 0;
+  }
+
+  .service-text p {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .background {
+    height: 300px;                /* optional: smaller backdrop */
+  }
+}
+

@@ -1,0 +1,396 @@
+.marketing-services-container {
+  direction: rtl;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #b9b9b9;
+}
+
+.marketing-services-container::before {
+  content: '';
+  position: absolute;
+  top: 60%; /* move it a bit down */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* stripe width */
+  height: 300px; /* taller stripe */
+  background: url('homePage.png') no-repeat center center;
+  background-size: cover; /* make the stripe cover the div */
+  z-index: 1; /* behind cards */
+  border-radius: 15px;
+}
+
+
+
+.services-header {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 100px; /* Increased margin */
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 3; /* Above the background */
+}
+
+.services-header h2 {
+  color: rgb(0, 152, 116);
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.services-header p {
+  color: black; /* Changed to black */
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px; /* Increased gap between cards */
+  max-width: 2000px; /* Increased max-width */
+  margin: 0 auto;
+  align-items: flex-start;
+  position: relative;
+  z-index: 3; /* Above the background */
+}
+
+.service-card {
+  background: rgb(255, 252, 249);
+  border-radius: 45px;
+  border: 3px solid rgb(0, 0, 0); /* Thicker border */
+  padding: 40px 30px; /* More horizontal padding */
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  text-align: center; /* Center text */
+  width: 320px; /* Wider cards */
+  height: 600px; /* Taller cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Better vertical distribution */
+  position: relative;
+  z-index: 2;
+}
+
+/* Cards positioned slightly higher */
+.service-card.up {
+  margin-top: -25px;
+}
+
+/* Cards positioned slightly lower */
+.service-card.down {
+  margin-top: 25px;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  flex: 0 0 45%;             /* image takes top half */
+  height: 190px; /* container height */
+  margin-bottom: 15px;
+  text-align: center;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start; /* align image to top */
+  overflow: hidden; /* prevent overflow if image is slightly bigger */
+}
+
+.service-icon img {
+  width: 100%;       /* take full container width */
+  height: auto;      /* keep aspect ratio */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+
+
+.service-card:hover .service-icon img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.service-card h3 {
+  color: rgb(0, 152, 116);
+  font-size: 22px; /* Slightly larger */
+  font-weight: 700; /* Bolder */
+  line-height: 1.4;
+  min-height: 60px;
+  flex-shrink: 0;
+}
+
+.service-card p {
+  color: #4a4a4a; /* Darker gray for better readability */
+  line-height: 1.4; /* Increased line height */
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight:200;
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+.service-button {
+  background-color: rgb(0, 152, 116);
+  color: white;
+  border: none;
+  padding: 14px 30px; /* Larger button */
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.service-button:hover {
+  background-color: rgb(0, 94, 72);;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 100, 0, 0.3);
+}
+
+/* Green dotted line for header - LTR version */
+.green-dotted-line-header {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start; /* LTR alignment */
+  margin: 35px 80px 25px 0; /* top, right, bottom, left */
+  gap: 15px;
+}
+
+.green-dotted-line-header .thick-green-line {
+  flex-grow: 1;
+  height: 6px;
+  background-color: rgb(0, 152, 116);
+  border-radius: 3px;
+  max-width: 35%;
+}
+
+.green-dotted-line-header .three-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.green-dotted-line-header .dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgb(0, 152, 116);
+  border-radius: 50%;
+}
+
+/* iPad responsive styles (1024px) */
+@media (max-width: 1024px) {
+  .marketing-services-container {
+    padding: 60px 15px;
+  }
+  
+  .services-header {
+    margin-bottom: 70px;
+  }
+  
+  .services-header h2 {
+    font-size: 36px;
+  }
+  
+  .services-header p {
+    font-size: 18px;
+  }
+  
+  .services-grid {
+    gap: 30px;
+    max-width: 800px;
+  }
+  
+  .service-card {
+    min-height: 520px; /* Set minimum height instead of fixed */
+    padding: 30px 20px;
+    border-radius: 35px;
+  }
+  
+  .service-icon {
+    height: 120px; /* Reduced height to prevent image disappearing */
+    margin-bottom: 10px;
+  }
+  
+  .service-icon img {
+    max-height: 100%; /* Ensure image doesn't exceed container */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+    min-height: 50px;
+  }
+  
+  .service-card p {
+    font-size: 18px;
+  }
+  
+  .service-button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+  
+  .green-dotted-line-header {
+    margin: 35px 80px 25px 0; /* top, right, bottom, left */
+    max-width: 80%;
+  }
+}
+
+/* Mobile responsive styles (767px) */
+@media (max-width: 767px) {
+  .marketing-services-container {
+    padding: 40px 10px;
+  }
+  
+  .services-header {
+    margin-bottom: 50px;
+  }
+  
+  .services-header h2 {
+    font-size: 28px;
+  }
+  
+  .services-header p {
+    font-size: 16px;
+  }
+  
+  .services-grid {
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-card {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    min-height: 400px; /* Reduced minimum height */
+    padding: 25px 15px;
+    border-radius: 30px;
+    margin-top: 0 !important;
+  }
+  
+  .service-icon {
+    height: 100px; /* Further reduced height for mobile */
+    margin-bottom: 15px;
+  }
+  
+  .service-card h3 {
+    font-size: 18px;
+    min-height: auto;
+  }
+  
+  .service-card p {
+    font-size: 16px;
+  }
+  
+  .service-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .green-dotted-line-header {
+    margin: 35px 80px 25px 0; /* top, right, bottom, left */
+    max-width: 90%;
+  }
+  
+  .marketing-services-container::before {
+    display: none;
+  }
+}
+
+/* Small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .marketing-services-container {
+    padding: 20px 8px;
+    min-height: 100vh; /* ensure it fills the screen */
+  }
+
+  .services-header {
+    margin-bottom: 30px;
+  }
+
+  .services-header h2 {
+    font-size: 22px;
+  }
+
+  .services-header p {
+    font-size: 12px;
+  }
+
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .service-card {
+    width: 80%;                /* almost full width */
+    max-width: 380px;          /* don’t let it get too wide */
+    height: 90vh;              /* fills most of screen height */
+    border-radius: 25px;
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .service-icon {
+    flex: 0 0 45%;             /* image takes top half */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* fill entire area neatly */
+    border-radius: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px 0 5px;
+  }
+
+  .service-card p {
+    font-size: 18px;
+    line-height: 1.3;
+    flex-grow: 1;
+    margin-bottom: 15px;
+  }
+
+  .service-button {
+    padding: 12px 22px;
+    font-size: 15px;
+    border-radius: 25px;
+    align-self: center;
+  }
+
+  .green-dotted-line-header {
+    margin: 30px 40px 20px 0;
+  }
+
+  /* Hide background stripe for mobile */
+  .marketing-services-container::before {
+    display: none;
+  }
+}

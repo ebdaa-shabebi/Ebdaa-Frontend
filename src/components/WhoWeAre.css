@@ -1,0 +1,166 @@
+/* ===== Who We Are Section ===== */
+.who-we-are-section {
+  width: 100%;
+  min-height: 700px;  /* smaller section height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b9b9b9; /* background color */
+  padding: 40px 20px;
+}
+
+.who-we-are-card {
+  display: flex;
+  width: 80%;              /* smaller card width */
+  background-color: white;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* softer shadow */
+  border-radius: 30px;     /* slightly smaller radius */
+  overflow: hidden;
+  flex-direction: row-reverse; /* image left, text right */
+}
+
+/* ===== Text Area ===== */
+.who-we-are-text {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;  /* RTL for Arabic */
+}
+
+.green-title {
+  color: green;
+  font-size: 42px;       /* smaller */
+  margin-bottom: 10px;
+}
+
+.black-title {
+  color: black;
+  font-size: 28px;       /* smaller */
+  margin-bottom: 10px;
+}
+
+.black-paragraph {
+  color: black;
+  font-size: 18px;       /* smaller */
+  line-height: 1.6;
+}
+
+/* ===== Image Area ===== */
+.who-we-are-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  overflow: hidden; /* keeps rounded corners */
+}
+
+.who-we-are-image img {
+  width: 85%;           /* smaller image */
+  height: auto;
+  object-fit: cover;
+  border-radius: 90px;  /* all sides rounded */
+  display: block;
+}
+
+/* ====== 1024px and down (tablet) ====== */
+@media (max-width: 1024px) {
+  .who-we-are-section {
+    min-height: 600px;
+    padding: 32px 18px;
+  }
+
+  .who-we-are-card {
+    width: 90%;
+    border-radius: 26px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+  }
+
+  .who-we-are-text {
+    padding: 24px;
+  }
+
+  .green-title { font-size: 36px; }
+  .black-title { font-size: 24px; }
+  .black-paragraph { font-size: 16px; }
+
+  .who-we-are-image {
+    border-radius: 26px;
+  }
+
+  .who-we-are-image img {
+    width: 90%;
+    border-radius: 80px;
+  }
+}
+
+/* ====== 767px and down (mobile) ====== */
+@media (max-width: 767px) {
+  .who-we-are-section {
+    min-height: 540px;
+    padding: 24px 14px;
+  }
+
+  .who-we-are-card {
+    width: 94%;
+    border-radius: 22px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.16);
+    /* still side-by-side here to keep same look, but tighter */
+  }
+
+  .who-we-are-text {
+    padding: 18px;
+  }
+
+  .green-title { font-size: 30px; }
+  .black-title { font-size: 20px; }
+  .black-paragraph { font-size: 14px; }
+
+  .who-we-are-image {
+    border-radius: 22px;
+  }
+
+  .who-we-are-image img {
+    width: 100%;
+    border-radius: 70px;
+  }
+}
+
+/* ====== 430px and down (ultra small) ====== */
+@media (max-width: 480px) {
+  .who-we-are-section {
+    min-height: auto;
+    padding: 18px 12px;
+  }
+
+  .who-we-are-card {
+    width: 550px;
+    max-width: 580px;         /* smaller card on tiny screens */
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+    overflow: hidden;
+  }
+
+  .who-we-are-text {
+    padding: 10px;
+    text-align: right;
+  }
+
+  .green-title { font-size: 18px; }
+  .black-title { font-size: 9px; }
+  .black-paragraph { font-size: 7px; line-height: 1.25; }
+
+  .who-we-are-image {
+    border-radius: 0; /* image fills card edge-to-edge above */
+  }
+
+  .who-we-are-image img {
+    width: 80%;
+    border-radius: 38px;  /* keep soft corners inside card */
+  }
+}
+

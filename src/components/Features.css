@@ -1,0 +1,271 @@
+.features {
+  background-size: cover;
+  background-position: center;
+  padding: 60px 10px;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.features-title {
+  padding-right: 140px;
+  text-align: right;
+  font-size: 40px;
+  font-weight: bold;
+  color: #c62828; /* red */
+  margin-bottom: 40px;
+}
+
+.features-row {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  background: #827470;
+  color: #fff;
+  flex: 1;
+  min-width: 200px;
+  max-width: 210px;
+  border-radius: 45px;
+  height: auto;
+  border: 2px solid rgb(0, 0, 0); /* Thicker border */
+  padding: 10px 7px; /* More horizontal padding */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.shift-up {
+  margin-top: -90px; /* adjust this value for how high you want them */
+  margin-bottom: 90px;
+}
+
+.feature-icon {
+  width: 100px;
+  height: auto;
+}
+
+.feature-box h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.feature-box p {
+  font-size: 20px;
+  line-height: 1.2;
+  color: #f1f1f1;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  padding : 40px 0;
+  direction: rtl; 
+  background-color: #a7a6a6;
+  outline: rgba(77, 77, 77, 0.3) solid 5px;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.stat-box h3 span {
+  color: #444;
+}
+
+.stat-box h3::before {
+  content: "";
+}
+
+.stat-box h3 {
+  color: #b63d2b;
+}
+
+.stat-box span {
+  color: #333; 
+}
+
+.stat-icon {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* iPad responsive styles (1024px) */
+@media (max-width: 1024px) {
+  .features {
+    padding: 50px 10px;
+  }
+  
+  .features-title {
+    padding-right: 80px;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .features-row {
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .feature-box {
+    min-width: 180px;
+    max-width: 190px;
+    border-radius: 35px;
+    padding: 15px 10px;
+  }
+  
+  .feature-icon {
+    width: 80px;
+  }
+  
+  .feature-box h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .feature-box p {
+    font-size: 18px;
+  }
+  
+  .shift-up {
+    margin-top: -60px;
+    margin-bottom: 60px;
+  }
+  
+  .stats-container {
+    gap: 60px;
+    padding: 30px 0;
+  }
+  
+  .stat-box h3 {
+    font-size: 26px;
+  }
+  
+  .stat-icon {
+    width: 80px;
+  }
+}
+
+/* ===== Mobile (≤767px) ===== */
+@media (max-width: 767px) {
+  .features { padding: 32px 12px; }
+
+  /* centered, responsive title */
+  .features-title {
+    padding-right: 0;
+    text-align: center;
+    margin: 0 auto 20px;
+    font-size: clamp(22px, 5.5vw, 28px); /* shrinks gracefully */
+  }
+
+  /* 2×2 grid with fixed card widths so nothing overlaps */
+  .features-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 240px)); /* narrower cards */
+    row-gap: 55px;
+    justify-content: center;   /* center the two columns */
+    padding: 0 16px;           /* room for the horizontal shifts */
+    overflow: visible;
+  }
+
+  .feature-box {
+    width: 100%;
+    max-width: 140px;
+    border-radius: 26px;
+    padding: 14px;
+    min-height: 220px;         /* taller cards like your ref */
+    text-align: center;
+    transition: transform 0.25s ease;
+  }
+
+  /* shift rows without causing overflow */
+  .feature-box:nth-child(1),
+  .feature-box:nth-child(2) { transform: translateX(62px); }   /* top row → right */
+  .feature-box:nth-child(3),
+  .feature-box:nth-child(4) { transform: translateX(-12px); }  /* bottom row → left */
+
+  .feature-icon { width: 72px; }
+  .feature-box h3 { font-size: 18px; margin-bottom: 10px; }
+  .feature-box p  { font-size: 16px; line-height: 1.45; }
+
+  .shift-up { margin: 0; } /* disable staggering on mobile */
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 22px 8px;
+  }
+
+  .features-title {
+    font-size: clamp(16px, 5.5vw, 20px);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .features-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1px;   /* ✅ fixed consistent horizontal gap */
+    row-gap: 35px;      /* ✅ vertical space between rows */
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  .feature-box {
+    width: 140px;
+    max-width: none;      /* override earlier max-width */
+    min-width: 0;         /* avoid overflow from long content */
+    min-height: 260px;   /* ✅ larger height */
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.25s ease;
+  }
+
+  /* ✅ Optional subtle shifts if you want the “staggered” effect */
+  .feature-box:nth-child(1),
+  .feature-box:nth-child(2) {
+    transform: translateX(40px);
+  }
+  .feature-box:nth-child(3),
+  .feature-box:nth-child(4) {
+    transform: translateX(10px);
+  }
+
+  .feature-icon {
+    width: 55px;
+  }
+
+  .feature-box h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .feature-box p {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
+
+
+
