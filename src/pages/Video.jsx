@@ -13,7 +13,7 @@ const Video = ({ setPage }) => {
   // ✅ FETCH VIDEO IMAGES
   useEffect(() => {
 
-    fetch("https://newback-jul8.onrender.com/images/video")
+    fetch("https://ebdaa-backend-zbiy.onrender.com/images/video")
       .then((res) => res.json())
       .then((data) => setImages(data))
       .catch((err) => console.error(err));
@@ -36,7 +36,7 @@ const Video = ({ setPage }) => {
     try {
 
       const res = await fetch(
-        `https://newback-jul8.onrender.com/image-video/${img.id}`
+        `https://ebdaa-backend-zbiy.onrender.com/image-video/${img.id}`
       );
 
       const data = await res.json();

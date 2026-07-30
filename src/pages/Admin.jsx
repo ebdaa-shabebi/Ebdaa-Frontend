@@ -3,7 +3,7 @@ import "./Admin.css";
 
 const Admin = () => {
 
-  const API = "https://newback-jul8.onrender.com";
+  const API = "https://ebdaa-backend-zbiy.onrender.com";
 
   // ================= AUTH =================
 
@@ -34,24 +34,79 @@ const Admin = () => {
 
   const [videoUrl, setVideoUrl] = useState("");
 
+  // ================= BILLBOARDS =================
+
+  const [billboards, setBillboards] = useState([]);
+
+  const [rentals, setRentals] = useState([]);
+
+  const [showRentalForm, setShowRentalForm] = useState(false);
+
+  const [editingRental, setEditingRental] = useState(null);
+
+  const [rentalForm, setRentalForm] = useState({
+    billboard_id: "",
+    customer_name: "",
+    customer_phone: "",
+    company_name: "",
+    rent_start: "",
+    rent_end: "",
+    contract_price: "",
+    notes: ""
+  });
+
+  const [billboardForm, setBillboardForm] = useState({
+    board_code: "",
+    area: "",
+    address: "",
+    width: "",
+    height: "",
+    faces: 1,
+    total_area: "",
+    status: "متاحة",
+    notes: ""
+  });
+
+  const [editingBillboard, setEditingBillboard] = useState(null);
+
+  const [showBillboardForm, setShowBillboardForm] = useState(false);
+
   // ================= LOGIN =================
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
 
-    if (
-      username === "admin" &&
-      password === "Ebdaa@2026Admin!"
-    ) {
+  try {
+
+    const res = await fetch("https://ebdaa-backend-zbiy.onrender.com/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.success) {
 
       setLoggedIn(true);
 
     } else {
 
-      alert("Wrong username or password");
+      alert("اسم المستخدم أو كلمة المرور غير صحيحة");
 
     }
 
-  };
+  } catch (err) {
+
+    alert("تعذر الاتصال بالخادم");
+
+  }
+
+};
 
   // ================= FETCH IMAGES =================
 
@@ -97,6 +152,209 @@ const Admin = () => {
 
   };
 
+  const fetchBillboards = async () => {
+    try {
+
+      const res = await fetch(`${API}/billboards`);
+
+      const data = await res.json();
+
+      setBillboards(data);
+
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const fetchRentals = async () => {
+
+    try {
+
+      const res = await fetch(`${API}/rentals`);
+
+      console.log("Status:", res.status);
+
+      const text = await res.text();
+
+      console.log("Response:", text);
+
+      const data = JSON.parse(text);
+
+      setRentals(data);
+
+    } catch (err) {
+
+      console.error("FETCH RENTALS ERROR:", err);
+
+    }
+
+  };
+
+  // ================= ADD BILLBOARD =================
+
+  const handleBillboardSubmit = async () => {
+
+    try {
+
+      const payload = {
+        ...billboardForm,
+        width: Number(billboardForm.width),
+        height: Number(billboardForm.height),
+        faces: Number(billboardForm.faces),
+        total_area:
+          Number(billboardForm.width) *
+          Number(billboardForm.height)
+      };
+
+      if (editingBillboard) {
+
+        await fetch(`${API}/billboards/${editingBillboard.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        alert("تم تعديل اللوحة بنجاح");
+
+      } else {
+
+        await fetch(`${API}/billboards`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        alert("تمت إضافة اللوحة");
+
+      }
+
+      fetchBillboards();
+
+      setShowBillboardForm(false);
+
+      setEditingBillboard(null);
+
+      setBillboardForm({
+        board_code: "",
+        area: "",
+        address: "",
+        width: "",
+        height: "",
+        faces: 1,
+        total_area: "",
+        status: "متاحة",
+        notes: ""
+      });
+
+    } catch (err) {
+
+      console.error(err);
+
+      alert("حدث خطأ");
+
+    }
+
+  };
+
+  const handleRentalSubmit = async () => {
+
+    try {
+
+      const method = editingRental ? "PUT" : "POST";
+
+      const url = editingRental
+        ? `${API}/rentals/${editingRental.id}`
+        : `${API}/rentals`;
+
+      const res = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(rentalForm)
+      });
+
+      const data = await res.json();
+
+      console.log(data);
+
+      if (!res.ok) {
+        alert(data.error || "حدث خطأ");
+        return;
+      }
+
+      alert(
+        editingRental
+          ? "تم تعديل العقد"
+          : "تمت إضافة العقد"
+      );
+
+      fetchRentals();
+      fetchBillboards();
+
+      setShowRentalForm(false);
+
+    } catch (err) {
+
+      console.error(err);
+      alert("حدث خطأ في الاتصال بالخادم");
+
+    }
+
+  };
+
+
+  // ================= DELETE BILLBOARD =================
+
+  const handleDeleteBillboard = async (id) => {
+
+    if (!window.confirm("هل تريد حذف اللوحة؟")) return;
+
+    try {
+
+      await fetch(`${API}/billboards/${id}`, {
+        method: "DELETE"
+      });
+
+      fetchBillboards();
+
+    } catch (err) {
+
+      console.error(err);
+
+    }
+
+  };
+
+  const handleDeleteRental = async (id) => {
+
+    if (!window.confirm("هل تريد حذف هذا العقد؟"))
+      return;
+
+    await fetch(`${API}/rentals/${id}`, {
+      method: "DELETE"
+    });
+
+    fetchRentals();
+  };
+
+
+  // ================= EDIT BILLBOARD =================
+
+  const handleEditBillboard = (billboard) => {
+
+    setEditingBillboard(billboard);
+
+    setBillboardForm(billboard);
+
+    setShowBillboardForm(true);
+
+  };
+
   // ================= EFFECT =================
 
   useEffect(() => {
@@ -104,6 +362,10 @@ const Admin = () => {
     if (loggedIn) {
 
       fetchImages();
+
+      fetchBillboards();
+
+      fetchRentals();
 
       setSelectedImage(null);
 
@@ -118,7 +380,7 @@ const Admin = () => {
   const handleUpload = async () => {
 
     if (!file) {
-      alert("Please select image");
+      alert("يرجى اختيار صورة");
       return;
     }
 
@@ -137,7 +399,7 @@ const Admin = () => {
         body: formData
       });
 
-      alert("Uploaded Successfully ✅");
+      alert("تم رفع الصورة بنجاح ✅");
 
       setFile(null);
 
@@ -147,7 +409,7 @@ const Admin = () => {
 
       console.error(err);
 
-      alert("Upload Failed ❌");
+      alert("فشل رفع الصورة ❌");
 
     } finally {
 
@@ -162,7 +424,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
 
     const confirmDelete = window.confirm(
-      "Delete this image?"
+      "هل أنت متأكد من حذف هذه الصورة؟"
     );
 
     if (!confirmDelete) return;
@@ -186,7 +448,7 @@ const Admin = () => {
 
       console.error(err);
 
-      alert("Delete failed");
+      alert("فشل حذف الصورة");
 
     }
 
@@ -197,12 +459,12 @@ const Admin = () => {
   const handleAddVideo = async () => {
 
     if (!selectedImage) {
-      alert("Select image first");
+      alert("يرجى اختيار صورة أولاً");
       return;
     }
 
     if (!videoUrl) {
-      alert("Enter youtube url");
+      alert("يرجى إدخال رابط يوتيوب");
       return;
     }
 
@@ -230,13 +492,13 @@ const Admin = () => {
 
       fetchVideos(selectedImage.id);
 
-      alert("Video Added ✅");
+      alert("تمت إضافة الفيديو بنجاح ✅");
 
     } catch (err) {
 
       console.error(err);
 
-      alert("Failed");
+      alert("حدث خطأ");
 
     }
 
@@ -276,24 +538,28 @@ const Admin = () => {
 
             <div>
 
-              <h1>EBDAA</h1>
+              <h1>إبداع ميديا</h1>
 
               <p>
-                Creative Media Admin Dashboard
+                لوحة إدارة مؤسسة إبداع ميديا
               </p>
 
               <div className="login-features">
 
                 <div>
-                  • Upload portfolio images
+                  • إدارة معرض الصور
                 </div>
 
                 <div>
-                  • Manage portfolio videos
+                  • إدارة فيديوهات الأعمال
                 </div>
 
                 <div>
-                  • Delete content instantly
+                  • إدارة اللوحات الإعلانية
+                </div>
+
+                <div>
+                  • إدارة المحتوى بسهولة وأمان
                 </div>
 
               </div>
@@ -306,28 +572,24 @@ const Admin = () => {
 
             <div className="login-form">
 
-              <h2>Admin Login</h2>
+              <h2>تسجيل الدخول</h2>
 
               <input
                 type="text"
-                placeholder="Admin username"
+                placeholder="اسم المستخدم"
                 value={username}
-                onChange={(e) =>
-                  setUsername(e.target.value)
-                }
+                onChange={(e) => setUsername(e.target.value)}
               />
 
               <input
                 type="password"
-                placeholder="Password"
+                placeholder="كلمة المرور"
                 value={password}
-                onChange={(e) =>
-                  setPassword(e.target.value)
-                }
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <button onClick={handleLogin}>
-                Login
+                دخول
               </button>
 
             </div>
@@ -353,7 +615,7 @@ const Admin = () => {
       <aside className="sidebar">
 
         <div className="sidebar-logo">
-          <h2>EBDAA</h2>
+          <h2>إبداع ميديا</h2>
         </div>
 
         <div className="sidebar-menu">
@@ -370,7 +632,7 @@ const Admin = () => {
               setActivePanel("images")
             }
           >
-            Images
+            الصور
           </div>
 
           <div
@@ -385,7 +647,27 @@ const Admin = () => {
               setActivePanel("videos")
             }
           >
-            Videos
+            الفيديوهات
+          </div>
+
+          <div
+            className={`
+              sidebar-item
+              ${activePanel === "billboards" ? "active" : ""}
+            `}
+            onClick={() => setActivePanel("billboards")}
+          >
+            اللوحات الإعلانية
+          </div>
+
+          <div
+            className={`
+              sidebar-item
+              ${activePanel === "rentals" ? "active" : ""}
+            `}
+            onClick={() => setActivePanel("rentals")}
+          >
+            عقود الإيجار
           </div>
 
         </div>
@@ -394,7 +676,7 @@ const Admin = () => {
           className="logout-btn"
           onClick={() => setLoggedIn(false)}
         >
-          Logout
+          تسجيل الخروج
         </button>
 
       </aside>
@@ -410,26 +692,34 @@ const Admin = () => {
           <div>
 
             <h1>
-
-              {activePanel === "images"
-                ? "Image Management"
-                : "Video Management"
+              {
+                activePanel === "images"
+                  ?
+                  "إدارة الصور"
+                  :
+                  activePanel === "videos"
+                    ?
+                    "إدارة الفيديوهات"
+                    :
+                    activePanel === "billboards"
+                      ?
+                      "إدارة اللوحات الإعلانية"
+                      :
+                      "إدارة عقود الإيجار"
               }
-
             </h1>
 
             <p>
-              Manage your portfolio content
+              إدارة محتوى مؤسسة إبداع ميديا
             </p>
 
           </div>
 
           <div className="topbar-user">
-            Admin
+            المشرف
           </div>
 
         </div>
-
         {/* =========================
             IMAGES PANEL
         ========================= */}
@@ -446,7 +736,7 @@ const Admin = () => {
 
                 <h3>{images.length}</h3>
 
-                <p>Total Images</p>
+                <p>إجمالي الصور</p>
 
               </div>
 
@@ -454,15 +744,15 @@ const Admin = () => {
 
                 <h3>{category}</h3>
 
-                <p>Current Category</p>
+                <p>القسم الحالي</p>
 
               </div>
 
               <div className="stat-card">
 
-                <h3>EBDAA</h3>
+                <h3>إبداع ميديا</h3>
 
-                <p>Creative Studio</p>
+                <p>مؤسسة إبداع ميديا</p>
 
               </div>
 
@@ -472,7 +762,7 @@ const Admin = () => {
 
             <div className="upload-card">
 
-              <h2>Select Category</h2>
+              <h2>اختر القسم</h2>
 
               <div className="upload-controls">
 
@@ -484,15 +774,15 @@ const Admin = () => {
                 >
 
                   <option value="digital">
-                    Digital
+                    التصميم الرقمي
                   </option>
 
                   <option value="video">
-                    Video
+                    إنتاج الفيديو
                   </option>
 
                   <option value="motion">
-                    Motion
+                    الموشن جرافيك
                   </option>
 
                 </select>
@@ -505,7 +795,7 @@ const Admin = () => {
 
             <div className="upload-card">
 
-              <h2>Upload New Image</h2>
+              <h2>رفع صورة جديدة</h2>
 
               <div className="upload-controls">
 
@@ -522,8 +812,8 @@ const Admin = () => {
                 >
 
                   {loading
-                    ? "Uploading..."
-                    : "Upload"}
+                    ? "جاري الرفع..."
+                    : "رفع الصورة"}
 
                 </button>
 
@@ -537,14 +827,14 @@ const Admin = () => {
 
               <div className="section-header">
 
-                <h2>Gallery</h2>
+                <h2>معرض الصور</h2>
 
               </div>
 
               {images.length === 0 ? (
 
                 <p className="empty-text">
-                  No images found
+                  لا توجد صور
                 </p>
 
               ) : (
@@ -570,7 +860,7 @@ const Admin = () => {
                             handleDelete(img.id)
                           }
                         >
-                          Delete
+                          حذف
                         </button>
 
                       </div>
@@ -607,7 +897,7 @@ const Admin = () => {
                   {imageVideos.length}
                 </h3>
 
-                <p>Videos</p>
+                <p>الفيديوهات</p>
 
               </div>
 
@@ -615,7 +905,7 @@ const Admin = () => {
 
                 <h3>{category}</h3>
 
-                <p>Current Category</p>
+                <p>القسم الحالي</p>
 
               </div>
 
@@ -628,7 +918,7 @@ const Admin = () => {
                   }
                 </h3>
 
-                <p>Selected Image</p>
+                <p>الصورة المحددة</p>
 
               </div>
 
@@ -638,27 +928,25 @@ const Admin = () => {
 
             <div className="upload-card">
 
-              <h2>Select Category</h2>
+              <h2>اختر القسم</h2>
 
               <div className="upload-controls">
 
                 <select
                   value={category}
-                  onChange={(e) =>
-                    setCategory(e.target.value)
-                  }
+                  onChange={(e) => setCategory(e.target.value)}
                 >
 
                   <option value="digital">
-                    Digital
+                    التصميم الرقمي
                   </option>
 
                   <option value="video">
-                    Video
+                    إنتاج الفيديو
                   </option>
 
                   <option value="motion">
-                    Motion
+                    الموشن جرافيك
                   </option>
 
                 </select>
@@ -674,7 +962,7 @@ const Admin = () => {
               <div className="section-header">
 
                 <h2>
-                  Select Image
+                  اختر الصورة
                 </h2>
 
               </div>
@@ -721,7 +1009,7 @@ const Admin = () => {
               <div className="upload-card">
 
                 <h2>
-                  Manage Videos
+                  إدارة الفيديوهات
                 </h2>
 
                 {/* SELECTED IMAGE */}
@@ -749,7 +1037,7 @@ const Admin = () => {
 
                   <input
                     type="text"
-                    placeholder="Paste YouTube URL"
+                    placeholder="ألصق رابط يوتيوب"
                     value={videoUrl}
                     onChange={(e) =>
                       setVideoUrl(e.target.value)
@@ -771,7 +1059,7 @@ const Admin = () => {
                   {imageVideos.length === 0 ? (
 
                     <p className="empty-text">
-                      No videos added yet
+                      لا توجد فيديوهات
                     </p>
 
                   ) : (
@@ -810,7 +1098,587 @@ const Admin = () => {
           </>
 
         )}
+        {
+          activePanel === "billboards" && (
 
+            <div className="gallery-section">
+
+              <div
+                className="section-header"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center"
+                }}
+              >
+
+                <h2>إدارة اللوحات الإعلانية</h2>
+
+                <button
+                  onClick={() => {
+                    setEditingBillboard(null);
+
+                    setBillboardForm({
+                      board_code: "",
+                      area: "",
+                      address: "",
+                      width: "",
+                      height: "",
+                      faces: 1,
+                      total_area: "",
+                      status: "Available",
+                      notes: ""
+                    });
+
+                    setShowBillboardForm(true);
+
+                  }}
+                >
+
+                  إضافة لوحة
+
+                </button>
+
+              </div>
+
+              <table className="billboard-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>الكود</th>
+
+                    <th>المنطقة</th>
+
+                    <th>المقاس</th>
+
+                    <th>الوجوه</th>
+
+                    <th>الحالة</th>
+
+                    <th>تعديل</th>
+
+                    <th>حذف</th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  {
+                    billboards.map(board => (
+
+                      <tr key={board.id}>
+
+                        <td>{board.board_code}</td>
+
+                        <td>{board.area}</td>
+
+                        <td>
+
+                          {board.width} × {board.height}
+
+                        </td>
+
+                        <td>{board.faces}</td>
+
+                        <td>{board.status}</td>
+
+                        <td>
+
+                          <button
+                            className="edit-btn"
+                            onClick={() => handleEditBillboard(board)}
+                          >
+
+                            تعديل
+
+                          </button>
+
+                        </td>
+
+                        <td>
+
+                          <button
+                            className="delete-btn"
+                            onClick={() => handleDeleteBillboard(board.id)}
+                          >
+
+                            حذف
+
+                          </button>
+
+                        </td>
+
+                      </tr>
+
+                    ))
+                  }
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          )
+        }
+
+
+        {
+          showBillboardForm && (
+
+            <div className="modal-overlay">
+
+              <div className="modal">
+
+                <h2>
+
+                  {
+                    editingBillboard
+                      ?
+
+                      "تعديل لوحة"
+
+                      :
+
+                      "إضافة لوحة"
+
+                  }
+
+                </h2>
+
+                <div className="billboard-form">
+
+                  <input
+                    placeholder="كود اللوحة"
+                    value={billboardForm.board_code}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        board_code: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    placeholder="المنطقة"
+                    value={billboardForm.area}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        area: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    placeholder="العنوان"
+                    value={billboardForm.address}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        address: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    type="number"
+                    placeholder="العرض (متر)"
+                    value={billboardForm.width}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        width: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    type="number"
+                    placeholder="الارتفاع (متر)"
+                    value={billboardForm.height}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        height: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    type="number"
+                    placeholder="عدد الوجوه"
+                    value={billboardForm.faces}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        faces: e.target.value
+                      })
+                    }
+                  />
+
+                  <select
+                    value={billboardForm.status}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        status: e.target.value
+                      })
+                    }
+                  >
+                    <option>متاحة</option>
+                    <option>مؤجرة</option>
+                    <option>تحت الصيانة</option>
+                  </select>
+
+                  <textarea
+                    placeholder="ملاحظات"
+                    value={billboardForm.notes}
+                    onChange={(e) =>
+                      setBillboardForm({
+                        ...billboardForm,
+                        notes: e.target.value
+                      })
+                    }
+                  />
+
+                  <div className="total-area-preview">
+                    المساحة الإجمالية:{" "}
+                    {(Number(billboardForm.width) || 0) *
+                      (Number(billboardForm.height) || 0)} م²
+                  </div>
+
+                  <div className="form-buttons">
+
+                    <button onClick={handleBillboardSubmit}>
+                      حفظ
+                    </button>
+
+                    <button
+                      onClick={() => setShowBillboardForm(false)}
+                    >
+                      إلغاء
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          )
+        }
+
+        {
+          activePanel === "rentals" && (
+
+            <div className="gallery-section">
+
+              <div
+                className="section-header"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center"
+                }}
+              >
+
+                <h2>إدارة عقود الإيجار</h2>
+
+                <button
+                  onClick={() => {
+
+                    setEditingRental(null);
+
+                    setRentalForm({
+                      billboard_id: "",
+                      customer_name: "",
+                      customer_phone: "",
+                      company_name: "",
+                      rent_start: "",
+                      rent_end: "",
+                      contract_price: "",
+                      notes: ""
+                    });
+
+                    setShowRentalForm(true);
+
+                  }}
+                >
+
+
+                  إضافة عقد
+
+                </button>
+
+              </div>
+
+              <table className="billboard-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>كود اللوحة</th>
+
+                    <th>المنطقة</th>
+
+                    <th>العميل</th>
+
+                    <th>الهاتف</th>
+
+                    <th>الشركة</th>
+
+                    <th>بداية العقد</th>
+
+                    <th>نهاية العقد</th>
+
+                    <th>تعديل</th>
+
+                    <th>حذف</th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  {
+                    rentals.map(rental => (
+
+                      <tr key={rental.id}>
+
+                        <td>{rental.board_code}</td>
+
+                        <td>{rental.area}</td>
+
+                        <td>{rental.customer_name}</td>
+
+                        <td>{rental.customer_phone}</td>
+
+                        <td>{rental.company_name}</td>
+
+                        <td>{rental.rent_start?.slice(0, 10)}</td>
+
+                        <td>{rental.rent_end?.slice(0, 10)}</td>
+
+                        <td>
+
+                          <button
+                            className="edit-btn"
+                            onClick={() => {
+
+                              setEditingRental(rental);
+
+                              setRentalForm({
+                                billboard_id: rental.billboard_id,
+                                customer_name: rental.customer_name,
+                                customer_phone: rental.customer_phone,
+                                company_name: rental.company_name,
+                                rent_start: rental.rent_start.slice(0, 10),
+                                rent_end: rental.rent_end.slice(0, 10),
+                                contract_price: rental.contract_price,
+                                notes: rental.notes
+                              });
+
+                              setShowRentalForm(true);
+
+                            }}
+                          >
+
+                            تعديل
+
+                          </button>
+
+                        </td>
+
+                        <td>
+
+                          <button
+                            className="delete-btn"
+                            onClick={() => handleDeleteRental(rental.id)}
+                          >
+
+                            حذف
+
+                          </button>
+
+                        </td>
+
+                      </tr>
+
+                    ))
+                  }
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          )
+        }
+
+        {
+          showRentalForm && (
+
+            <div className="modal-overlay">
+
+              <div className="modal">
+
+                <h2>
+
+                  {
+                    editingRental
+                      ?
+                      "تعديل عقد"
+                      :
+                      "إضافة عقد جديد"
+                  }
+
+                </h2>
+
+                <div className="billboard-form">
+
+                  <select
+                    value={rentalForm.billboard_id}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        billboard_id: e.target.value
+                      })
+                    }
+                  >
+
+                    <option value="">
+                      اختر اللوحة
+                    </option>
+
+                    {
+                      billboards.map(board => (
+
+                        <option
+                          key={board.id}
+                          value={board.id}
+                        >
+
+                          {board.board_code} - {board.area}
+
+                        </option>
+
+                      ))
+                    }
+
+                  </select>
+
+                  <input
+                    placeholder="اسم العميل"
+                    value={rentalForm.customer_name}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        customer_name: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    placeholder="رقم الهاتف"
+                    value={rentalForm.customer_phone}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        customer_phone: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    placeholder="اسم الشركة"
+                    value={rentalForm.company_name}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        company_name: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    type="date"
+                    value={rentalForm.rent_start}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        rent_start: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    type="date"
+                    value={rentalForm.rent_end}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        rent_end: e.target.value
+                      })
+                    }
+                  />
+
+                  <input
+                    type="number"
+                    placeholder="قيمة العقد"
+                    value={rentalForm.contract_price}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        contract_price: e.target.value
+                      })
+                    }
+                  />
+
+                  <textarea
+                    placeholder="ملاحظات"
+                    value={rentalForm.notes}
+                    onChange={(e) =>
+                      setRentalForm({
+                        ...rentalForm,
+                        notes: e.target.value
+                      })
+                    }
+                  />
+
+                  <div className="form-buttons">
+
+                    <button onClick={handleRentalSubmit}>
+                      حفظ
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        setShowRentalForm(false)
+                      }
+                    >
+                      إلغاء
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          )
+        }
       </main>
 
     </div>

@@ -21,8 +21,8 @@ import Motion from "./pages/Motion";
 import Admin from "./pages/Admin";
 
 const PAGES = new Set([
-  "home","digital","video","motion",
-  "visualIdentity","digitalAds","campaigns","contentCreation","admin-ebdaa-2026"
+  "home", "digital", "video", "motion",
+  "visualIdentity", "digitalAds", "campaigns", "contentCreation", "admin-ebdaa-2026"
 ]);
 
 function parseHash() {
@@ -38,8 +38,8 @@ function parseHash() {
 
 export default function App() {
   useEffect(() => {
-  fetch("https://newback-jul8.onrender.com/ping")
-    .catch(() => {});
+    fetch("https://ebdaa-backend-zbiy.onrender.com/ping")
+      .catch(() => { });
   }, []);
   const [{ page, anchor }, setNav] = useState(parseHash());
 
@@ -91,16 +91,16 @@ export default function App() {
           <Carousel />
           <Services />
           <WhoWeAre />
-          <div id="services"><MarketingServicesGrid  setPage={(p) => navigate(p)} /></div>
+          <div id="services"><MarketingServicesGrid setPage={(p) => navigate(p)} /></div>
           <Features />
-          <div id="ourwork"><OurWork setPage={(p, o)=>navigate(p, o)} /></div>
+          <div id="ourwork"><OurWork setPage={(p, o) => navigate(p, o)} /></div>
           <div id="contact"><Footer /></div>
         </>
       )}
 
       {page === "digital" && <Digital setPage={(p, o) => navigate(p, o)} />}
-      {page === "video"   && <Video   setPage={(p, o) => navigate(p, o)} />}
-      {page === "motion"  && <Motion  setPage={(p, o) => navigate(p, o)} />}
+      {page === "video" && <Video setPage={(p, o) => navigate(p, o)} />}
+      {page === "motion" && <Motion setPage={(p, o) => navigate(p, o)} />}
       {page === "admin-ebdaa-2026" && <Admin />}
 
       {page === "visualIdentity" && (
