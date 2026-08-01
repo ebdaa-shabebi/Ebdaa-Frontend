@@ -22,7 +22,6 @@
 body {
   background: var(--bg);
   font-family: "Poppins", sans-serif;
-  direction: rtl;
 }
 
 /* ================= LOGIN ================= */
@@ -127,6 +126,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: row-reverse;
+  direction: rtl;
 }
 
 /* SIDEBAR */
