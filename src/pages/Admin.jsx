@@ -1,4 +1,19 @@
 import React, { useEffect, useState } from "react";
+
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend
+} from "chart.js";
+
+import { Doughnut } from "react-chartjs-2";
+
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend
+);
 import "./Admin.css";
 
 const Admin = () => {
@@ -14,7 +29,7 @@ const Admin = () => {
 
   // ================= PANELS =================
 
-  const [activePanel, setActivePanel] = useState("images");
+  const [activePanel, setActivePanel] = useState("dashboard");
 
   // ================= IMAGES =================
 
@@ -75,38 +90,38 @@ const Admin = () => {
 
   const handleLogin = async () => {
 
-  try {
+    try {
 
-    const res = await fetch("https://ebdaa-backend-zbiy.onrender.com/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    });
+      const res = await fetch("https://ebdaa-backend-zbiy.onrender.com/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username,
+          password
+        })
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (res.ok && data.success) {
+      if (res.ok && data.success) {
 
-      setLoggedIn(true);
+        setLoggedIn(true);
 
-    } else {
+      } else {
 
-      alert("اسم المستخدم أو كلمة المرور غير صحيحة");
+        alert("اسم المستخدم أو كلمة المرور غير صحيحة");
+
+      }
+
+    } catch (err) {
+
+      alert("تعذر الاتصال بالخادم");
 
     }
 
-  } catch (err) {
-
-    alert("تعذر الاتصال بالخادم");
-
-  }
-
-};
+  };
 
   // ================= FETCH IMAGES =================
 
@@ -375,6 +390,124 @@ const Admin = () => {
 
   }, [category, loggedIn]);
 
+  const getRemainingDays = (endDate) => {
+    const today = new Date();
+    const end = new Date(endDate);
+
+    return Math.ceil((end - today) / (1000 * 60 * 60 * 24));
+  };
+
+  const getAlert = (days) => {
+    if (days < 0)
+      return {
+        color: "#d32f2f",
+        text: "انتهى العقد",
+        icon: "✖",
+      };
+
+    if (days <= 30)
+      return {
+        color: "#d32f2f",
+        text: `${days} يوم`,
+        icon: "🔴",
+      };
+
+    if (days <= 90)
+      return {
+        color: "#f9a825",
+        text: `${days} يوم`,
+        icon: "🟡",
+      };
+
+    if (days <= 180)
+      return {
+        color: "#2e7d32",
+        text: `${days} يوم`,
+        icon: "🟢",
+      };
+
+    return null;
+  };
+
+  // ================= DASHBOARD =================
+
+  const totalBoards = billboards.length;
+
+  const rentedBoards = billboards.filter(
+    b => b.status === "مؤجرة"
+  ).length;
+
+  const availableBoards = billboards.filter(
+    b => b.status === "متاحة"
+  ).length;
+
+  const maintenanceBoards = billboards.filter(
+    b => b.status === "تحت الصيانة"
+  ).length;
+
+  const alertContracts = rentals.filter(
+    r => getAlert(getRemainingDays(r.rent_end))
+  ).length;
+
+  const chartData = {
+
+    labels: [
+      "مؤجرة ",
+      "متاحة ",
+      "تحت الصيانة "
+    ],
+
+    datasets: [
+
+      {
+
+        data: [
+
+          rentedBoards,
+          availableBoards,
+          maintenanceBoards
+
+        ],
+
+        backgroundColor: [
+
+          "#2563eb",
+          "#22c55e",
+          "#f59e0b"
+
+        ],
+
+        borderWidth: 0
+
+      }
+
+    ]
+
+  };
+
+  const chartOptions = {
+    responsive: true,
+
+    plugins: {
+      legend: {
+        position: "bottom",
+
+        labels: {
+          font: {
+            family: "Tajawal",
+            size: 16,
+          },
+
+          padding: 30,
+
+          usePointStyle: true,
+          pointStyle: "circle",
+        },
+      },
+    },
+
+    cutout: "72%",
+  };
   // ================= UPLOAD =================
 
   const handleUpload = async () => {
@@ -619,6 +752,13 @@ const Admin = () => {
         </div>
 
         <div className="sidebar-menu">
+          <div
+            className={`sidebar-item ${activePanel === "dashboard" ? "active" : ""
+              }`}
+            onClick={() => setActivePanel("dashboard")}
+          >
+            لوحة التحكم
+          </div>
 
           <div
             className={`
@@ -670,6 +810,16 @@ const Admin = () => {
             عقود الإيجار
           </div>
 
+          <div
+            className={`
+    sidebar-item
+    ${activePanel === "alerts" ? "active" : ""}
+  `}
+            onClick={() => setActivePanel("alerts")}
+          >
+            التنبيهات
+          </div>
+
         </div>
 
         <button
@@ -693,19 +843,17 @@ const Admin = () => {
 
             <h1>
               {
-                activePanel === "images"
-                  ?
-                  "إدارة الصور"
-                  :
-                  activePanel === "videos"
-                    ?
-                    "إدارة الفيديوهات"
-                    :
-                    activePanel === "billboards"
-                      ?
-                      "إدارة اللوحات الإعلانية"
-                      :
-                      "إدارة عقود الإيجار"
+                activePanel === "dashboard"
+                  ? "لوحة التحكم" :
+                  activePanel === "images"
+                    ? "إدارة الصور"
+                    : activePanel === "videos"
+                      ? "إدارة الفيديوهات"
+                      : activePanel === "billboards"
+                        ? "إدارة اللوحات الإعلانية"
+                        : activePanel === "rentals"
+                          ? "إدارة عقود الإيجار"
+                          : "التنبيهات"
               }
             </h1>
 
@@ -720,6 +868,72 @@ const Admin = () => {
           </div>
 
         </div>
+
+        {
+          activePanel === "dashboard" && (
+
+            <>
+
+              <div className="stats-grid">
+
+                <div className="stat-card">
+                  <h3>{totalBoards}</h3>
+                  <p>إجمالي اللوحات</p>
+                </div>
+
+                <div className="stat-card">
+                  <h3>{rentedBoards}</h3>
+                  <p>المؤجرة</p>
+                </div>
+
+                <div className="stat-card">
+                  <h3>{availableBoards}</h3>
+                  <p>المتاحة</p>
+                </div>
+
+                <div className="stat-card">
+                  <h3>{maintenanceBoards}</h3>
+                  <p>تحت الصيانة</p>
+                </div>
+
+                <div className="stat-card">
+                  <h3>{alertContracts}</h3>
+                  <p>التنبيهات</p>
+                </div>
+
+              </div>
+
+              <div className="gallery-section">
+
+                <h2>حالة اللوحات الإعلانية</h2>
+
+                <div className="dashboard-chart">
+
+                  <div
+                    style={{
+                      width: "420px",
+                      margin: "40px auto"
+                    }}
+                  >
+
+                    <Doughnut
+
+                      data={chartData}
+
+                      options={chartOptions}
+
+                    />
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </>
+
+          )
+        }
         {/* =========================
             IMAGES PANEL
         ========================= */}
@@ -1126,7 +1340,7 @@ const Admin = () => {
                       height: "",
                       faces: 1,
                       total_area: "",
-                      status: "Available",
+                      status: "متاحة",
                       notes: ""
                     });
 
@@ -1674,6 +1888,96 @@ const Admin = () => {
                 </div>
 
               </div>
+
+            </div>
+
+          )
+        }
+        {
+          activePanel === "alerts" && (
+
+            <div className="gallery-section">
+
+              <h2>تنبيهات العقود</h2>
+
+              <table className="billboard-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>الحالة</th>
+                    <th>العميل</th>
+                    <th>الشركة</th>
+                    <th>اللوحة</th>
+                    <th>تاريخ الانتهاء</th>
+                    <th>المتبقي</th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  {
+                    rentals
+                      .filter(r => getAlert(getRemainingDays(r.rent_end)))
+                      .sort((a, b) =>
+                        getRemainingDays(a.rent_end) - getRemainingDays(b.rent_end)
+                      )
+                      .map(r => {
+
+                        const days = getRemainingDays(r.rent_end);
+
+                        const alert = getAlert(days);
+
+                        return (
+                          <tr key={r.id} className="alert-row">
+
+                            <td className="alert-icon">
+                              {alert.icon}
+                            </td>
+
+                            <td>{r.customer_name}</td>
+
+                            <td>{r.company_name}</td>
+
+                            <td>{r.board_code}</td>
+
+                            <td>{r.rent_end.slice(0, 10)}</td>
+
+                            <td>
+                              {
+                                days < 0 ? (
+                                  <span className="alert-badge badge-expired">
+                                    انتهى العقد
+                                  </span>
+                                ) : days <= 30 ? (
+                                  <span className="alert-badge badge-red">
+                                    {days} يوم
+                                  </span>
+                                ) : days <= 90 ? (
+                                  <span className="alert-badge badge-yellow">
+                                    {days} يوم
+                                  </span>
+                                ) : (
+                                  <span className="alert-badge badge-green">
+                                    {days} يوم
+                                  </span>
+                                )
+                              }
+                            </td>
+
+                          </tr>
+                        );
+
+                      })
+
+                  }
+
+                </tbody>
+
+              </table>
 
             </div>
 

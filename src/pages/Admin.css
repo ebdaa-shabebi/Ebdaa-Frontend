@@ -700,3 +700,76 @@ body {
     white-space: nowrap;
   }
 }
+
+/* ================= ALERTS PANEL ================= */
+
+.alert-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.alert-title h2 {
+  color: var(--primary);
+}
+
+.alert-row:hover {
+  background: #f8fafc;
+}
+
+.alert-icon {
+  font-size: 24px;
+}
+
+.alert-green {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.alert-yellow {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.alert-red {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.alert-expired {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.alert-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-green {
+  background: #16a34a;
+}
+
+.badge-yellow {
+  background: #f59e0b;
+}
+
+.badge-red {
+  background: #dc2626;
+}
+
+.badge-expired {
+  background: #7f1d1d;
+}
+
+.alert-empty {
+  text-align: center;
+  color: #64748b;
+  padding: 40px;
+  font-size: 18px;
+}
