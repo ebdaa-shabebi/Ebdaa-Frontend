@@ -1,4 +1,4 @@
-import './header.css'
+import './Header.css'
 
 import logo from '../assets/logo.png'
 import homeIcon from '../assets/home-icon.png'
