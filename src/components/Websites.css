@@ -1,0 +1,420 @@
+
+/* ========================================
+   WEBSITE DEVELOPMENT PORTFOLIO
+   Independent styles
+======================================== */
+
+.websites-page {
+  width: 100%;
+  direction: rtl;
+  overflow: hidden;
+  background: #dbe3e6;
+  color: #515151;
+  font-family: "Changa", sans-serif;
+}
+
+.websites-page *,
+.websites-page *::before,
+.websites-page *::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.websites-page__hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin: 0 0 150px;
+  overflow: visible;
+  background: #dbe3e6;
+}
+
+.websites-page__background {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.websites-page__background img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.websites-page__hero-content {
+  position: absolute;
+  z-index: 5;
+  top: 24%;
+  left: 50%;
+  display: flex;
+  width: min(704px, 60%);
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 34px);
+  text-align: center;
+  pointer-events: none;
+}
+
+.websites-page__hero-content h1 {
+  margin: 0;
+  color: #459daf;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(32px, 4.7vw, 60px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 1px #fff;
+  paint-order: stroke fill;
+}
+
+/* Tagline */
+
+.websites-page__tagline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.websites-page__tagline span:first-child {
+  color: #58b7c8;
+  -webkit-text-stroke: 0.6px #fff;
+  paint-order: stroke fill;
+}
+
+.websites-page__tagline span:last-child {
+  color: #f0b152;
+  -webkit-text-stroke: 0.6px #fff;
+  paint-order: stroke fill;
+}
+
+/* Hero buttons */
+
+.websites-page__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  pointer-events: auto;
+}
+
+.websites-page__button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 20px;
+  border-radius: 12px;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.websites-page__button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.websites-page__button--primary {
+  width: 160px;
+  color: #fff;
+  background: #f1bc6a;
+}
+
+.websites-page__button--outline {
+  width: 150px;
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+/* Yellow wave */
+
+.websites-page__wave {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  bottom: -70px;
+  display: block;
+  width: 100%;
+  height: min(140px, 10.9375vw);
+  pointer-events: none;
+}
+
+/* ========================================
+   CLIENTS SECTION
+======================================== */
+
+.websites-page__clients {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 140px;
+  text-align: center;
+}
+
+.websites-page__clients-inner {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+}
+
+.websites-page__clients h2 {
+  display: flex;
+  width: min(800px, 100%);
+  min-height: 65px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 155px;
+  padding: 10px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.02),
+    0 6px 12px rgba(0, 0, 0, 0.03);
+  color: #515151;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(20px, 2.8vw, 36px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ========================================
+   CLICKABLE LOGO CARDS
+======================================== */
+.websites-page__logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 235px);
+  grid-template-rows: repeat(5, 158px);
+  justify-content: center;
+  align-content: start;
+  column-gap: 65px;
+  row-gap: 50px;
+  min-height: 990px;
+}
+
+
+.websites-page__logo-card {
+  display: flex;
+  width: 235px;
+  height: 158px;
+  min-width: 0;
+  min-height: 0;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 7px;
+  overflow: hidden;
+  border: none;
+  border-radius: 23px;
+  background: #429faf;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.websites-page__logo-card:hover {
+  transform: translateY(-5px);
+}
+
+.websites-page__logo-card:focus-visible {
+  outline: 3px solid #f0b152;
+  outline-offset: 5px;
+}
+
+.websites-page__logo-card-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+  border: 2px solid #f1b45f;
+  border-radius: 19px;
+  background: #fff;
+}
+
+.websites-page__logo-card-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .websites-page__hero-content {
+    top: 30%;
+    width: 75%;
+    gap: 20px;
+  }
+
+  .websites-page__hero-content h1 {
+    font-size: 42px;
+  }
+
+  .websites-page__tagline {
+    font-size: 24px;
+  }
+
+  .websites-page__button {
+    min-height: 36px;
+    font-size: 16px;
+  }
+
+  .websites-page__clients h2 {
+    margin-bottom: 80px;
+  }
+
+  .websites-page__logo-grid {
+    grid-template-columns: repeat(2, 235px);
+    grid-template-rows: repeat(8, 158px);
+    column-gap: 35px;
+    row-gap: 35px;
+    min-height: calc(8 * 158px + 7 * 35px);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .websites-page__hero {
+    margin-bottom: 24vw;
+  }
+
+  .websites-page__hero-content {
+    top: 24%;
+    width: calc(100% - 32px);
+    gap: 0;
+  }
+
+  .websites-page__hero-content h1 {
+    position: absolute;
+    top: 123px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.25;
+    white-space: nowrap;
+    -webkit-text-stroke: 0.7px #fff;
+  }
+
+  .websites-page__tagline {
+    position: absolute;
+    top: 171px;
+    width: 100%;
+    justify-content: center;
+    gap: 4px;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .websites-page__tagline span {
+    -webkit-text-stroke: 0.35px #fff;
+    paint-order: stroke fill;
+  }
+
+  .websites-page__actions {
+    position: absolute;
+    top: 215px;
+    gap: 16px;
+  }
+
+  .websites-page__button {
+    min-height: 24px;
+    padding: 1px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+
+  .websites-page__button--primary {
+    width: 85px;
+  }
+
+  .websites-page__button--outline {
+    width: 90px;
+    border-width: 1px;
+  }
+
+  .websites-page__wave {
+    bottom: clamp(-70px, -5.46875vw, -18px);
+    height: min(140px, 10.9375vw);
+  }
+
+  .websites-page__clients {
+    padding: 0 20px 90px;
+  }
+
+  .websites-page__clients h2 {
+    min-height: 42px;
+    margin-bottom: 45px;
+    padding: 6px 12px;
+    font-size: 18px;
+  }
+
+  .websites-page__logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(8, auto);
+    grid-auto-rows: auto;
+    gap: 18px 12px;
+    min-height: calc(
+      8 * ((100vw - 52px) / 2 * 158 / 235) + 7 * 18px
+    );
+  }
+
+  .websites-page__logo-card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 235 / 158;
+    padding: 5px;
+    border-radius: 17px;
+  }
+
+  .websites-page__logo-card-inner {
+    padding: 8px;
+    border-width: 1.5px;
+    border-radius: 13px;
+  }
+}
+
+/* Very small screens */
+
+@media (max-width: 360px) {
+  .websites-page__logo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .websites-page__button,
+  .websites-page__logo-card {
+    transition: none;
+  }
+}

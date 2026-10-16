@@ -1,0 +1,450 @@
+.why-us {
+  width: 100%;
+  min-height: 700px;
+  padding: 30px 0 120px;
+  background: #dbe3e6;
+  direction: rtl;
+}
+
+.why-us__container {
+  position: relative;
+  width: min(1579px, calc(100% - 40px));
+  min-height: 672px;
+  margin: 0 auto;
+  padding: 30px 57px 70px;
+  background: #b5d3de;
+  border-radius: 16px;
+}
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+.why-us__title {
+  width: 553px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #459daf;
+}
+
+/* =========================
+   FEATURE AREA
+========================= */
+
+.why-us__features {
+  width: 100%;
+  margin: 109px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 56px;
+  direction: ltr;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.why-us__card {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+  direction: rtl;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.why-us__icon {
+  position: absolute;
+  width: 118px;
+  height: 104px;
+  left: 50%;
+  top: -57px;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  object-fit: contain;
+  border: 3px solid #f0b152;
+  border-radius: 32px;
+  filter:
+    drop-shadow(0 0 4.4px rgba(0, 0, 0, 0.06))
+    drop-shadow(0 5px 19px rgba(0, 0, 0, 0.08));
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.why-us__card h3 {
+  width: min(227px, calc(100% - 30px));
+  margin: 48px auto 0;
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #459daf;
+}
+
+.why-us__card p {
+  width: min(229px, calc(100% - 30px));
+  margin: 7px auto 0;
+  font-family: 'Changa', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 145%;
+  letter-spacing: -0.005em;
+  text-align: center;
+  color: #565655;
+}
+
+/* =========================
+   CARD ORDER
+========================= */
+
+.why-us__card--4 {
+  order: 1;
+}
+
+.why-us__card--3 {
+  order: 2;
+}
+
+.why-us__card--2 {
+  order: 3;
+}
+
+.why-us__card--1 {
+  order: 4;
+}
+
+/* =========================
+   WORKS TITLE
+========================= */
+
+.why-us__works-title {
+  width: 406px;
+  max-width: 100%;
+  height: auto;
+  margin: 58px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #f1bc6a;
+}
+
+.why-us__buttons {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: center;
+  gap: 24px;
+}
+
+.why-us__button {
+  width: 100%;
+  min-width: 0;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  background: #459daf;
+  border-radius: 12px;
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 120%;
+  text-align: center;
+  color: #ffffff;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.why-us__button:hover {
+  transform: translateY(-2px);
+  background: #3b91a2;
+}
+
+
+/* =========================================================
+   TABLET
+   601px — 1000px
+========================================================= */
+
+@media (max-width: 1200px) and (min-width: 601px) {
+
+  .why-us {
+    min-height: 0;
+    padding: 30px 0 100px;
+  }
+
+  .why-us__container {
+    width: calc(100% - 40px);
+    max-width: 760px;
+    min-height: 0;
+    padding: 28px 40px 65px;
+    border-radius: 16px;
+  }
+
+  /* TITLE */
+
+  .why-us__title {
+    font-size: clamp(28px, 4.8vw, 40px);
+  }
+
+  /* 2 × 2 CARDS */
+
+  .why-us__features {
+    margin-top: 90px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 75px 30px;
+  }
+
+  .why-us__card {
+    height: auto;
+    min-height: 220px;
+    aspect-ratio: 252 / 220;
+  }
+
+  .why-us__icon {
+    width: clamp(90px, 14vw, 118px);
+    height: clamp(80px, 12.5vw, 104px);
+    top: clamp(-48px, -6vw, -57px);
+    border-width: 3px;
+    border-radius: clamp(22px, 4vw, 32px);
+  }
+
+  .why-us__card h3 {
+    margin-top: 48px;
+    font-size: clamp(18px, 2.8vw, 24px);
+  }
+
+  .why-us__card p {
+    font-size: clamp(11px, 1.7vw, 15px);
+  }
+
+  /* WORKS */
+
+  .why-us__works-title {
+    margin-top: 65px;
+    font-size: clamp(48px, 7vw, 72px);
+  }
+
+  /* 3 BUTTONS STILL ONE ROW */
+
+  .why-us__buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 3vw, 35px);
+    margin-top: 20px;
+  }
+
+  .why-us__button {
+    height: clamp(48px, 6vw, 58px);
+    font-size: clamp(12px, 1.8vw, 19px);
+    border-radius: 10px;
+  }
+}
+
+
+/* =========================================================
+   PHONE
+   600px and below
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .why-us {
+    min-height: 0;
+    padding: 25px 0 80px;
+  }
+
+  .why-us__container {
+    width: calc(100% - 24px);
+    min-height: 0;
+    padding: 24px 16px 55px;
+    border-radius: 14px;
+  }
+
+  /* TITLE */
+
+  .why-us__title {
+    font-size: clamp(23px, 7vw, 32px);
+  }
+
+  /* 2 × 2 CARDS */
+
+  .why-us__features {
+    margin-top: 75px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 65px 14px;
+  }
+
+  .why-us__card {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 252 / 220;
+    border-radius: 12px;
+  }
+
+  .why-us__icon {
+    width: clamp(65px, 23vw, 90px);
+    height: clamp(58px, 20vw, 80px);
+    top: clamp(-40px, -10vw, -32px);
+    border-width: 2px;
+    border-radius: clamp(16px, 5vw, 24px);
+  }
+
+  .why-us__card h3 {
+    width: calc(100% - 14px);
+    margin-top: 38px;
+    font-size: clamp(13px, 4vw, 18px);
+    line-height: 120%;
+  }
+
+  .why-us__card p {
+    width: calc(100% - 14px);
+    margin-top: 5px;
+    font-size: clamp(9px, 2.8vw, 13px);
+    line-height: 145%;
+  }
+
+  /* WORKS TITLE */
+
+  .why-us__works-title {
+    margin-top: 55px;
+    font-size: clamp(40px, 13vw, 60px);
+  }
+
+  /* 1 BUTTON PER ROW */
+
+  .why-us__buttons {
+    width: 100%;
+    margin-top: 18px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .why-us__button {
+    width: 100%;
+    height: 50px;
+    font-size: clamp(14px, 4vw, 18px);
+    border-radius: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   390px and below
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .why-us {
+    padding-top: 20px;
+  }
+
+  .why-us__container {
+    width: calc(100% - 16px);
+    padding: 22px 10px 48px;
+    border-radius: 12px;
+  }
+
+  .why-us__title {
+    font-size: 22px;
+  }
+
+  .why-us__features {
+    margin-top: 68px;
+    gap: 58px 10px;
+  }
+
+  .why-us__card {
+    border-radius: 10px;
+  }
+
+  .why-us__icon {
+    width: 62px;
+    height: 55px;
+    top: -28px;
+    border-radius: 16px;
+  }
+
+  .why-us__card h3 {
+    width: calc(100% - 8px);
+    margin-top: 34px;
+    font-size: 12px;
+  }
+
+  .why-us__card p {
+    width: calc(100% - 8px);
+    margin-top: 4px;
+    font-size: 8px;
+  }
+
+  .why-us__works-title {
+    margin-top: 48px;
+    font-size: 38px;
+  }
+
+  .why-us__buttons {
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .why-us__button {
+    height: 46px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+}
+/* Make feature cards taller so text stays inside */
+.why-us__card {
+  height: auto;
+  min-height: 260px;
+  aspect-ratio: auto;
+}
+
+/* Tablet */
+@media (max-width: 1200px) and (min-width: 601px) {
+  .why-us__card {
+    min-height: 260px;
+    aspect-ratio: auto;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .why-us__card {
+    min-height: 185px;
+    aspect-ratio: auto;
+  }
+}
+
+/* Small phone */
+@media (max-width: 390px) {
+  .why-us__card {
+    min-height: 135px;
+    aspect-ratio: auto;
+  }
+}

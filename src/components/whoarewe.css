@@ -1,0 +1,717 @@
+/* ========================================
+   WHO WE ARE
+======================================== */
+
+.who-we-are {
+  width: 100%;
+  padding: clamp(50px, 6.85vw, 80px) 0;
+  background: #dbe3e6;
+  direction: rtl;
+}
+
+.who-we-are__card {
+  position: relative;
+
+  /*
+    Desktop card:
+    1168px at a 1280px viewport.
+
+    It shrinks continuously as the viewport
+    becomes smaller.
+  */
+  width: min(1168px, calc(100% - clamp(40px, 8.28vw, 106px)));
+
+  /*
+    Keep the exact Figma proportion:
+    1168 / 728
+  */
+  aspect-ratio: 1168 / 728;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  background: #f5f5f5;
+
+  border-radius: clamp(28px, 3.90625vw, 50px);
+}
+
+
+/* ========================================
+   MAIN IMAGE
+======================================== */
+
+.who-we-are__main-image {
+  position: absolute;
+
+  /*
+    453 / 1168
+  */
+  width: 38.784%;
+
+  /*
+    Keep image ratio exactly the same
+  */
+  height: auto;
+  aspect-ratio: 453 / 358;
+
+  /*
+    64 / 1168
+  */
+  left: 5.479%;
+
+  /*
+    61 / 728
+  */
+  top: 8.379%;
+
+  object-fit: cover;
+
+  border: clamp(2px, 0.234vw, 3px) solid #f0b152;
+  border-radius: clamp(10px, 1.25vw, 16px);
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.who-we-are__about {
+  position: absolute;
+
+  /*
+    488 / 1168
+  */
+  width: 41.781%;
+
+  right: 5.479%;
+
+  /*
+    40 / 728
+  */
+  top: 5.495%;
+
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.who-we-are__about h2,
+.who-we-are__vision h2 {
+  width: 100%;
+
+  margin: 0 0 clamp(14px, 1.875vw, 24px);
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 800;
+
+  /*
+    36px at 1280px
+  */
+  font-size: clamp(24px, 2.8125vw, 36px);
+
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  text-align: right;
+
+  color: #459daf;
+}
+
+.who-we-are__about p,
+.who-we-are__vision p {
+  width: 100%;
+  margin: 0;
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 500;
+
+  /*
+    18px at 1280px
+  */
+  font-size: clamp(12px, 1.40625vw, 18px);
+
+  line-height: 145%;
+  letter-spacing: -0.005em;
+
+  text-align: right;
+
+  color: #515151;
+}
+
+.who-we-are__about p strong,
+.who-we-are__vision p strong {
+  font-weight: 700;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.who-we-are__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*
+    127px at desktop
+  */
+  width: clamp(90px, 9.922vw, 127px);
+
+  /*
+    35px at desktop
+  */
+  height: clamp(28px, 2.734vw, 35px);
+
+  flex-shrink: 0;
+
+  margin-top: clamp(10px, 1.40625vw, 18px);
+
+  background: #f0b152;
+
+  border-radius: clamp(8px, 0.9375vw, 12px);
+
+  align-self: flex-end;
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 500;
+
+  font-size: clamp(12px, 1.40625vw, 18px);
+
+  line-height: 145%;
+  color: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.who-we-are__button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   VISION
+======================================== */
+
+.who-we-are__vision {
+  position: absolute;
+
+  width: 41.781%;
+
+  left: 5.479%;
+
+  /*
+    467 / 728
+  */
+  top: 64.148%;
+
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.who-we-are__vision h2 {
+  margin-bottom: clamp(14px, 1.875vw, 24px);
+}
+
+.who-we-are__vision p {
+  height: auto;
+}
+
+
+/* ========================================
+   SECOND IMAGE
+======================================== */
+
+.who-we-are__computer-image {
+  position: absolute;
+
+  /*
+    502 / 1168
+  */
+  width: 42.979%;
+
+  height: auto;
+
+  aspect-ratio: 502 / 207;
+
+  right: 5.479%;
+
+  /*
+    458 / 728
+  */
+  top: 62.912%;
+
+  object-fit: cover;
+
+  border: clamp(2px, 0.234vw, 3px) solid #f0b152;
+
+  border-radius: clamp(10px, 1.25vw, 16px);
+}
+
+
+/* ========================================
+   TABLET
+   Same layout, everything scales together
+======================================== */
+
+@media (max-width: 900px) {
+
+  .who-we-are {
+    padding: 55px 0;
+  }
+
+  .who-we-are__card {
+    /*
+      Keep the original proportions.
+      Everything inside is based on the
+      available card width.
+    */
+    width: calc(100% - 60px);
+    max-width: 760px;
+
+    /*
+      Original ratio:
+      1168 / 728
+    */
+    height: auto;
+    aspect-ratio: 1168 / 728;
+
+    border-radius: clamp(24px, 4vw, 32px);
+  }
+
+
+  /* ======================================
+     MAIN IMAGE
+  ====================================== */
+
+  .who-we-are__main-image {
+    /*
+      Original:
+      453 / 1168 = 38.78%
+    */
+    width: 38.78%;
+    height: auto;
+    aspect-ratio: 453 / 358;
+
+    left: 5.48%;
+    top: 8.38%;
+
+    border-width: clamp(1.5px, 0.25vw, 2px);
+    border-radius: clamp(8px, 1.5vw, 12px);
+  }
+
+
+  /* ======================================
+     ABOUT
+  ====================================== */
+
+  .who-we-are__about {
+    /*
+      Original:
+      488 / 1168 = 41.78%
+    */
+    width: 41.78%;
+    height: auto;
+
+    right: 5.48%;
+    top: 5.49%;
+  }
+
+  .who-we-are__about h2,
+  .who-we-are__vision h2 {
+    margin-bottom: clamp(8px, 1.5vw, 14px);
+
+    /*
+      36px -> scales with viewport
+    */
+    font-size: clamp(18px, 2.8vw, 24px);
+    line-height: 120%;
+  }
+
+  .who-we-are__about p,
+  .who-we-are__vision p {
+    font-size: clamp(9px, 1.4vw, 12px);
+    line-height: 145%;
+  }
+
+
+  /* ======================================
+     BUTTON
+  ====================================== */
+
+  .who-we-are__button {
+    /*
+      127px -> scales with card
+    */
+    width: clamp(75px, 13.1vw, 100px);
+    height: clamp(23px, 3.8vw, 29px);
+
+    margin-top: clamp(7px, 1.5vw, 12px);
+
+    border-radius: clamp(6px, 1.2vw, 9px);
+
+    font-size: clamp(9px, 1.7vw, 13px);
+  }
+
+
+  /* ======================================
+     VISION
+  ====================================== */
+
+  .who-we-are__vision {
+    width: 41.78%;
+    height: auto;
+
+    left: 5.48%;
+    top: 64.15%;
+  }
+
+  .who-we-are__vision h2 {
+    margin-bottom: clamp(8px, 1.5vw, 14px);
+  }
+
+  .who-we-are__vision p {
+    height: auto;
+  }
+
+
+  /* ======================================
+     SECOND IMAGE
+  ====================================== */
+
+  .who-we-are__computer-image {
+    /*
+      Original:
+      502 / 1168 = 42.98%
+    */
+    width: 42.98%;
+    height: auto;
+    aspect-ratio: 502 / 207;
+
+    right: 5.48%;
+    top: 62.91%;
+
+    border-width: clamp(1.5px, 0.25vw, 2px);
+    border-radius: clamp(8px, 1.5vw, 12px);
+  }
+}
+
+
+/* ========================================
+   MOBILE
+   Everything becomes one column
+======================================== */
+
+@media (max-width: 600px) {
+
+  .who-we-are {
+    padding: 40px 0;
+  }
+
+  .who-we-are__card {
+    position: relative;
+
+    width: calc(100% - 32px);
+    max-width: 430px;
+
+    /*
+      IMPORTANT:
+      No fixed height.
+      The card grows with the content.
+    */
+    height: auto;
+    aspect-ratio: auto;
+
+    padding: 24px 20px 30px;
+
+    border-radius: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+
+  /* ======================================
+     FIRST IMAGE
+     1st
+  ====================================== */
+
+  .who-we-are__main-image {
+    position: relative;
+
+    left: auto;
+    top: auto;
+    right: auto;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 453 / 358;
+
+    object-fit: cover;
+
+    margin: 0;
+
+    border-width: 2px;
+    border-radius: 12px;
+
+    /*
+      FIRST ELEMENT
+    */
+    order: 1;
+  }
+
+
+  /* ======================================
+     ABOUT TEXT
+     2nd
+  ====================================== */
+
+  .who-we-are__about {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    top: auto;
+
+    width: 100%;
+    height: auto;
+
+    margin: 28px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    /*
+      SECOND ELEMENT
+    */
+    order: 2;
+  }
+
+  .who-we-are__about h2,
+  .who-we-are__vision h2 {
+    width: 100%;
+
+    margin: 0 0 12px;
+
+    font-size: 24px;
+    line-height: 120%;
+
+    text-align: right;
+  }
+
+  .who-we-are__about p,
+  .who-we-are__vision p {
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    text-align: right;
+  }
+
+
+  /* ======================================
+     ABOUT BUTTON
+  ====================================== */
+
+  .who-we-are__about .who-we-are__button {
+    width: 105px;
+    height: 31px;
+
+    margin-top: 14px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    align-self: flex-end;
+  }
+
+
+  /* ======================================
+     SECOND IMAGE
+     3rd
+     
+     THIS IS THE IMPORTANT FIX.
+     
+     The second image is now BEFORE
+     the vision text.
+  ====================================== */
+
+  .who-we-are__computer-image {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    top: auto;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 502 / 207;
+
+    object-fit: cover;
+
+    margin: 32px 0 0;
+
+    border-width: 2px;
+    border-radius: 12px;
+
+    /*
+      THIRD ELEMENT
+    */
+    order: 3;
+  }
+
+
+  /* ======================================
+     VISION TEXT
+     4th
+  ====================================== */
+
+  .who-we-are__vision {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    top: auto;
+
+    width: 100%;
+    height: auto;
+
+    margin: 28px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    /*
+      FOURTH ELEMENT
+    */
+    order: 4;
+  }
+
+  .who-we-are__vision h2 {
+    margin-bottom: 12px;
+  }
+
+  .who-we-are__vision p {
+    height: auto;
+  }
+
+  .who-we-are__vision .who-we-are__button {
+    width: 105px;
+    height: 31px;
+
+    margin-top: 14px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    align-self: flex-end;
+  }
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 390px) {
+
+  .who-we-are {
+    padding: 32px 0;
+  }
+
+  .who-we-are__card {
+    width: calc(100% - 24px);
+
+    padding: 18px 15px 24px;
+
+    border-radius: 22px;
+  }
+
+
+  /* FIRST IMAGE */
+
+  .who-we-are__main-image {
+    border-radius: 10px;
+  }
+
+
+  /* ABOUT */
+
+  .who-we-are__about {
+    margin-top: 22px;
+  }
+
+  .who-we-are__about h2,
+  .who-we-are__vision h2 {
+    font-size: 21px;
+    margin-bottom: 9px;
+  }
+
+  .who-we-are__about p,
+  .who-we-are__vision p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  /* ABOUT BUTTON */
+
+  .who-we-are__about .who-we-are__button {
+    width: 92px;
+    height: 28px;
+
+    margin-top: 11px;
+
+    font-size: 12px;
+
+    border-radius: 8px;
+  }
+
+
+  /* SECOND IMAGE */
+
+  .who-we-are__computer-image {
+    margin-top: 22px;
+    border-radius: 10px;
+  }
+
+
+  /* VISION */
+
+  .who-we-are__vision {
+    margin-top: 22px;
+  }
+
+
+  /* VISION BUTTON */
+
+  .who-we-are__vision .who-we-are__button {
+    width: 92px;
+    height: 28px;
+
+    margin-top: 11px;
+
+    font-size: 12px;
+
+    border-radius: 8px;
+  }
+}

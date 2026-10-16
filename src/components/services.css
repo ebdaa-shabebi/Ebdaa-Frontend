@@ -1,0 +1,1116 @@
+/* ============================================================
+   SERVICES
+============================================================ */
+
+.services {
+  width: 100%;
+  min-height: 1350px;
+  padding: 170px 0 100px;
+
+  background: #dbe3e6;
+
+  direction: rtl;
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
+
+.services__inner {
+  position: relative;
+
+  width: min(1258px, calc(100% - 42px));
+
+  height: 680px;
+
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.services__title {
+  position: absolute;
+
+  top: -125px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 579px;
+
+  margin: 0;
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  text-align: center;
+
+  color: #459daf;
+}
+
+.services__subtitle {
+  position: absolute;
+
+  top: -10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 1002px;
+  max-width: 100%;
+
+  margin: 0;
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  text-align: center;
+
+  color: #515151;
+}
+
+
+/* ============================================================
+   CARDS AREA
+============================================================ */
+
+.services__cards {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ============================================================
+   CARD BASE
+============================================================ */
+
+.service-card {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background: #459daf;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   CARD TEXT
+============================================================ */
+
+.service-card__text {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  /*
+    This scales with the card.
+  */
+  height: 145px;
+
+  padding: 14px 18px 0;
+
+  box-sizing: border-box;
+
+  z-index: 2;
+}
+
+.service-card__text h3 {
+  width: 100%;
+
+  margin: 0;
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  text-align: center;
+
+  color: #f1bc6a;
+}
+
+.service-card__text p {
+  width: 100%;
+
+  margin: 8px 0 0;
+
+  font-family: 'Changa', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 145%;
+  letter-spacing: -0.005em;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   CARD IMAGE
+============================================================ */
+
+.service-card__image {
+  position: absolute;
+
+  left: 50%;
+
+  /*
+    IMPORTANT:
+    Width controls the image.
+    Height stays AUTO.
+
+    This means the border always follows
+    the actual image proportions.
+  */
+  width: 86%;
+  height: auto;
+
+  transform: translateX(-50%);
+
+  object-fit: contain;
+
+  box-sizing: border-box;
+
+  border: 6px solid #f0b152;
+
+  border-radius: 32px;
+
+  box-shadow:
+    0 0 4.4px rgba(0, 0, 0, 0.06),
+    0 5px 19px rgba(0, 0, 0, 0.08);
+
+  z-index: 3;
+}
+
+
+/* ============================================================
+   DESKTOP
+   ORIGINAL POSITIONS
+============================================================ */
+
+/*
+   The dimensions below are kept as your original design.
+   Responsive desktop below converts them to percentages.
+*/
+
+
+/* CARD 1 */
+
+.service-card--content {
+  width: 268px;
+  height: 384px;
+
+  left: 0;
+  top: 100px;
+
+  transform: scale(1.15);
+}
+
+.service-card--content .service-card__text h3 {
+  width: 237px;
+
+  margin-inline: auto;
+}
+
+.service-card--content .service-card__image {
+  width: 230px;
+
+  left: 50%;
+  bottom: 6px;
+
+  transform: translateX(-50%);
+}
+
+
+/* CARD 2 */
+
+.service-card--campaigns {
+  width: 259px;
+  height: 384px;
+
+  left: 335px;
+  top: 320px;
+
+  transform: scale(1.15);
+}
+
+.service-card--campaigns .service-card__text h3 {
+  margin-top: 5px;
+}
+
+.service-card--campaigns .service-card__image {
+  width: 230px;
+
+  left: 50%;
+  bottom: 8px;
+
+  transform: translateX(-50%);
+}
+
+
+/* CARD 3 */
+
+.service-card--identity {
+  width: 268px;
+  height: 384px;
+
+  left: 665px;
+  top: 100px;
+
+  transform: scale(1.15);
+}
+
+.service-card--identity .service-card__image {
+  width: 230px;
+
+  left: 50%;
+  bottom: 11px;
+
+  transform: translateX(-50%);
+}
+
+
+/* CARD 4 */
+
+.service-card--digital {
+  width: 259px;
+  height: 384px;
+
+  right: 0;
+  top: 320px;
+
+  transform: scale(1.15);
+}
+
+.service-card--digital .service-card__text h3 {
+  font-weight: 600;
+}
+
+.service-card--digital .service-card__image {
+  width: 225px;
+
+  left: 50%;
+  bottom: 7px;
+
+  transform: translateX(-50%);
+}
+
+
+/* CARD 5 */
+
+.service-card--social {
+  width: 273px;
+  height: 384px;
+
+  left: 0;
+  top: 625px;
+
+  transform: scale(1.15);
+}
+
+.service-card--social .service-card__image {
+  width: 237px;
+
+  left: 50%;
+  bottom: 6px;
+
+  transform: translateX(-50%);
+}
+
+
+/* CARD 6 */
+
+.service-card--video {
+  width: 268px;
+  height: 384px;
+
+  left: 665px;
+  top: 625px;
+
+  transform: scale(1.15);
+}
+
+.service-card--video .service-card__image {
+  width: 245px;
+
+  left: 50%;
+  bottom: 6px;
+
+  transform: translateX(-50%);
+}
+
+
+/* ============================================================
+   FLUID DESKTOP
+   901px → 1258px
+============================================================ */
+
+@media (max-width: 1258px) and (min-width: 901px) {
+
+  .services {
+    /*
+      Section spacing also shrinks.
+    */
+    padding-top: clamp(120px, 13.51vw, 170px);
+    padding-bottom: clamp(70px, 7.95vw, 100px);
+  }
+
+  .services__inner {
+    width: calc(100% - 42px);
+
+    /*
+      Keep the exact desktop composition ratio.
+    */
+    height: auto;
+    aspect-ratio: 1258 / 680;
+  }
+
+
+  /* ======================================
+     TITLE
+  ====================================== */
+
+  .services__title {
+    top: -18.8%;
+
+    width: 46.03%;
+
+    /*
+      96px at 1258px.
+    */
+    font-size: clamp(50px, 7.63vw, 96px);
+  }
+
+  .services__subtitle {
+    top: -1.47%;
+
+    width: 79.65%;
+
+    font-size: clamp(16px, 2.54vw, 32px);
+  }
+
+
+  /* ======================================
+     CARD BASE
+  ====================================== */
+
+  .service-card {
+    transform: none;
+
+    border-radius: clamp(10px, 1.27vw, 16px);
+  }
+
+
+  /* ======================================
+     CARD TEXT
+  ====================================== */
+
+  .service-card__text {
+    height: 37.76%;
+
+    padding:
+      1.11vw
+      1.43vw
+      0;
+  }
+
+  .service-card__text h3 {
+    font-size: clamp(14px, 1.91vw, 24px);
+  }
+
+  .service-card__text p {
+    margin-top: clamp(4px, 0.64vw, 8px);
+
+    font-size: clamp(8px, 0.95vw, 12px);
+  }
+
+
+  /* ======================================
+     CARD 1
+  ====================================== */
+
+  .service-card--content {
+    width: 21.30%;
+    height: 56.47%;
+
+    left: 0;
+    top: 14.71%;
+  }
+
+  .service-card--content .service-card__image {
+    width: 85.82%;
+
+    left: 50%;
+    bottom: 1.56%;
+
+    transform: translateX(-50%);
+  }
+
+
+  /* ======================================
+     CARD 2
+  ====================================== */
+
+  .service-card--campaigns {
+    width: 20.59%;
+    height: 56.47%;
+
+    left: 26.63%;
+    top: 47.06%;
+  }
+
+  .service-card--campaigns .service-card__image {
+    width: 88.80%;
+
+    left: 50%;
+    bottom: 2.08%;
+
+    transform: translateX(-50%);
+  }
+
+
+  /* ======================================
+     CARD 3
+  ====================================== */
+
+  .service-card--identity {
+    width: 21.30%;
+    height: 56.47%;
+
+    left: 52.86%;
+    top: 14.71%;
+  }
+
+  .service-card--identity .service-card__image {
+    width: 85.82%;
+
+    left: 50%;
+    bottom: 2.86%;
+
+    transform: translateX(-50%);
+  }
+
+
+  /* ======================================
+     CARD 4
+  ====================================== */
+
+  .service-card--digital {
+    width: 20.59%;
+    height: 56.47%;
+
+    right: 0;
+    top: 47.06%;
+  }
+
+  .service-card--digital .service-card__image {
+    width: 86.87%;
+
+    left: 50%;
+    bottom: 1.82%;
+
+    transform: translateX(-50%);
+  }
+
+
+  /* ======================================
+     CARD 5
+     
+     MUCH LOWER
+  ====================================== */
+
+  .service-card--social {
+    width: 21.70%;
+    height: 56.47%;
+
+    left: 0;
+
+    /*
+      Significantly lower than card 4/6.
+    */
+    top: 92%;
+  }
+
+  .service-card--social .service-card__image {
+    width: 86.81%;
+
+    left: 50%;
+    bottom: 1.56%;
+
+    transform: translateX(-50%);
+  }
+
+
+  /* ======================================
+     CARD 6
+  ====================================== */
+
+  .service-card--video {
+    width: 21.30%;
+    height: 56.47%;
+
+    left: 52.86%;
+    top: 92%;
+  }
+
+  .service-card--video .service-card__image {
+    width: 91.42%;
+
+    left: 50%;
+    bottom: 1.56%;
+
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ============================================================
+   TABLET
+   3 COLUMNS
+============================================================ */
+
+@media (max-width: 900px) and (min-width: 601px) {
+
+  .services {
+    min-height: 0;
+
+    padding:
+      clamp(95px, 13vw, 125px)
+      0
+      80px;
+  }
+
+  .services__inner {
+    width: calc(100% - 40px);
+    max-width: 760px;
+
+    height: auto;
+  }
+
+
+  /* ======================================
+     TITLE
+  ====================================== */
+
+  .services__title {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-bottom: 4px;
+
+    font-size: clamp(48px, 7vw, 70px);
+  }
+
+  .services__subtitle {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-bottom: 35px;
+
+    font-size: clamp(17px, 2.8vw, 26px);
+  }
+
+
+  /* ======================================
+     REAL GRID
+     
+     This fixes the left/right problem.
+  ====================================== */
+
+  .services__cards {
+    position: relative;
+
+    inset: auto;
+
+    width: 100%;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    column-gap: clamp(14px, 2.5vw, 24px);
+
+    row-gap: clamp(30px, 5vw, 50px);
+
+    direction: rtl;
+
+    align-items: start;
+  }
+
+
+  /* ======================================
+     ALL CARDS RESET
+  ====================================== */
+
+  .service-card,
+  .service-card--content,
+  .service-card--campaigns,
+  .service-card--identity,
+  .service-card--digital,
+  .service-card--social,
+  .service-card--video {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    left: auto;
+    right: auto;
+    top: auto;
+
+    transform: none;
+
+    aspect-ratio: 268 / 384;
+
+    border-radius: clamp(10px, 2vw, 16px);
+  }
+
+
+  /* ======================================
+     TEXT
+  ====================================== */
+
+  .service-card__text {
+    height: 38%;
+
+    padding:
+      clamp(8px, 1.4vw, 12px)
+      clamp(6px, 1.5vw, 12px)
+      0;
+  }
+
+  .service-card__text h3 {
+    font-size: clamp(14px, 2.25vw, 20px);
+  }
+
+  .service-card__text p {
+    margin-top: clamp(3px, 0.6vw, 5px);
+
+    font-size: clamp(7px, 1.25vw, 11px);
+  }
+
+
+  /* ======================================
+     IMAGES
+     
+     Width is proportional.
+     Height is AUTO.
+     
+     Border follows image exactly.
+  ====================================== */
+
+  .service-card__image {
+    width: 86%;
+    height: auto;
+
+    left: 50%;
+    bottom: 3%;
+
+    transform: translateX(-50%);
+
+    border-width: clamp(2px, 0.5vw, 5px);
+
+    border-radius: clamp(12px, 3vw, 24px);
+  }
+
+
+  /* ======================================
+     CARD 2
+     
+     Middle card in row 1 LOWER.
+  ====================================== */
+
+  .service-card--campaigns {
+    top: 35px;
+  }
+
+
+  /* ======================================
+     CARD 5
+     
+     Middle card in row 2 MUCH LOWER.
+  ====================================== */
+
+  .service-card--social {
+    top: 70px;
+  }
+
+
+  /* ======================================
+     IMAGE OVERRIDES
+  ====================================== */
+
+  .service-card--content .service-card__image {
+    width: 86%;
+    bottom: 3%;
+  }
+
+  .service-card--campaigns .service-card__image {
+    width: 88%;
+    bottom: 3%;
+  }
+
+  .service-card--identity .service-card__image {
+    width: 86%;
+    bottom: 3%;
+  }
+
+  .service-card--digital .service-card__image {
+    width: 85%;
+    bottom: 3%;
+  }
+
+  .service-card--social .service-card__image {
+    width: 88%;
+    bottom: 3%;
+  }
+
+  .service-card--video .service-card__image {
+    width: 90%;
+    bottom: 3%;
+  }
+}
+
+
+/* ============================================================
+   PHONE
+   2 COLUMNS
+============================================================ */
+
+@media (max-width: 600px) {
+
+  .services {
+    min-height: 0;
+
+    padding:
+      80px
+      0
+      55px;
+  }
+
+  .services__inner {
+    width: calc(100% - 24px);
+    max-width: 500px;
+
+    height: auto;
+  }
+
+
+  /* ======================================
+     TITLE
+  ====================================== */
+
+  .services__title {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-bottom: 4px;
+
+    font-size: clamp(40px, 13vw, 58px);
+  }
+
+  .services__subtitle {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(13px, 4vw, 18px);
+
+    line-height: 145%;
+  }
+
+
+  /* ======================================
+     2 COLUMN GRID
+  ====================================== */
+
+  .services__cards {
+    position: relative;
+
+    inset: auto;
+
+    width: 100%;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap: 12px;
+    row-gap: 18px;
+
+    direction: rtl;
+
+    align-items: start;
+  }
+
+
+  /* ======================================
+     CARDS
+     
+     ALL SAME POSITION.
+     No left/right positioning.
+  ====================================== */
+
+  .service-card,
+  .service-card--content,
+  .service-card--campaigns,
+  .service-card--identity,
+  .service-card--digital,
+  .service-card--social,
+  .service-card--video {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    left: auto;
+    right: auto;
+    top: auto;
+
+    transform: none;
+
+    aspect-ratio: 268 / 384;
+
+    border-radius: clamp(8px, 3vw, 12px);
+  }
+
+
+  /* ======================================
+     TEXT
+  ====================================== */
+
+  .service-card__text {
+    width: 100%;
+    height: 39%;
+
+    padding:
+      clamp(6px, 2vw, 9px)
+      clamp(4px, 1.8vw, 7px)
+      0;
+  }
+
+  .service-card__text h3 {
+    font-size: clamp(11px, 3.8vw, 16px);
+
+    line-height: 120%;
+  }
+
+  .service-card__text p {
+    margin-top: clamp(3px, 1.2vw, 5px);
+
+    font-size: clamp(6px, 2.2vw, 9px);
+
+    line-height: 145%;
+  }
+
+
+  /* ======================================
+     IMAGES
+     
+     ALWAYS SHRINK WITH THE CARD.
+     
+     Height AUTO is important.
+  ====================================== */
+
+  .service-card__image {
+    left: 50%;
+
+    width: 86%;
+    height: auto;
+
+    bottom: 3%;
+
+    transform: translateX(-50%);
+
+    box-sizing: border-box;
+
+    border-width: clamp(2px, 0.7vw, 3px);
+
+    border-radius: clamp(10px, 4vw, 16px);
+  }
+
+
+  /* ======================================
+     INDIVIDUAL IMAGE WIDTHS
+  ====================================== */
+
+  .service-card--content .service-card__image {
+    width: 86%;
+  }
+
+  .service-card--campaigns .service-card__image {
+    width: 88%;
+  }
+
+  .service-card--identity .service-card__image {
+    width: 86%;
+  }
+
+  .service-card--digital .service-card__image {
+    width: 84%;
+  }
+
+  .service-card--social .service-card__image {
+    width: 88%;
+  }
+
+  .service-card--video .service-card__image {
+    width: 90%;
+  }
+}
+
+
+/* ============================================================
+   SMALL PHONES
+============================================================ */
+
+@media (max-width: 390px) {
+
+  .services {
+    padding-top: 65px;
+    padding-bottom: 45px;
+  }
+
+  .services__inner {
+    width: calc(100% - 18px);
+  }
+
+  .services__cards {
+    column-gap: 9px;
+    row-gap: 14px;
+  }
+
+  .services__title {
+    font-size: 40px;
+  }
+
+  .services__subtitle {
+    font-size: 12px;
+
+    margin-bottom: 20px;
+  }
+
+
+  /* ======================================
+     SMALL PHONE TEXT
+  ====================================== */
+
+  .service-card__text {
+    padding:
+      6px
+      4px
+      0;
+  }
+
+  .service-card__text h3 {
+    font-size: 11px;
+  }
+
+  .service-card__text p {
+    font-size: 6.5px;
+
+    margin-top: 3px;
+  }
+
+
+  /* ======================================
+     SMALL PHONE BORDERS
+  ====================================== */
+
+  .service-card {
+    border-radius: 9px;
+  }
+
+  .service-card__image {
+    border-width: 2px;
+    border-radius: 12px;
+  }
+}
+
+/* Fix service card headings on mobile */
+@media (max-width: 600px) {
+  .service-card__text {
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .service-card__text h3,
+  .service-card--content .service-card__text h3 {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 390px) {
+  .service-card__text h3,
+  .service-card--content .service-card__text h3 {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: center;
+  }
+}

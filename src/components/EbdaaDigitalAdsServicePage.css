@@ -1,0 +1,1797 @@
+/* Content marketing service page */
+
+.ebdaa-digital-ads-page {
+
+  --bg: #dbe3e6;
+
+  --teal: #429faf;
+
+  --orange: #f0b152;
+
+  --text: #394b50;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  color: var(--text);
+
+  background: var(--bg);
+
+  font-family: "Changa", sans-serif;
+
+}
+
+.ebdaa-digital-ads-page *,
+
+.ebdaa-digital-ads-page *::before,
+
+.ebdaa-digital-ads-page *::after {
+
+  box-sizing: border-box;
+
+}
+
+/* HERO */
+
+.ebdaa-digital-ads-page .digital-ads__hero {
+
+  position: relative;
+
+  isolation: isolate;
+
+  z-index: 2;
+
+  width: 100%;
+
+  margin: 0;
+
+  overflow: visible;
+
+  background: var(--bg);
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__hero-media {
+
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  overflow: hidden;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__hero-media img {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: cover;
+
+  object-position: center;
+
+}
+
+/* Hero copy */
+
+.ebdaa-digital-ads-page .digital-ads__hero-copy {
+
+  position: absolute;
+
+  z-index: 4;
+
+  top: 22%;
+
+  right: 3%;
+
+  bottom: 12%;
+
+  left: auto;
+
+  display: flex;
+
+  width: 45%;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  text-align: right;
+
+}
+
+/* ========================================
+
+   LARGE OUTLINED HEADLINE
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__hero-copy h1 {
+
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 20px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  color: #459daf;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(36px, 4.1vw, 54px);
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing: 0;
+
+  text-align: center;
+
+  -webkit-text-stroke: 1.2px #fff;
+
+  paint-order: stroke fill;
+
+  text-shadow: none;
+
+}
+
+/* ========================================
+
+   TAGLINE
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__tagline {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  align-items: baseline;
+
+  gap: 8px;
+
+  width: 100%;
+
+  margin: 30px 0 10px;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(19px, 1.9vw, 25px);
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  letter-spacing: 0;
+
+  text-align: center;
+
+  direction: rtl;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__tagline span:first-child {
+
+  color: #245e68;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__tagline span:last-child {
+
+  color: #f0b152;
+
+}
+
+/* ========================================
+
+   HERO DESCRIPTION
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__hero-description {
+
+  display: block;
+
+  width: 100%;
+
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  color: #37494e;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(18px, 1.6vw, 22px);
+
+  font-weight: 500;
+
+  line-height: 1.7;
+
+  letter-spacing: 0;
+
+  text-align: center;
+
+}
+
+/* ========================================
+
+   BUTTONS — DIRECTLY UNDER DESCRIPTION
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  width: 100%;
+
+  margin: 58px 0 0;
+
+  padding: 0;
+
+}
+
+/* ========================================
+
+   BUTTON SIZE AND TYPOGRAPHY
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__button {
+
+  display: inline-flex;
+
+  min-width: 160px;
+
+  min-height: 50px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 8px 22px;
+
+  border-radius: 12px;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(18px, 1.7vw, 22px);
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+
+    transform 0.18s ease,
+
+    opacity 0.18s ease;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__button:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+
+}
+
+/* PRIMARY BUTTON */
+
+.ebdaa-digital-ads-page .digital-ads__button--primary {
+
+  color: #fff;
+
+  border: 1px solid #f0b152;
+
+  background: #f0b152;
+
+}
+
+/* OUTLINE BUTTON */
+
+.ebdaa-digital-ads-page .digital-ads__button--outline {
+
+  color: #ffffff;
+
+  border: 2px solid #fbfcfc;
+
+  background: transparent;
+
+}
+
+/* Wave overlaps the section below */
+
+.ebdaa-digital-ads-page .digital-ads__wave {
+
+  position: absolute;
+
+  z-index: 5;
+
+  right: 0;
+
+  bottom: -42px;
+
+  display: block;
+
+  width: 100%;
+
+  height: clamp(55px, 8vw, 105px);
+
+  pointer-events: none;
+
+}
+
+/* OVERVIEW */
+
+.ebdaa-digital-ads-page .digital-ads__overview {
+
+  position: relative;
+
+  z-index: 1;
+
+  width: min(calc(100% - 40px), 1300px);
+
+  margin: 0 auto;
+
+  padding: 145px 0 30px;
+
+}
+
+/* Overview card: compact image left, text right */
+
+.ebdaa-digital-ads-page .digital-ads__overview-card {
+
+  display: grid;
+
+  direction: ltr;
+
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.3fr);
+
+  grid-template-areas: "image copy";
+
+  align-items: center;
+
+  gap: 28px;
+
+  margin-bottom: 30px;
+
+  padding: 50px;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  border-radius: 44px;
+
+  background: #f7f7f6;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__overview-image {
+
+  grid-area: image;
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  min-height: 0;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: 2.5px solid var(--orange);
+
+  border-radius: 12px;
+
+  object-fit: unset;
+
+  aspect-ratio: auto;
+
+  background: transparent;
+
+  justify-self: stretch;
+
+}
+
+/* Arabic text on the right */
+
+.ebdaa-digital-ads-page .digital-ads__overview-copy {
+
+  grid-area: copy;
+
+  min-width: 0;
+
+  direction: rtl;
+
+  text-align: right;
+
+}
+
+/* Title: bigger, bold, and blue */
+
+.ebdaa-digital-ads-page .digital-ads__overview-copy h2 {
+
+  margin: 0 0 20px;
+
+  color: #459daf;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(32px, 2.2vw, 32px);
+
+  font-weight: 900;
+
+  line-height: 1.5;
+
+  letter-spacing: 0;
+
+  text-align: right;
+
+}
+
+/* Paragraphs: black, readable, and less bold */
+
+.ebdaa-digital-ads-page .digital-ads__overview-copy p {
+
+    max-width: 85%;
+
+  margin: 0 0 20px;
+
+  color: #111111;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(20px, 1.35vw, 20px);
+
+  font-weight: 500;
+
+  line-height: 1.9;
+
+  letter-spacing: 0;
+
+  text-align: right;
+
+}
+
+/* Remove extra space after the last paragraph */
+
+.ebdaa-digital-ads-page .digital-ads__overview-copy p:last-child {
+
+  margin-bottom: 0;
+
+}
+
+/* SECTION TITLE */
+
+.ebdaa-digital-ads-page .digital-ads__section-title {
+
+  display: flex;
+
+  width: min(800px, 100%);
+
+  min-width: 0;
+
+  min-height: 57px;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  margin: 0 0 24px auto;
+
+  padding: 8px 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  border-radius: 16px;
+
+  color: #459daf;
+
+  background: #fff;
+
+  box-shadow:
+
+    0 4px 8px rgba(0, 0, 0, 0.02),
+
+    0 6px 12px rgba(0, 0, 0, 0.03);
+
+  font-family: "Changa", sans-serif;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+
+  letter-spacing: -0.02em;
+
+  text-align: right;
+
+}
+
+/* ========================================
+
+   SERVICE CARDS GRID
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+  display: grid;
+  grid-auto-rows: 1fr;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto 65px;
+
+  gap: 28px;
+
+  scroll-margin-top: 24px;
+
+}
+
+/* ========================================
+
+   SERVICE CARD
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__feature-card {
+
+  display: flex;
+  height: 100%;
+
+  min-width: 0;
+
+  min-height: 370px;
+
+  flex-direction: column;
+
+  padding: 18px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  color: #fff;
+
+  background: var(--teal);
+
+  text-align: center;
+
+}
+
+/* ========================================
+
+   CARD TITLE
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__feature-card h3 {
+
+  margin: 0 0 12px;
+
+  color: #ffd078;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: clamp(16px, 1.3vw, 19px);
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
+}
+
+/* ========================================
+
+   CARD DESCRIPTION
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__feature-card p {
+
+  flex: 1;
+
+  margin: 0 0 18px;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+
+}
+
+/* ========================================
+
+   CARD IMAGE
+
+   Fill the orange border completely
+
+\======================================== */
+
+.ebdaa-digital-ads-page .digital-ads__feature-card img {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  aspect-ratio: 4 / 3;
+
+  padding: 0;
+
+  margin-top: auto;
+
+  border: 2px solid var(--orange);
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  object-fit: cover;
+
+  object-position: center;
+
+}
+
+/* CLOSING CALL TO ACTION */
+
+.ebdaa-digital-ads-page .digital-ads__closing {
+
+  width: min(calc(100% - 40px), 800px);
+
+  min-height: 166px;
+
+  margin: 30px auto 70px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  border-radius: 16px;
+
+  background: #fff;
+
+  box-shadow:
+
+    0 4px 8px rgba(0, 0, 0, 0.02),
+
+    0 6px 12px rgba(0, 0, 0, 0.03);
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__closing h2 {
+
+  margin: 0 0 12px;
+
+  color: #459daf;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+
+  letter-spacing: -0.02em;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__closing p {
+
+  margin: 0 0 12px;
+
+  color: #000;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  letter-spacing: -0.005em;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__closing a {
+
+  display: block;
+
+  width: fit-content;
+
+  margin-left: 0;
+
+  margin-right: auto;
+
+  margin-top: 12px;
+
+  color: #f0b152;
+
+  font-family: "Changa", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  line-height: 1.45;
+
+  letter-spacing: -0.005em;
+
+  text-decoration: none;
+
+}
+
+.ebdaa-digital-ads-page .digital-ads__closing a:hover {
+
+  color: #d28d2b;
+
+}
+
+/* TABLET */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy {
+
+    top: 20%;
+
+    right: 4%;
+
+    bottom: 12%;
+
+    width: 47%;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy h1 {
+
+    margin-bottom: 26px;
+
+    font-size: clamp(29px, 4vw, 38px);
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__tagline {
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-description {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__actions {
+
+    gap: 10px;
+
+    padding-top: 18px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__button {
+
+    min-width: 95px;
+
+    min-height: 31px;
+
+    font-size: 13px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__wave {
+
+    bottom: -30px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy {
+
+    top: 13%;
+
+    right: 5%;
+
+    width: 48%;
+
+    gap: 10px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy h1 {
+
+    font-size: clamp(24px, 3vw, 32px);
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-description {
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview {
+
+    padding-top: 30px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview-card {
+
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+
+    gap: 20px;
+
+    padding: 18px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview-image {
+
+    min-height: 160px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card p {
+
+    min-height: 0;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__section-title {
+
+    width: min(674px, 100%);
+
+    min-height: 42px;
+
+    font-size: 22px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing {
+
+    min-height: 158px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing h2 {
+
+    font-size: 24px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing p {
+
+    font-size: 16px;
+
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .ebdaa-digital-ads-page .digital-ads__hero {
+
+    margin-bottom: 0;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy {
+
+    top: 16%;
+
+    right: 5%;
+
+    bottom: 10%;
+
+    width: 90%;
+
+    align-items: center;
+
+    text-align: center;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy h1 {
+
+    margin-bottom: 20px;
+
+    font-size: clamp(24px, 6.5vw, 30px);
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    -webkit-text-stroke: 0.8px #fff;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__tagline {
+
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-bottom: 8px;
+
+    font-size: clamp(13px, 3.8vw, 16px);
+
+    text-align: center;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-description {
+
+    max-width: 95%;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__actions {
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding-top: 18px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__button {
+
+    min-width: 82px;
+
+    min-height: 27px;
+
+    padding: 3px 10px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__wave {
+
+    bottom: -20px;
+
+    height: 45px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero {
+
+    margin-bottom: 34px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-media img {
+
+    width: 100%;
+
+    height: auto;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy {
+
+    top: 12%;
+
+    right: 6%;
+
+    left: auto;
+
+    width: 88%;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    text-align: center;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-copy h1 {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    font-size: clamp(20px, 5vw, 26px);
+
+    line-height: 1.2;
+
+    text-align: center;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__tagline {
+
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 14px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__hero-description {
+
+    max-width: 90%;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__actions {
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 2px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__button {
+
+    min-width: 82px;
+
+    min-height: 25px;
+
+    padding: 3px 9px;
+
+    font-size: 11px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__wave {
+
+    height: 45px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview {
+
+    width: calc(100% - 24px);
+
+    padding-bottom: 24px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview-card {
+
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+
+      "copy"
+
+      "image";
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+
+    padding: 12px;
+
+    border-radius: 18px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview-image {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview-copy h2 {
+
+    margin-bottom: 7px;
+
+    font-size: 17px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview-copy p {
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__section-title {
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 25px;
+
+    margin: 0 0 16px;
+
+    padding: 6px 14px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card {
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card h3 {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card p {
+
+    flex: initial;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card img {
+
+    aspect-ratio: 4 / 3;
+
+    padding: 4px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing {
+
+    width: calc(100% - 24px);
+
+    min-height: 92px;
+
+    margin: 18px auto 35px;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing h2 {
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing p {
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing a {
+
+    font-size: 12px;
+
+  }
+
+}
+
+/* Small mobile screens */
+
+@media (max-width: 360px) {
+
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card img {
+
+    aspect-ratio: 16 / 9;
+
+  }
+
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ebdaa-digital-ads-page .digital-ads__button {
+
+    transition: none;
+
+  }
+
+}
+
+/* ========================================
+
+   MORE SPACE BETWEEN SECTIONS
+
+\======================================== */
+
+/* Space between the overview card and "What we offer" */
+
+.ebdaa-digital-ads-page .digital-ads__overview-card {
+
+  margin-bottom: 75px;
+
+}
+
+/* Space below the "What we offer" title */
+
+.ebdaa-digital-ads-page .digital-ads__section-title {
+
+  margin-bottom: 95px;
+
+}
+
+/* Space after the service cards */
+
+.ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+  margin-bottom: 65px;
+
+}
+
+/* Space before and after the closing section */
+
+.ebdaa-digital-ads-page .digital-ads__closing {
+
+  margin-bottom: 150px;
+
+}
+
+/* Extra breathing room at the bottom of the overview */
+
+.ebdaa-digital-ads-page .digital-ads__overview {
+
+  padding-bottom: 55px;
+
+}
+
+/* TABLET */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .ebdaa-digital-ads-page .digital-ads__overview-card {
+
+    margin-bottom: 45px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__section-title {
+
+    margin-bottom: 30px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+    margin-bottom: 45px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing {
+
+    margin: 55px auto 75px;
+
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .ebdaa-digital-ads-page .digital-ads__overview-card {
+
+    margin-bottom: 35px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__section-title {
+
+    margin-bottom: 24px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+
+    margin-bottom: 35px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__closing {
+
+    margin: 40px auto 55px;
+
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__overview {
+
+    padding-bottom: 30px;
+
+  }
+
+}
+
+
+/* =====================================================
+   DIGITAL ADS SERVICE — FULL TEXT SERVICE CARDS
+   Cards grow naturally to fit every line and list item.
+===================================================== */
+.ebdaa-digital-ads-page .digital-ads__feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  grid-auto-rows: auto;
+  gap: 28px;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 560px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 18px;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card-content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card p {
+  flex: 0 0 auto;
+  min-height: 0;
+  margin: 0 0 12px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.8;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card-includes {
+  margin-top: 2px;
+  margin-bottom: 16px;
+  text-align: right;
+  direction: rtl;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card-includes strong {
+  display: block;
+  margin: 0 0 5px;
+  color: #ffd078;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card-includes ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card-includes li {
+  position: relative;
+  margin: 0;
+  padding: 2px 16px 2px 0;
+  color: #fff;
+  font-family: "Changa", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card-includes li::before {
+  content: "•";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.ebdaa-digital-ads-page .digital-ads__feature-card img {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  margin-top: auto;
+  border: 2px solid var(--orange);
+  border-radius: 10px;
+  background: #fff;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card {
+    min-height: 0;
+    height: auto;
+    padding: 12px;
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card h3 {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card p,
+  .ebdaa-digital-ads-page .digital-ads__feature-card-includes li {
+    font-size: 11px;
+    line-height: 1.75;
+  }
+
+  .ebdaa-digital-ads-page .digital-ads__feature-card img {
+    aspect-ratio: 4 / 3;
+    padding: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   FINAL OVERRIDES — DIGITAL / PRINT AD LISTS
+   Keep all service copy visible; let cards grow naturally.
+===================================================== */
+.service-detail--digital-ads .digital-ads__feature-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  align-items: start;
+  gap: 28px;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card {
+  display: flex !important;
+  flex-direction: column;
+  align-self: start;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: 18px;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card-content {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card h3 {
+  flex: 0 0 auto;
+  margin: 0 0 12px;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card p {
+  display: block !important;
+  flex: 0 0 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 0 12px;
+  overflow: visible !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card-includes {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 0 16px;
+  overflow: visible !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  text-align: right;
+  direction: rtl;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card-includes strong {
+  display: block !important;
+  margin: 0 0 6px;
+  color: #ffd078;
+  font-weight: 700;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card-includes ul {
+  display: block !important;
+  list-style: none !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card-includes li {
+  display: block !important;
+  position: relative;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 2px 16px 2px 0 !important;
+  color: #fff;
+  font-family: "Changa", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.75;
+  white-space: normal !important;
+  overflow: visible !important;
+  overflow-wrap: anywhere;
+  visibility: visible !important;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card-includes li::before {
+  content: "•";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.service-detail--digital-ads .digital-ads__feature-card img {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  margin-top: 12px;
+  border: 2px solid var(--orange);
+  border-radius: 10px;
+  background: #fff;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .service-detail--digital-ads .digital-ads__feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-detail--digital-ads .digital-ads__feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .service-detail--digital-ads .digital-ads__feature-card {
+    padding: 12px;
+  }
+
+  .service-detail--digital-ads .digital-ads__feature-card-includes li {
+    font-size: 11px;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 360px) {
+  .service-detail--digital-ads .digital-ads__feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* DESKTOP — center the short cards vertically */
+@media (min-width: 1101px) {
+  .ebdaa-digital-ads-page .digital-ads__feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-auto-rows: auto !important;
+    align-items: stretch !important;
+  }
+
+  /* Long outer cards */
+  .ebdaa-digital-ads-page .digital-ads__feature-card:nth-child(1),
+  .ebdaa-digital-ads-page .digital-ads__feature-card:nth-child(4) {
+    height: auto !important;
+    min-height: 560px !important;
+    align-self: stretch !important;
+  }
+
+  /* Short middle cards: vertically center within the row */
+  .ebdaa-digital-ads-page .digital-ads__feature-card:nth-child(2),
+  .ebdaa-digital-ads-page .digital-ads__feature-card:nth-child(3) {
+    height: 420px !important;
+    min-height: 420px !important;
+    align-self: center !important;
+  }
+}

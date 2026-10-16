@@ -1,0 +1,716 @@
+
+.dynamic-portfolio {
+  width: 100%;
+  min-width: 0;
+  color: #073f49;
+  box-sizing: border-box;
+}
+
+.dynamic-portfolio *,
+.dynamic-portfolio *::before,
+.dynamic-portfolio *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LOADING AREA
+========================================= */
+
+.dynamic-portfolio__loading-area {
+  width: 100%;
+  padding: 30px 0 50px;
+  animation: portfolioFadeIn 0.5s ease both;
+}
+
+.dynamic-portfolio__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  width: 100%;
+  padding: 42px 20px;
+
+  text-align: center;
+  animation: portfolioFadeIn 0.4s ease both;
+}
+
+.dynamic-portfolio__loading p {
+  margin: 0;
+  color: #073f49;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.dynamic-portfolio__loading-hint {
+  color: #68777b;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Animated three-dot loader */
+.dynamic-portfolio__loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 32px;
+}
+
+.dynamic-portfolio__loader span {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #459daf;
+  animation: portfolioDotBounce 1s ease-in-out infinite;
+}
+
+.dynamic-portfolio__loader span:nth-child(2) {
+  background: #f0b152;
+  animation-delay: 0.15s;
+}
+
+.dynamic-portfolio__loader span:nth-child(3) {
+  background: #459daf;
+  animation-delay: 0.3s;
+}
+
+@keyframes portfolioDotBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.65;
+  }
+
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   LOADING SKELETON
+========================================= */
+
+.dynamic-portfolio__skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 12px auto 0;
+}
+
+.dynamic-portfolio__skeleton-card {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+
+  border: 4px solid #459daf;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #f0b152;
+}
+
+.dynamic-portfolio__skeleton-card span {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgb(69 157 175 / 12%) 40%,
+    rgb(240 177 82 / 18%) 50%,
+    transparent 70%
+  );
+
+  transform: translateX(-100%);
+  animation: portfolioShimmer 1.5s ease-in-out infinite;
+}
+
+.dynamic-portfolio__skeleton-card:nth-child(2) span {
+  animation-delay: 0.15s;
+}
+
+.dynamic-portfolio__skeleton-card:nth-child(3) span {
+  animation-delay: 0.3s;
+}
+
+.dynamic-portfolio__skeleton-card:nth-child(4) span {
+  animation-delay: 0.45s;
+}
+
+.dynamic-portfolio__skeleton-card:nth-child(5) span {
+  animation-delay: 0.6s;
+}
+
+.dynamic-portfolio__skeleton-card:nth-child(6) span {
+  animation-delay: 0.75s;
+}
+
+@keyframes portfolioShimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* =========================================
+   ARABIC NOTICES
+========================================= */
+
+.dynamic-portfolio__notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  width: min(100%, 720px);
+  margin: 20px auto;
+  padding: 40px 28px;
+
+  background: #fff;
+  border: 2px solid rgb(69 157 175 / 25%);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgb(7 63 73 / 6%);
+
+  text-align: center;
+  animation: portfolioFadeIn 0.45s ease both;
+}
+
+.dynamic-portfolio__notice-icon {
+  display: grid;
+  place-items: center;
+
+  width: 62px;
+  height: 62px;
+  border: 2px solid #459daf;
+  border-radius: 50%;
+
+  background: #edf7f8;
+  color: #277f91;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.dynamic-portfolio__notice--error .dynamic-portfolio__notice-icon {
+  border-color: #edc0b9;
+  background: #fff3f1;
+  color: #b94b3d;
+}
+
+.dynamic-portfolio__notice h3 {
+  margin: 0;
+  color: #073f49;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(22px, 2.4vw, 29px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.dynamic-portfolio__notice p {
+  max-width: 560px;
+  margin: 0;
+
+  color: #657478;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(16px, 1.6vw, 19px);
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.dynamic-portfolio__retry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 175px;
+  min-height: 50px;
+  margin-top: 8px;
+  padding: 10px 25px;
+
+  border: 0;
+  border-radius: 10px;
+  background: #459daf;
+  color: #fff;
+
+  font-family: "Changa", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dynamic-portfolio__retry:hover {
+  transform: translateY(-2px);
+  background: #317f90;
+  box-shadow: 0 7px 18px rgb(69 157 175 / 22%);
+}
+
+.dynamic-portfolio__retry:focus-visible {
+  outline: 3px solid #f0b152;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   LOGO GRID
+========================================= */
+
+.dynamic-portfolio .service-page__logo-grid {
+  width: 100%;
+}
+
+.dynamic-portfolio__grid {
+  animation: portfolioFadeIn 0.5s ease both;
+}
+
+.dynamic-portfolio__logo-card {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  animation: portfolioCardIn 0.45s ease both;
+  animation-delay: calc(var(--logo-index, 0) * 45ms);
+}
+
+.dynamic-portfolio__logo-card:hover {
+  transform: translateY(-5px);
+}
+
+.dynamic-portfolio__logo-card:focus-visible,
+.dynamic-portfolio__selected-logo:focus-visible,
+.dynamic-portfolio__thumbnail:focus-visible {
+  outline: 3px solid #459daf;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   SELECTED LOGO
+========================================= */
+
+.dynamic-portfolio__selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+
+  animation: portfolioFadeIn 0.45s ease both;
+}
+
+.dynamic-portfolio__selected-logo {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  width: 240px;
+  height: 150px;
+  padding: 12px;
+
+  border: 5px solid #459daf;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #f0b152;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.dynamic-portfolio__selected-logo:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 0 0 2px #f0b152,
+    0 8px 20px rgb(0 0 0 / 10%);
+}
+
+.dynamic-portfolio__selected-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Return to grid button */
+.dynamic-portfolio__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 44px;
+  padding: 8px 18px;
+
+  border: 1px solid rgb(69 157 175 / 40%);
+  border-radius: 10px;
+  background: #fff;
+  color: #277f91;
+
+  font-family: "Changa", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.dynamic-portfolio__back:hover {
+  transform: translateY(-2px);
+  background: #edf7f8;
+}
+
+.dynamic-portfolio__back span {
+  font-size: 22px;
+}
+
+/* =========================================
+   VIDEOS: TWO PER ROW
+========================================= */
+
+.dynamic-portfolio__videos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: center;
+  align-items: start;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+
+  animation: portfolioFadeIn 0.5s ease both;
+}
+
+.dynamic-portfolio__video-card {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  padding: 5px;
+  border: 5px solid #459daf;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #f0b152;
+
+  animation: portfolioCardIn 0.45s ease both;
+  animation-delay: calc(var(--video-index, 0) * 70ms);
+}
+
+.dynamic-portfolio__video-card iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #171717;
+}
+
+/* Video thumbnail */
+.dynamic-portfolio__thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+
+  background: #171717;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dynamic-portfolio__thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.dynamic-portfolio__thumbnail:hover img {
+  transform: scale(1.04);
+}
+
+/* Play button */
+.dynamic-portfolio__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: grid;
+  place-items: center;
+
+  width: 62px;
+  height: 46px;
+  border-radius: 12px;
+
+  background: #e62117;
+  color: #fff;
+  font-size: 24px;
+
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease;
+}
+
+.dynamic-portfolio__thumbnail:hover .dynamic-portfolio__play {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* Center the final video when the count is odd */
+.dynamic-portfolio__video-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - 28px) / 2);
+}
+
+/* =========================================
+   SECTION HEIGHT AND FOOTER SPACING
+========================================= */
+
+.service-page__clients {
+  position: relative;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.service-page__clients-inner {
+  height: auto;
+  min-height: 0;
+  padding-bottom: 100px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes portfolioFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes portfolioCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .dynamic-portfolio__loading-area {
+    padding: 24px 0 35px;
+  }
+
+  .dynamic-portfolio__skeleton-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .dynamic-portfolio__skeleton-card {
+    height: 135px;
+  }
+
+  .dynamic-portfolio__selected {
+    gap: 28px;
+  }
+
+  .dynamic-portfolio__selected-logo {
+    width: 215px;
+    height: 140px;
+  }
+
+  .dynamic-portfolio__videos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .dynamic-portfolio__video-card:last-child:nth-child(odd) {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .dynamic-portfolio__notice {
+    padding: 32px 22px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .dynamic-portfolio__loading-area {
+    padding: 16px 0 28px;
+  }
+
+  .dynamic-portfolio__loading {
+    gap: 12px;
+    padding: 30px 12px;
+  }
+
+  .dynamic-portfolio__loading p {
+    font-size: 23px;
+  }
+
+  .dynamic-portfolio__loading-hint {
+    font-size: 15px;
+  }
+
+  .dynamic-portfolio__loader {
+    gap: 8px;
+  }
+
+  .dynamic-portfolio__loader span {
+    width: 11px;
+    height: 11px;
+  }
+
+  .dynamic-portfolio__skeleton-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .dynamic-portfolio__skeleton-card {
+    height: 105px;
+    border-width: 3px;
+    border-radius: 9px;
+  }
+
+  .dynamic-portfolio__notice {
+    gap: 12px;
+    margin: 14px auto;
+    padding: 28px 18px;
+    border-radius: 15px;
+  }
+
+  .dynamic-portfolio__notice-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .dynamic-portfolio__notice h3 {
+    font-size: 22px;
+  }
+
+  .dynamic-portfolio__notice p {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .dynamic-portfolio__retry {
+    min-height: 46px;
+    min-width: 155px;
+    font-size: 16px;
+  }
+
+  .dynamic-portfolio__selected {
+    gap: 24px;
+  }
+
+  .dynamic-portfolio__selected-logo {
+    width: 190px;
+    height: 125px;
+    padding: 9px;
+    border-width: 4px;
+  }
+
+  .dynamic-portfolio__videos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .dynamic-portfolio__video-card {
+    padding: 4px;
+    border-width: 4px;
+  }
+
+  .dynamic-portfolio__video-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .dynamic-portfolio__play {
+    width: 54px;
+    height: 40px;
+    font-size: 21px;
+  }
+
+  .dynamic-portfolio__back {
+    min-height: 42px;
+    font-size: 15px;
+  }
+
+  .service-page__clients-inner {
+    padding-bottom: 70px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .dynamic-portfolio *,
+  .dynamic-portfolio *::before,
+  .dynamic-portfolio *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,599 @@
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: min(830px, 64.84375vw);
+  overflow: visible;
+  background: #dbe3e6;
+  direction: rtl;
+  margin-bottom: min(100px, 6.25vw);
+}
+
+/* ========================================
+   HERO BACKGROUND / SLIDES
+======================================== */
+
+.hero__slides {
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.hero__slide {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  opacity: 0;
+
+  transition: opacity 800ms ease-in-out;
+}
+
+.hero__slide img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero__slide:first-child {
+  position: absolute;
+}
+
+.hero__slide--active {
+  opacity: 1;
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero__content {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  max-width: none;
+
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   HERO COPY
+======================================== */
+
+.hero__copy {
+  position: absolute;
+
+  /*
+    Desktop:
+    175px
+    175 / 1280 = 13.671875vw
+  */
+
+  top: min(175px, 13.671875vw);
+
+  width: 42%;
+
+  text-align: center;
+
+  pointer-events: auto;
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.hero__copy h1 {
+  margin: 0 0 min(70px, 5.46875vw);
+
+  color: #565655;
+
+  font-family: "Changa", sans-serif;
+
+  /*
+    Desktop: 40px
+  */
+
+  font-size: min(40px, 3.125vw);
+
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+/* ========================================
+   TAGLINE
+======================================== */
+
+.hero__tagline {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: min(5px, 0.390625vw);
+
+  margin: 0 0 min(10px, 0.78125vw);
+
+  font-family: "Changa", sans-serif;
+
+  /*
+    Desktop: 24px
+  */
+
+  font-size: min(24px, 1.875vw);
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+
+  direction: rtl;
+}
+
+.hero__tagline span:first-child {
+  color: #294047;
+}
+
+.hero__tagline span:last-child {
+  color: #f1bc6a;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.hero__copy p {
+  width: 100%;
+
+  /*
+    Desktop: 500px
+  */
+
+  max-width: min(500px, 39.0625vw);
+
+  margin: 0 auto;
+
+  color: #565655;
+
+  font-family: "Changa", sans-serif;
+
+  /*
+    Desktop: 16px
+  */
+
+  font-size: min(16px, 1.25vw);
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.hero__actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  /*
+    Desktop: 16px
+  */
+
+  gap: min(16px, 1.25vw);
+
+  /*
+    Desktop: 98px
+  */
+
+  margin-top: min(98px, 7.65625vw);
+
+  direction: rtl;
+}
+
+.hero__button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  /*
+    Desktop: 50px
+  */
+
+  height: min(50px, 3.90625vw);
+
+  font-family: "Changa", sans-serif;
+
+  /*
+    Desktop: 22px
+  */
+
+  font-size: min(22px, 1.71875vw);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background 180ms ease;
+}
+
+.hero__button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ========================================
+   أعمالنا
+======================================== */
+
+.hero__button--primary {
+  /*
+    Desktop: 160px
+  */
+
+  width: min(160px, 12.5vw);
+
+  background: #f1bc6a;
+
+  /*
+    Desktop: 12px
+  */
+
+  border-radius: min(12px, 0.9375vw);
+
+  color: #ffffff;
+}
+
+/* ========================================
+   تواصل معنا
+======================================== */
+
+.hero__button--outline {
+  /*
+    Desktop: 160px
+  */
+
+  width: min(160px, 12.5vw);
+
+  background: transparent;
+
+  /*
+    Desktop: 2px
+  */
+
+  border: min(2px, 0.15625vw) solid #459daf;
+
+  /*
+    Desktop: 12px
+  */
+
+  border-radius: min(12px, 0.9375vw);
+
+  color: #459daf;
+}
+
+/* ========================================
+   HERO WAVE
+
+   DO NOT CHANGE
+======================================== */
+
+.hero__wave {
+  position: absolute;
+
+  z-index: 1000;
+
+  left: 0;
+
+  /*
+    Desktop = -70px
+    Scales down smoothly with the viewport
+  */
+
+  bottom: clamp(-70px, -5.46875vw, -18px);
+
+  width: 100%;
+
+  /*
+    Desktop = 140px
+  */
+
+  height: min(140px, 10.9375vw);
+
+  display: block;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   PHONE HERO
+   600px and below
+======================================== */
+
+@media (max-width: 600px) {
+
+  .hero {
+    /*
+      Mobile images:
+      1080 × 1883
+
+      Preserve their exact aspect ratio.
+    */
+
+    height: calc(100vw * 1.7435185);
+
+    min-height: 0;
+
+    margin-bottom: 24vw;
+
+    background: #ffffff;
+  }
+
+
+  /* ======================================
+     MOBILE SLIDES
+  ====================================== */
+
+  .hero__slides {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+  }
+
+  .hero__slide img {
+    width: 100%;
+    height: 100%;
+
+    /*
+      Show the complete portrait artwork.
+    */
+
+    object-fit: fill;
+    object-position: center top;
+  }
+
+
+  /* ======================================
+     MOBILE CONTENT
+  ====================================== */
+
+  .hero__content {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    max-width: none;
+
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /* ======================================
+     MOBILE COPY
+
+     Positioned inside the white area
+     at the top of the portrait image.
+  ====================================== */
+
+  .hero__copy {
+    position: absolute;
+
+    top: clamp(90px, 20vw, 125px);
+
+    left: 5%;
+
+    width: 90%;
+
+    text-align: center;
+  }
+
+
+  /* ======================================
+     MOBILE HEADING
+  ====================================== */
+
+  .hero__copy h1 {
+    width: 100%;
+
+    margin: 0 0 clamp(16px, 4vw, 25px);
+
+    color: #565655;
+
+    font-family: "Changa", sans-serif;
+
+    font-size: clamp(21px, 6vw, 30px);
+
+    font-weight: 800;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    white-space: normal;
+  }
+
+
+  /* ======================================
+     MOBILE TAGLINE
+  ====================================== */
+
+  .hero__tagline {
+    width: 100%;
+
+    gap: 3px;
+
+    margin: 0 0 clamp(7px, 2vw, 12px);
+
+    font-family: "Changa", sans-serif;
+
+    font-size: clamp(13px, 4vw, 19px);
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    white-space: normal;
+
+    justify-content: center;
+
+    direction: rtl;
+  }
+
+  .hero__tagline span:first-child {
+    color: #294047;
+  }
+
+  .hero__tagline span:last-child {
+    color: #f1bc6a;
+  }
+
+
+  /* ======================================
+     MOBILE DESCRIPTION
+  ====================================== */
+
+  .hero__copy p {
+    width: 100%;
+
+    max-width: 470px;
+
+    margin: 0 auto;
+
+    color: #565655;
+
+    font-family: "Changa", sans-serif;
+
+    font-size: clamp(11px, 3.3vw, 15px);
+
+    font-weight: 400;
+
+    line-height: 1.65;
+
+    text-align: center;
+  }
+
+
+  /* ======================================
+     MOBILE BUTTONS
+  ====================================== */
+
+  .hero__actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    direction: rtl;
+  }
+
+  .hero__button {
+    height: 34px;
+
+    font-family: "Changa", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+  }
+
+  .hero__button--primary,
+  .hero__button--outline {
+    width: 105px;
+
+    border-radius: 7px;
+  }
+
+  .hero__button--outline {
+    border-width: 2px;
+    color: #ffffff;
+  }
+
+
+  /* ======================================
+     HERO WAVE
+
+     YOUR EXACT VALUES
+     DO NOT CHANGE
+  ====================================== */
+
+  .hero__wave {
+    bottom: clamp(-70px, -5.46875vw, -18px);
+
+    width: 100%;
+
+    height: min(140px, 10.9375vw);
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero__slide {
+    transition: none;
+  }
+}
