@@ -1,4 +1,4 @@
-import './footer.css'
+import './Footer.css'
 
 import footerBackground from '../assets/footer-background.png'
 import logo from '../assets/logo.png'
