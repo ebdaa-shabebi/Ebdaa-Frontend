@@ -209,13 +209,14 @@
 
 .service-page--advertisingcampaigns .service-page__logo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 235px);
-  grid-template-rows: repeat(5, 158px);
+  grid-template-columns: repeat(3, minmax(0, 235px));
+  grid-template-rows: none;
+  grid-auto-rows: 158px;
   justify-content: center;
   align-content: start;
   column-gap: 65px;
   row-gap: 50px;
-  min-height: 990px;
+  min-height: 0;
 }
 
 .service-page--advertisingcampaigns .service-page__logo-card {
@@ -290,11 +291,12 @@
   }
 
   .service-page--advertisingcampaigns .service-page__logo-grid {
-    grid-template-columns: repeat(2, 235px);
-    grid-template-rows: repeat(8, 158px);
+    grid-template-columns: repeat(2, minmax(0, 235px));
+    grid-template-rows: none;
+    grid-auto-rows: 158px;
     column-gap: 35px;
     row-gap: 35px;
-    min-height: calc(8 * 158px + 7 * 35px);
+    min-height: 0;
   }
 }
 
@@ -379,12 +381,10 @@
 
   .service-page--advertisingcampaigns .service-page__logo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(8, auto);
+    grid-template-rows: none;
     grid-auto-rows: auto;
     gap: 18px 12px;
-    min-height: calc(
-      8 * ((100vw - 52px) / 2 * 158 / 235) + 7 * 18px
-    );
+    min-height: 0;
   }
 
   .service-page--advertisingcampaigns .service-page__logo-card {
@@ -409,5 +409,409 @@
 @media (prefers-reduced-motion: reduce) {
   .service-page--advertisingcampaigns .service-page__button {
     transition: none;
+  }
+}
+
+/* ========================================
+   INTERACTIVE PORTFOLIO — mirrors DynamicPortfolio styling
+======================================== */
+
+.service-page--advertisingcampaigns .advertisingcampaigns__logo-grid {
+  animation: advertisingCampaignsFadeIn 0.5s ease both;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__logo-button {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: inherit;
+  animation: advertisingCampaignsCardIn 0.45s ease both;
+  animation-delay: calc(var(--logo-index, 0) * 45ms);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__logo-button:hover {
+  transform: translateY(-5px);
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__logo-button:focus-visible,
+.service-page--advertisingcampaigns .advertisingcampaigns__selected-logo:focus-visible,
+.service-page--advertisingcampaigns .advertisingcampaigns__back:focus-visible,
+.service-page--advertisingcampaigns .advertisingcampaigns__retry:focus-visible {
+  outline: 3px solid #459daf;
+  outline-offset: 4px;
+}
+
+/* Same dotted loading indicator used by the Motion Graphics portfolio. */
+.service-page--advertisingcampaigns .advertisingcampaigns__loading-area {
+  width: 100%;
+  padding: 30px 0 50px;
+  animation: advertisingCampaignsFadeIn 0.5s ease both;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  padding: 42px 20px;
+  color: #073f49;
+  text-align: center;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__loading p {
+  margin: 0;
+  color: #073f49;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 32px;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__loader span {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #459daf;
+  animation: advertisingCampaignsDotBounce 1s ease-in-out infinite;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__loader span:nth-child(2) {
+  background: #f0b152;
+  animation-delay: 0.15s;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes advertisingCampaignsDotBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.65; }
+  30% { transform: translateY(-10px); opacity: 1; }
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: min(100%, 720px);
+  margin: 20px auto;
+  padding: 40px 28px;
+  background: #fff;
+  border: 2px solid rgb(69 157 175 / 25%);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgb(7 63 73 / 6%);
+  color: #657478;
+  text-align: center;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.9;
+  animation: advertisingCampaignsFadeIn 0.45s ease both;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__notice p {
+  max-width: 560px;
+  margin: 0;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__notice--error .advertisingcampaigns__notice-icon {
+  border-color: #edc0b9;
+  background: #fff3f1;
+  color: #b94b3d;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__notice-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border: 2px solid #459daf;
+  border-radius: 50%;
+  background: #edf7f8;
+  color: #277f91;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__retry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 175px;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 10px;
+  background: #459daf;
+  color: #fff;
+  font-family: "Changa", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__retry:hover {
+  transform: translateY(-2px);
+  background: #317f90;
+  box-shadow: 0 7px 18px rgb(69 157 175 / 22%);
+}
+
+/* Selected company: logo, return button, then related billboard photos. */
+.service-page--advertisingcampaigns .advertisingcampaigns__selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  animation: advertisingCampaignsFadeIn 0.45s ease both;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__selected-logo {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 240px;
+  height: 150px;
+  margin: 0;
+  padding: 12px;
+  border: 5px solid #459daf;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #f0b152;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__selected-logo:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 0 0 2px #f0b152, 0 8px 20px rgb(0 0 0 / 10%);
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__selected-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 18px;
+  border: 1px solid rgb(69 157 175 / 40%);
+  border-radius: 10px;
+  background: #fff;
+  color: #277f91;
+  font-family: "Changa", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__back:hover {
+  transform: translateY(-2px);
+  background: #edf7f8;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__back span {
+  font-size: 22px;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__boards-title {
+  margin: -2px auto 0;
+  color: #073f49;
+  font-family: "Changa", sans-serif;
+  font-size: clamp(22px, 2.4vw, 29px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Photos replace Motion Graphics video tiles; card size, borders and grid match. */
+.service-page--advertisingcampaigns .advertisingcampaigns__board-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: center;
+  align-items: start;
+  gap: 28px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: advertisingCampaignsFadeIn 0.5s ease both;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__board-card {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  border: 5px solid #459daf;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #f0b152;
+  animation: advertisingCampaignsCardIn 0.45s ease both;
+  animation-delay: calc(var(--board-index, 0) * 70ms);
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__board-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.service-page--advertisingcampaigns .advertisingcampaigns__board-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - 28px) / 2);
+}
+
+@keyframes advertisingCampaignsFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes advertisingCampaignsCardIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .service-page--advertisingcampaigns .advertisingcampaigns__loading-area {
+    padding: 24px 0 35px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__selected {
+    gap: 28px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__board-grid {
+    gap: 20px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__board-card:last-child:nth-child(odd) {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__notice {
+    padding: 32px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-page--advertisingcampaigns .advertisingcampaigns__loading-area {
+    padding: 16px 0 28px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__loading {
+    padding: 30px 12px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__loading p {
+    font-size: 17px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__selected {
+    gap: 24px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__selected-logo {
+    width: 190px;
+    height: 125px;
+    padding: 9px;
+    border-width: 4px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__back {
+    min-height: 42px;
+    font-size: 15px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__boards-title {
+    font-size: 22px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__board-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__board-card {
+    padding: 4px;
+    border-width: 4px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__board-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__notice {
+    gap: 12px;
+    margin: 14px auto;
+    padding: 28px 18px;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__notice-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__retry {
+    min-height: 46px;
+    min-width: 155px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-page--advertisingcampaigns .advertisingcampaigns__logo-button,
+  .service-page--advertisingcampaigns .advertisingcampaigns__selected,
+  .service-page--advertisingcampaigns .advertisingcampaigns__selected-logo,
+  .service-page--advertisingcampaigns .advertisingcampaigns__back,
+  .service-page--advertisingcampaigns .advertisingcampaigns__board-card,
+  .service-page--advertisingcampaigns .advertisingcampaigns__notice,
+  .service-page--advertisingcampaigns .advertisingcampaigns__loading,
+  .service-page--advertisingcampaigns .advertisingcampaigns__loading-area {
+    animation: none;
+    transition: none;
+  }
+
+  .service-page--advertisingcampaigns .advertisingcampaigns__loader span {
+    animation: none;
   }
 }

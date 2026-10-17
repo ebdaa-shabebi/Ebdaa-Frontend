@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 import Header from './components/Header'
@@ -40,33 +41,41 @@ function HomePage() {
   useEffect(() => {
     const hash = window.location.hash
 
-    if (!hash || hash === '#admin-ebdaa-2026' || hash === '#/admin') {
+    // Do not treat application routes as section anchors.
+    if (
+      !hash ||
+      hash.startsWith('#/') ||
+      hash === '#admin-ebdaa-2026'
+    ) {
       return
     }
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const target = document.getElementById(
-          decodeURIComponent(hash.slice(1))
-        )
+    const targetId = decodeURIComponent(hash.slice(1))
 
-        target?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        })
+    const frame = requestAnimationFrame(() => {
+      const target = document.getElementById(targetId)
+
+      // Jump directly to the requested section without animation.
+      target?.scrollIntoView({
+        behavior: 'instant',
+        block: 'start',
       })
     })
+
+    return () => cancelAnimationFrame(frame)
   }, [])
 
   return (
     <>
       <Header />
+
       <main>
         <Hero />
         <WhoAreWe />
         <Services />
         <WhyUs />
       </main>
+
       <Footer />
     </>
   )
@@ -76,6 +85,8 @@ function App() {
   const [currentHash, setCurrentHash] = useState(
     window.location.hash
   )
+
+  const previousRoute = useRef(null)
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -93,6 +104,33 @@ function App() {
     ? currentHash.slice(1).split('?')[0].replace(/\/+$/, '') || '/'
     : '/'
 
+  // Reset scrolling only when navigating to a different route.
+  useEffect(() => {
+    if (previousRoute.current === route) {
+      return
+    }
+
+    previousRoute.current = route
+
+    // Let homepage section links scroll to their own target.
+    const isHomeSectionLink =
+      route === '/' &&
+      currentHash !== '' &&
+      !currentHash.startsWith('#/') &&
+      currentHash !== '#admin-ebdaa-2026'
+
+    if (isHomeSectionLink) {
+      return
+    }
+
+    // Immediately jump to the top and stop any ongoing scroll animation.
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    })
+  }, [route, currentHash])
+
   if (
     currentHash === '#admin-ebdaa-2026' ||
     route === '/admin'
@@ -106,9 +144,11 @@ function App() {
     return (
       <>
         <Header />
+
         <main>
           <ServiceComponent />
         </main>
+
         <Footer />
       </>
     )
