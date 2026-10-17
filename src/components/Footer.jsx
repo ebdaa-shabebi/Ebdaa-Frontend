@@ -147,11 +147,11 @@ function Footer() {
                     </a>
 
                     <a
-                        href="https://wa.me/967777730311"
+                        href="https://wa.me/967783999900"
                         className="footer__item"
                     >
                         <img src={whatsappIcon} alt="" />
-                        <span>777730311</span>
+                        <span>783999900</span>
                     </a>
 
                     <a
