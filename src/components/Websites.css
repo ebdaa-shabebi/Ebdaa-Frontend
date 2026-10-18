@@ -298,6 +298,7 @@
   }
 }
 
+
 /* ========================================
    MOBILE — HERO + CLIENTS
    Shared layout for all 4 service pages
@@ -323,7 +324,7 @@
   .service-page--advertisingvideos .service-page__hero-content,
   .service-page--advertisingcampaigns .service-page__hero-content {
     position: absolute;
-    top: 15%;
+    top: 35%;
     left: 50%;
     width: calc(100% - 24px);
     transform: translateX(-50%);
@@ -335,7 +336,7 @@
     text-align: center;
   }
 
-  /* Main heading */
+  /* Main heading — black with subtle shadow */
 
   .websites-page__hero-content h1,
   .service-page--motiongraphics .service-page__hero-content h1,
@@ -344,15 +345,17 @@
     position: static;
     width: 100%;
     margin: 0;
-    font-size: clamp(18px, 4.5vw, 24px);
+    color: #000;
+    font-size: clamp(20px, 5.5vw, 26px);
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: -0.02em;
     white-space: normal;
-    -webkit-text-stroke: 0.5px #fff;
+    -webkit-text-stroke: 0;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 25%);
   }
 
-  /* Tagline */
+  /* Tagline — preserve its existing colors */
 
   .websites-page__tagline,
   .service-page--motiongraphics .service-page__tagline,
@@ -370,14 +373,17 @@
     font-weight: 300;
     line-height: 1.4;
     white-space: normal;
+    -webkit-text-stroke: 0;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 55%);
   }
 
   .websites-page__tagline span,
   .service-page--motiongraphics .service-page__tagline span,
   .service-page--advertisingvideos .service-page__tagline span,
   .service-page--advertisingcampaigns .service-page__tagline span {
-    -webkit-text-stroke: 0.35px #fff;
-    paint-order: stroke fill;
+    -webkit-text-stroke: 0;
+    paint-order: normal;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 55%);
   }
 
   /* Hero buttons */
@@ -496,6 +502,24 @@
     border-width: 1.5px;
     border-radius: 13px;
   }
+
+  @media (max-width: 600px) {
+  /* First phrase — black */
+  .websites-page__tagline span:first-child,
+  .service-page--motiongraphics .service-page__tagline span:first-child,
+  .service-page--advertisingvideos .service-page__tagline span:first-child,
+  .service-page--advertisingcampaigns .service-page__tagline span:first-child {
+    color: #000 !important;
+  }
+
+  /* Second phrase — keep orange */
+  .websites-page__tagline span:last-child,
+  .service-page--motiongraphics .service-page__tagline span:last-child,
+  .service-page--advertisingvideos .service-page__tagline span:last-child,
+  .service-page--advertisingcampaigns .service-page__tagline span:last-child {
+    color: #f0b152 !important;
+  }
+}
 }
 
 /* ========================================
@@ -527,6 +551,7 @@
     transition: none;
   }
 }
+
 
 /* Very small screens */
 
