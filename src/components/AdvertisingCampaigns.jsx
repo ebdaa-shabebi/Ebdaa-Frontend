@@ -179,10 +179,10 @@ function AdvertisingCampaigns() {
             <a
               className="service-page__button service-page__button--primary"
               href="#clients"
-              onClick={(event) => {
-                event.preventDefault()
+              onClick={(e) => {
+                e.preventDefault()
                 document.getElementById('clients')?.scrollIntoView({
-                  behavior: 'instant',
+                  behavior: 'smooth',
                   block: 'start',
                 })
               }}
@@ -198,6 +198,29 @@ function AdvertisingCampaigns() {
             </a>
           </div>
         </div>
+
+        <a
+          className="hero-scroll-arrow"
+          href="#clients"
+          aria-label="Scroll down"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('clients')?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            })
+          }}
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 9L12 16L19 9"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
 
         <svg
           className="service-page__wave"
@@ -259,7 +282,7 @@ function AdvertisingCampaigns() {
                 onClick={backToLogos}
               >
                 <span aria-hidden="true">→</span>
-                عرض جميع الشركات
+               الرجوع الى قائمة العملاء
               </button>
 
               <h3 className="advertisingcampaigns__boards-title">

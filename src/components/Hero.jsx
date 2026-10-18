@@ -91,7 +91,7 @@ function Hero() {
           <div className="hero__actions">
             <a
               className="hero__button hero__button--primary"
-              href="#portfolio"
+              href="#why-us"
             >
               اعمالنا
             </a>

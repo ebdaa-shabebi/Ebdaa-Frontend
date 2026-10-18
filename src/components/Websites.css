@@ -299,95 +299,188 @@
 }
 
 /* ========================================
-   MOBILE
+   MOBILE — HERO + CLIENTS
+   Shared layout for all 4 service pages
 ======================================== */
 
 @media (max-width: 600px) {
-  .websites-page__hero {
+
+  /* ========================================
+     HERO SECTION
+  ======================================== */
+
+  .websites-page__hero,
+  .service-page--motiongraphics .service-page__hero,
+  .service-page--advertisingvideos .service-page__hero,
+  .service-page--advertisingcampaigns .service-page__hero {
     margin-bottom: 24vw;
   }
 
-  .websites-page__hero-content {
-    top: 24%;
-    width: calc(100% - 32px);
-    gap: 0;
+  /* Hero content positioning */
+
+  .websites-page__hero-content,
+  .service-page--motiongraphics .service-page__hero-content,
+  .service-page--advertisingvideos .service-page__hero-content,
+  .service-page--advertisingcampaigns .service-page__hero-content {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: calc(100% - 24px);
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    text-align: center;
   }
 
-  .websites-page__hero-content h1 {
-    position: absolute;
-    top: 123px;
+  /* Main heading */
+
+  .websites-page__hero-content h1,
+  .service-page--motiongraphics .service-page__hero-content h1,
+  .service-page--advertisingvideos .service-page__hero-content h1,
+  .service-page--advertisingcampaigns .service-page__hero-content h1 {
+    position: static;
     width: 100%;
-    font-size: 24px;
-    line-height: 1.25;
-    white-space: nowrap;
-    -webkit-text-stroke: 0.7px #fff;
+    margin: 0;
+    font-size: clamp(18px, 4.5vw, 24px);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    white-space: normal;
+    -webkit-text-stroke: 0.5px #fff;
   }
 
-  .websites-page__tagline {
-    position: absolute;
-    top: 171px;
+  /* Tagline */
+
+  .websites-page__tagline,
+  .service-page--motiongraphics .service-page__tagline,
+  .service-page--advertisingvideos .service-page__tagline,
+  .service-page--advertisingcampaigns .service-page__tagline {
+    position: static;
+    display: flex;
     width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     gap: 4px;
-    font-size: 16px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 300;
     line-height: 1.4;
-    white-space: nowrap;
+    white-space: normal;
   }
 
-  .websites-page__tagline span {
+  .websites-page__tagline span,
+  .service-page--motiongraphics .service-page__tagline span,
+  .service-page--advertisingvideos .service-page__tagline span,
+  .service-page--advertisingcampaigns .service-page__tagline span {
     -webkit-text-stroke: 0.35px #fff;
     paint-order: stroke fill;
   }
 
-  .websites-page__actions {
-    position: absolute;
-    top: 215px;
-    gap: 16px;
+  /* Hero buttons */
+
+  .websites-page__actions,
+  .service-page--motiongraphics .service-page__actions,
+  .service-page--advertisingvideos .service-page__actions,
+  .service-page--advertisingcampaigns .service-page__actions {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 4px;
+    pointer-events: auto;
   }
 
-  .websites-page__button {
-    min-height: 24px;
-    padding: 1px 8px;
-    border-radius: 12px;
-    font-size: 13px;
+  .websites-page__button,
+  .service-page--motiongraphics .service-page__button,
+  .service-page--advertisingvideos .service-page__button,
+  .service-page--advertisingcampaigns .service-page__button {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 90px;
+    min-width: 0;
+    min-height: 28px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
   }
 
-  .websites-page__button--primary {
-    width: 85px;
+  .websites-page__button--primary,
+  .service-page--motiongraphics .service-page__button--primary,
+  .service-page--advertisingvideos .service-page__button--primary,
+  .service-page--advertisingcampaigns .service-page__button--primary {
+    width: 90px;
   }
 
-  .websites-page__button--outline {
+  .websites-page__button--outline,
+  .service-page--motiongraphics .service-page__button--outline,
+  .service-page--advertisingvideos .service-page__button--outline,
+  .service-page--advertisingcampaigns .service-page__button--outline {
     width: 90px;
     border-width: 1px;
   }
 
-  .websites-page__wave {
+  /* Decorative wave */
+
+  .websites-page__wave,
+  .service-page--motiongraphics .service-page__wave,
+  .service-page--advertisingvideos .service-page__wave,
+  .service-page--advertisingcampaigns .service-page__wave {
     bottom: clamp(-70px, -5.46875vw, -18px);
     height: min(140px, 10.9375vw);
   }
 
-  .websites-page__clients {
+  /* ========================================
+     CLIENTS SECTION
+  ======================================== */
+
+  .websites-page__clients,
+  .service-page--motiongraphics .service-page__clients,
+  .service-page--advertisingvideos .service-page__clients,
+  .service-page--advertisingcampaigns .service-page__clients {
     padding: 0 20px 90px;
   }
 
-  .websites-page__clients h2 {
+  .websites-page__clients h2,
+  .service-page--motiongraphics .service-page__clients h2,
+  .service-page--advertisingvideos .service-page__clients h2,
+  .service-page--advertisingcampaigns .service-page__clients h2 {
     min-height: 42px;
     margin-bottom: 45px;
     padding: 6px 12px;
     font-size: 18px;
+    line-height: 1.4;
   }
 
-  .websites-page__logo-grid {
+  /* Logo grid */
+
+  .websites-page__logo-grid,
+  .service-page--motiongraphics .service-page__logo-grid,
+  .service-page--advertisingvideos .service-page__logo-grid,
+  .service-page--advertisingcampaigns .service-page__logo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(8, auto);
+    grid-template-rows: none;
     grid-auto-rows: auto;
     gap: 18px 12px;
-    min-height: calc(
-      8 * ((100vw - 52px) / 2 * 158 / 235) + 7 * 18px
-    );
+    min-height: 0;
   }
 
-  .websites-page__logo-card {
+  /* Logo cards */
+
+  .websites-page__logo-card,
+  .service-page--motiongraphics .service-page__logo-card,
+  .service-page--advertisingvideos .service-page__logo-card,
+  .service-page--advertisingcampaigns .service-page__logo-card {
     width: 100%;
     height: auto;
     aspect-ratio: 235 / 158;
@@ -395,10 +488,43 @@
     border-radius: 17px;
   }
 
-  .websites-page__logo-card-inner {
+  .websites-page__logo-card-inner,
+  .service-page--motiongraphics .service-page__logo-card-inner,
+  .service-page--advertisingvideos .service-page__logo-card-inner,
+  .service-page--advertisingcampaigns .service-page__logo-card-inner {
     padding: 8px;
     border-width: 1.5px;
     border-radius: 13px;
+  }
+}
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 360px) {
+  .websites-page__logo-grid,
+  .service-page--motiongraphics .service-page__logo-grid,
+  .service-page--advertisingvideos .service-page__logo-grid,
+  .service-page--advertisingcampaigns .service-page__logo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .websites-page__button,
+  .websites-page__logo-card,
+  .service-page--motiongraphics .service-page__button,
+  .service-page--motiongraphics .service-page__logo-card,
+  .service-page--advertisingvideos .service-page__button,
+  .service-page--advertisingvideos .service-page__logo-card,
+  .service-page--advertisingcampaigns .service-page__button,
+  .service-page--advertisingcampaigns .service-page__logo-card {
+    transition: none;
   }
 }
 

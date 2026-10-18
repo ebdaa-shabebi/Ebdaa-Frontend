@@ -27,7 +27,7 @@ function Header() {
             <span>الرئيسية</span>
           </a>
 
-          <a className="header__link" href={homeSection('services')}>
+          <a className="header__link" href={homeSection('why-us')}>
             <img src={servicesIcon} alt="" aria-hidden="true" />
             <span>خدماتنا</span>
           </a>

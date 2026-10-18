@@ -277,7 +277,7 @@ function DynamicPortfolio({ category }) {
             onClick={() => handleImageClick(selectedImage)}
           >
             <span aria-hidden="true">→</span>
-            عرض جميع الأعمال
+           الرجوع الى قائمة العملاء
           </button>
 
           {loadingVideos && (

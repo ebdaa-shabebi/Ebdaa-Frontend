@@ -86,7 +86,7 @@ function EbdaaDigitalAdsServicePage() {
           <div className="digital-ads__actions">
             <a
               className="digital-ads__button digital-ads__button--primary"
-              href="#work"
+              href="#why-us"
             >
               أعمالنا
             </a>

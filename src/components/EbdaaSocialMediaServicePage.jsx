@@ -80,7 +80,7 @@ function EbdaaSocialMediaServicePage() {
           <div className="service-detail__actions">
             <a
               className="service-detail__button service-detail__button--primary"
-              href="#work"
+              href="#why-us"
             >
               أعمالنا
             </a>
