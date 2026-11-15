@@ -1,0 +1,428 @@
+{
+  "index.html": {
+    "file": "assets/index-DYOya9_I.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/index-B4VYfMFk.css"
+    ],
+    "assets": [
+      "assets/logo-9XLIHZcL.png",
+      "assets/home-icon-TwPpwQj5.png",
+      "assets/services-icon-CbRuo296.png",
+      "assets/about-icon-CNYOHt8t.png",
+      "assets/hero-1-CykPPbYf.png",
+      "assets/hero-2-D2uxaEC8.png",
+      "assets/hero-3-CTk5tfqh.png",
+      "assets/hero-4-HF_s1iSh.png",
+      "assets/خلفية-طول-1-B6pUTfzZ.png",
+      "assets/خلفية-طول-2-DsnQy6WX.png",
+      "assets/خلفية-طول-3-DxP0wV_v.png",
+      "assets/خلفية-طول-4-DmCpXcXb.png",
+      "assets/about-image-T0GUw4oh.png",
+      "assets/about-computer-DvclQ9eH.png",
+      "assets/service-content-CmIlWhya.png",
+      "assets/service-campaigns-z-LT-4cF.png",
+      "assets/service-identity-7VlW9nHT.png",
+      "assets/service-digital-D1p9E_zO.png",
+      "assets/service-social-CVrABBFE.png",
+      "assets/service-video-ckXpWyo2.png",
+      "assets/1-DaJDDDHd.png",
+      "assets/2-B13Ku4H6.png",
+      "assets/3-JD_JBnE8.png",
+      "assets/4-2O1KEC_X.png",
+      "assets/footer-background-Br4DtRsW.png",
+      "assets/ايقونة ويب-CZV91HTU.png",
+      "assets/ايقونة اتصال-DUUsemQD.png",
+      "assets/ايقونة بريد-CBwXxNNc.png",
+      "assets/ايقونة واتس-D--DsLGL.png",
+      "assets/خلفية الموشن عرض-BsWt2cKE.png",
+      "assets/خلفية الموشن طول.png 2-BSkbV7fm.png",
+      "assets/خلفية الفيديوهات الاعلانية عرض.png 3-D7syr7D1.png",
+      "assets/خلفية الفيديوهات الاعلانية طول.png 2-D8GJ1dSW.png",
+      "assets/خلفية الحملات الاعلانية عرض-uLtnOKWX.png",
+      "assets/خلفية الحملات الاعلانية طول.png 2-BWkuDPIy.png",
+      "assets/websites-hero-desktop-BHkCO65j.png",
+      "assets/websites-hero-mobile-Fg9hUj-w.png",
+      "assets/خلفية عرض-oFbs9m-O.png",
+      "assets/خلفية طول-BUrB0WP2.png",
+      "assets/خدمة ( صناعة المحتوى التسويقي )-Xj_q3M8p.png",
+      "assets/كتابة المحتوى التسويقي-MqBojirQ.png",
+      "assets/استراتيجية المحتوى-CJionqcx.png",
+      "assets/المحتوى التفاعلي-DgO27BX7.png",
+      "assets/محتوى الفيديو-CeFxav_t.png",
+      "assets/hero11-UqSzm7Tw.png",
+      "assets/hero12-BgrkqKhV.png",
+      "assets/service-D8ORJwSp.png",
+      "assets/تحديد الجمهور-BU9XoCh7.png",
+      "assets/إطلاق وإدارة الحملات-CSYmUXrO.png",
+      "assets/التخطيط والاستراتيجية-Dtrt957v.png",
+      "assets/المراقبة والتحسين-DDf2i9OH.png",
+      "assets/خلفية عرض-Cen9n5XN.png",
+      "assets/خلفية طول-B7NlVB29.png",
+      "assets/خدمة( تصميم الهوية البصرية )-C9Kj-qjR.png",
+      "assets/الشعار-CKUiAdcT.png",
+      "assets/الالوان-CnyUWCq_.png",
+      "assets/الخطوط.png 2-CRpBpehm.png",
+      "assets/دليل الهوية-DkUW7C4P.png",
+      "assets/تطبيق الهوية-BKonDexm.png",
+      "assets/خلفية عرض-o3820WJg.png",
+      "assets/خلفية طول-BC497cjr.png",
+      "assets/خدمة ( الاعلانات الرقمية والمطبوعة )-Dft2iJpO.png",
+      "assets/الإعلانات الرقمية-BBmjr2UV.png",
+      "assets/الإعلانات المطبوعة-Dac6E5ij.png",
+      "assets/تكييف التصميم لمختلف المقاسات-BcIp-P7Y.png",
+      "assets/التصميم حسب هوية العلامة-j6HXBznx.png",
+      "assets/hero2-BHwt-ZOa.png",
+      "assets/hero1-Dx8M05p2.png",
+      "assets/social1-D3hVuxxK.png",
+      "assets/تخطيط المحتوى-Bs29Uync.png",
+      "assets/صناعة وتصميم المحتوى-Ba7vW0Cd.png",
+      "assets/النشر وإدارة الحسابات-BwsxLbTI.png",
+      "assets/التفاعل مع الجمهور-BkBFb55d.png",
+      "assets/متابعة الأداء والتحليل-DKzlpyhw.png",
+      "assets/التقارير الشهرية-8hzgcp9l.png",
+      "assets/خلفية عرض-CiHUM8eQ.png",
+      "assets/خلفية طول-splxSI6k.png",
+      "assets/خدمة ( عمل إعلانات الفيديو )-QVNnjc8Q.png",
+      "assets/إعلانات الموشن جرافيك-DC1xhRmr.png",
+      "assets/إعلانات المنتجات والخدمات-BFgW_E4C.png",
+      "assets/الفيديوهات الترويجية-D9jWDTCD.png",
+      "assets/التعليق الصوتي والموسيقى-CNmDpOH6.png",
+      "assets/خلفية-طول-النهاية-BkRi2brQ.png"
+    ]
+  },
+  "src/assets/1.png": {
+    "file": "assets/1-DaJDDDHd.png",
+    "src": "src/assets/1.png"
+  },
+  "src/assets/2.png": {
+    "file": "assets/2-B13Ku4H6.png",
+    "src": "src/assets/2.png"
+  },
+  "src/assets/3.png": {
+    "file": "assets/3-JD_JBnE8.png",
+    "src": "src/assets/3.png"
+  },
+  "src/assets/4.png": {
+    "file": "assets/4-2O1KEC_X.png",
+    "src": "src/assets/4.png"
+  },
+  "src/assets/about-computer.png": {
+    "file": "assets/about-computer-DvclQ9eH.png",
+    "src": "src/assets/about-computer.png"
+  },
+  "src/assets/about-icon.png": {
+    "file": "assets/about-icon-CNYOHt8t.png",
+    "src": "src/assets/about-icon.png"
+  },
+  "src/assets/about-image.png": {
+    "file": "assets/about-image-T0GUw4oh.png",
+    "src": "src/assets/about-image.png"
+  },
+  "src/assets/footer-background.png": {
+    "file": "assets/footer-background-Br4DtRsW.png",
+    "src": "src/assets/footer-background.png"
+  },
+  "src/assets/hero-1.png": {
+    "file": "assets/hero-1-CykPPbYf.png",
+    "src": "src/assets/hero-1.png"
+  },
+  "src/assets/hero-2.png": {
+    "file": "assets/hero-2-D2uxaEC8.png",
+    "src": "src/assets/hero-2.png"
+  },
+  "src/assets/hero-3.png": {
+    "file": "assets/hero-3-CTk5tfqh.png",
+    "src": "src/assets/hero-3.png"
+  },
+  "src/assets/hero-4.png": {
+    "file": "assets/hero-4-HF_s1iSh.png",
+    "src": "src/assets/hero-4.png"
+  },
+  "src/assets/hero1.png": {
+    "file": "assets/hero1-Dx8M05p2.png",
+    "src": "src/assets/hero1.png"
+  },
+  "src/assets/hero11.png": {
+    "file": "assets/hero11-UqSzm7Tw.png",
+    "src": "src/assets/hero11.png"
+  },
+  "src/assets/hero12.png": {
+    "file": "assets/hero12-BgrkqKhV.png",
+    "src": "src/assets/hero12.png"
+  },
+  "src/assets/hero2.png": {
+    "file": "assets/hero2-BHwt-ZOa.png",
+    "src": "src/assets/hero2.png"
+  },
+  "src/assets/home-icon.png": {
+    "file": "assets/home-icon-TwPpwQj5.png",
+    "src": "src/assets/home-icon.png"
+  },
+  "src/assets/logo.png": {
+    "file": "assets/logo-9XLIHZcL.png",
+    "src": "src/assets/logo.png"
+  },
+  "src/assets/service-campaigns.png": {
+    "file": "assets/service-campaigns-z-LT-4cF.png",
+    "src": "src/assets/service-campaigns.png"
+  },
+  "src/assets/service-content.png": {
+    "file": "assets/service-content-CmIlWhya.png",
+    "src": "src/assets/service-content.png"
+  },
+  "src/assets/service-digital.png": {
+    "file": "assets/service-digital-D1p9E_zO.png",
+    "src": "src/assets/service-digital.png"
+  },
+  "src/assets/service-identity.png": {
+    "file": "assets/service-identity-7VlW9nHT.png",
+    "src": "src/assets/service-identity.png"
+  },
+  "src/assets/service-social.png": {
+    "file": "assets/service-social-CVrABBFE.png",
+    "src": "src/assets/service-social.png"
+  },
+  "src/assets/service-video.png": {
+    "file": "assets/service-video-ckXpWyo2.png",
+    "src": "src/assets/service-video.png"
+  },
+  "src/assets/service.png": {
+    "file": "assets/service-D8ORJwSp.png",
+    "src": "src/assets/service.png"
+  },
+  "src/assets/services-icon.png": {
+    "file": "assets/services-icon-CbRuo296.png",
+    "src": "src/assets/services-icon.png"
+  },
+  "src/assets/social1.png": {
+    "file": "assets/social1-D3hVuxxK.png",
+    "src": "src/assets/social1.png"
+  },
+  "src/assets/websites-hero-desktop.png": {
+    "file": "assets/websites-hero-desktop-BHkCO65j.png",
+    "src": "src/assets/websites-hero-desktop.png"
+  },
+  "src/assets/websites-hero-mobile.png": {
+    "file": "assets/websites-hero-mobile-Fg9hUj-w.png",
+    "src": "src/assets/websites-hero-mobile.png"
+  },
+  "src/assets/إطلاق وإدارة الحملات.png": {
+    "file": "assets/إطلاق وإدارة الحملات-CSYmUXrO.png",
+    "src": "src/assets/إطلاق وإدارة الحملات.png"
+  },
+  "src/assets/استراتيجية المحتوى.png": {
+    "file": "assets/استراتيجية المحتوى-CJionqcx.png",
+    "src": "src/assets/استراتيجية المحتوى.png"
+  },
+  "src/assets/التخطيط والاستراتيجية.png": {
+    "file": "assets/التخطيط والاستراتيجية-Dtrt957v.png",
+    "src": "src/assets/التخطيط والاستراتيجية.png"
+  },
+  "src/assets/التفاعل مع الجمهور.png": {
+    "file": "assets/التفاعل مع الجمهور-BkBFb55d.png",
+    "src": "src/assets/التفاعل مع الجمهور.png"
+  },
+  "src/assets/التقارير الشهرية.png": {
+    "file": "assets/التقارير الشهرية-8hzgcp9l.png",
+    "src": "src/assets/التقارير الشهرية.png"
+  },
+  "src/assets/المحتوى التفاعلي.png": {
+    "file": "assets/المحتوى التفاعلي-DgO27BX7.png",
+    "src": "src/assets/المحتوى التفاعلي.png"
+  },
+  "src/assets/المراقبة والتحسين.png": {
+    "file": "assets/المراقبة والتحسين-DDf2i9OH.png",
+    "src": "src/assets/المراقبة والتحسين.png"
+  },
+  "src/assets/النشر وإدارة الحسابات.png": {
+    "file": "assets/النشر وإدارة الحسابات-BwsxLbTI.png",
+    "src": "src/assets/النشر وإدارة الحسابات.png"
+  },
+  "src/assets/ايقونة اتصال.png": {
+    "file": "assets/ايقونة اتصال-DUUsemQD.png",
+    "src": "src/assets/ايقونة اتصال.png"
+  },
+  "src/assets/ايقونة بريد.png": {
+    "file": "assets/ايقونة بريد-CBwXxNNc.png",
+    "src": "src/assets/ايقونة بريد.png"
+  },
+  "src/assets/ايقونة واتس.png": {
+    "file": "assets/ايقونة واتس-D--DsLGL.png",
+    "src": "src/assets/ايقونة واتس.png"
+  },
+  "src/assets/ايقونة ويب.png": {
+    "file": "assets/ايقونة ويب-CZV91HTU.png",
+    "src": "src/assets/ايقونة ويب.png"
+  },
+  "src/assets/تحديد الجمهور.png": {
+    "file": "assets/تحديد الجمهور-BU9XoCh7.png",
+    "src": "src/assets/تحديد الجمهور.png"
+  },
+  "src/assets/تخطيط المحتوى.png": {
+    "file": "assets/تخطيط المحتوى-Bs29Uync.png",
+    "src": "src/assets/تخطيط المحتوى.png"
+  },
+  "src/assets/خدمة ( صناعة المحتوى التسويقي ).png": {
+    "file": "assets/خدمة ( صناعة المحتوى التسويقي )-Xj_q3M8p.png",
+    "src": "src/assets/خدمة ( صناعة المحتوى التسويقي ).png"
+  },
+  "src/assets/خدمة الهوية البصرية/الالوان.png": {
+    "file": "assets/الالوان-CnyUWCq_.png",
+    "src": "src/assets/خدمة الهوية البصرية/الالوان.png"
+  },
+  "src/assets/خدمة الهوية البصرية/الخطوط.png 2.png": {
+    "file": "assets/الخطوط.png 2-CRpBpehm.png",
+    "src": "src/assets/خدمة الهوية البصرية/الخطوط.png 2.png"
+  },
+  "src/assets/خدمة الهوية البصرية/الشعار.png": {
+    "file": "assets/الشعار-CKUiAdcT.png",
+    "src": "src/assets/خدمة الهوية البصرية/الشعار.png"
+  },
+  "src/assets/خدمة الهوية البصرية/تطبيق الهوية.png": {
+    "file": "assets/تطبيق الهوية-BKonDexm.png",
+    "src": "src/assets/خدمة الهوية البصرية/تطبيق الهوية.png"
+  },
+  "src/assets/خدمة الهوية البصرية/خدمة( تصميم الهوية البصرية ).png": {
+    "file": "assets/خدمة( تصميم الهوية البصرية )-C9Kj-qjR.png",
+    "src": "src/assets/خدمة الهوية البصرية/خدمة( تصميم الهوية البصرية ).png"
+  },
+  "src/assets/خدمة الهوية البصرية/خلفية طول.png": {
+    "file": "assets/خلفية طول-B7NlVB29.png",
+    "src": "src/assets/خدمة الهوية البصرية/خلفية طول.png"
+  },
+  "src/assets/خدمة الهوية البصرية/خلفية عرض.png": {
+    "file": "assets/خلفية عرض-Cen9n5XN.png",
+    "src": "src/assets/خدمة الهوية البصرية/خلفية عرض.png"
+  },
+  "src/assets/خدمة الهوية البصرية/دليل الهوية.png": {
+    "file": "assets/دليل الهوية-DkUW7C4P.png",
+    "src": "src/assets/خدمة الهوية البصرية/دليل الهوية.png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات الرقمية.png": {
+    "file": "assets/الإعلانات الرقمية-BBmjr2UV.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات الرقمية.png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات المطبوعة.png": {
+    "file": "assets/الإعلانات المطبوعة-Dac6E5ij.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات المطبوعة.png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/التصميم حسب هوية العلامة.png": {
+    "file": "assets/التصميم حسب هوية العلامة-j6HXBznx.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/التصميم حسب هوية العلامة.png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/تكييف التصميم لمختلف المقاسات.png": {
+    "file": "assets/تكييف التصميم لمختلف المقاسات-BcIp-P7Y.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/تكييف التصميم لمختلف المقاسات.png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خدمة ( الاعلانات الرقمية والمطبوعة ).png": {
+    "file": "assets/خدمة ( الاعلانات الرقمية والمطبوعة )-Dft2iJpO.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خدمة ( الاعلانات الرقمية والمطبوعة ).png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية طول.png": {
+    "file": "assets/خلفية طول-BC497cjr.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية طول.png"
+  },
+  "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية عرض.png": {
+    "file": "assets/خلفية عرض-o3820WJg.png",
+    "src": "src/assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية عرض.png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/إعلانات المنتجات والخدمات.png": {
+    "file": "assets/إعلانات المنتجات والخدمات-BFgW_E4C.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/إعلانات المنتجات والخدمات.png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/إعلانات الموشن جرافيك.png": {
+    "file": "assets/إعلانات الموشن جرافيك-DC1xhRmr.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/إعلانات الموشن جرافيك.png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/التعليق الصوتي والموسيقى.png": {
+    "file": "assets/التعليق الصوتي والموسيقى-CNmDpOH6.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/التعليق الصوتي والموسيقى.png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/الفيديوهات الترويجية.png": {
+    "file": "assets/الفيديوهات الترويجية-D9jWDTCD.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/الفيديوهات الترويجية.png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/خدمة ( عمل إعلانات الفيديو ).png": {
+    "file": "assets/خدمة ( عمل إعلانات الفيديو )-QVNnjc8Q.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/خدمة ( عمل إعلانات الفيديو ).png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/خلفية طول.png": {
+    "file": "assets/خلفية طول-splxSI6k.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/خلفية طول.png"
+  },
+  "src/assets/خدمة عمل إعلانات الفيديو/خلفية عرض.png": {
+    "file": "assets/خلفية عرض-CiHUM8eQ.png",
+    "src": "src/assets/خدمة عمل إعلانات الفيديو/خلفية عرض.png"
+  },
+  "src/assets/خلفية الحملات الاعلانية طول.png 2.png": {
+    "file": "assets/خلفية الحملات الاعلانية طول.png 2-BWkuDPIy.png",
+    "src": "src/assets/خلفية الحملات الاعلانية طول.png 2.png"
+  },
+  "src/assets/خلفية الحملات الاعلانية عرض.png": {
+    "file": "assets/خلفية الحملات الاعلانية عرض-uLtnOKWX.png",
+    "src": "src/assets/خلفية الحملات الاعلانية عرض.png"
+  },
+  "src/assets/خلفية الفيديوهات الاعلانية طول.png 2.png": {
+    "file": "assets/خلفية الفيديوهات الاعلانية طول.png 2-D8GJ1dSW.png",
+    "src": "src/assets/خلفية الفيديوهات الاعلانية طول.png 2.png"
+  },
+  "src/assets/خلفية الفيديوهات الاعلانية عرض.png 3.png": {
+    "file": "assets/خلفية الفيديوهات الاعلانية عرض.png 3-D7syr7D1.png",
+    "src": "src/assets/خلفية الفيديوهات الاعلانية عرض.png 3.png"
+  },
+  "src/assets/خلفية الموشن طول.png 2.png": {
+    "file": "assets/خلفية الموشن طول.png 2-BSkbV7fm.png",
+    "src": "src/assets/خلفية الموشن طول.png 2.png"
+  },
+  "src/assets/خلفية الموشن عرض.png": {
+    "file": "assets/خلفية الموشن عرض-BsWt2cKE.png",
+    "src": "src/assets/خلفية الموشن عرض.png"
+  },
+  "src/assets/خلفية طول.png": {
+    "file": "assets/خلفية طول-BUrB0WP2.png",
+    "src": "src/assets/خلفية طول.png"
+  },
+  "src/assets/خلفية عرض.png": {
+    "file": "assets/خلفية عرض-oFbs9m-O.png",
+    "src": "src/assets/خلفية عرض.png"
+  },
+  "src/assets/خلفية-طول-1.png": {
+    "file": "assets/خلفية-طول-1-B6pUTfzZ.png",
+    "src": "src/assets/خلفية-طول-1.png"
+  },
+  "src/assets/خلفية-طول-2.png": {
+    "file": "assets/خلفية-طول-2-DsnQy6WX.png",
+    "src": "src/assets/خلفية-طول-2.png"
+  },
+  "src/assets/خلفية-طول-3.png": {
+    "file": "assets/خلفية-طول-3-DxP0wV_v.png",
+    "src": "src/assets/خلفية-طول-3.png"
+  },
+  "src/assets/خلفية-طول-4.png": {
+    "file": "assets/خلفية-طول-4-DmCpXcXb.png",
+    "src": "src/assets/خلفية-طول-4.png"
+  },
+  "src/assets/خلفية-طول-النهاية.png": {
+    "file": "assets/خلفية-طول-النهاية-BkRi2brQ.png",
+    "src": "src/assets/خلفية-طول-النهاية.png"
+  },
+  "src/assets/صناعة وتصميم المحتوى.png": {
+    "file": "assets/صناعة وتصميم المحتوى-Ba7vW0Cd.png",
+    "src": "src/assets/صناعة وتصميم المحتوى.png"
+  },
+  "src/assets/كتابة المحتوى التسويقي.png": {
+    "file": "assets/كتابة المحتوى التسويقي-MqBojirQ.png",
+    "src": "src/assets/كتابة المحتوى التسويقي.png"
+  },
+  "src/assets/متابعة الأداء والتحليل.png": {
+    "file": "assets/متابعة الأداء والتحليل-DKzlpyhw.png",
+    "src": "src/assets/متابعة الأداء والتحليل.png"
+  },
+  "src/assets/محتوى الفيديو.png": {
+    "file": "assets/محتوى الفيديو-CeFxav_t.png",
+    "src": "src/assets/محتوى الفيديو.png"
+  }
+}
