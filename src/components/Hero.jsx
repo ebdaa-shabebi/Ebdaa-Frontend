@@ -77,6 +77,11 @@ function Hero() {
             وإدارة الحملات التسويقية، وإعلانات الطرق والشاشات الرقمية.
           </p>
 
+          <p className="hero__description">
+            نعمل على بناء حضور أقوى للعلامات التجارية من خلال حلول
+            تجمع بين الإبداع والتنفيذ الاحترافي وفهم أهداف العملاء.
+          </p>
+
           <div className="hero__actions">
             <a
               className="hero__button hero__button--primary"
