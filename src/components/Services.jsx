@@ -1,3 +1,4 @@
+
 import './services.css'
 
 import contentImage from '../assets/service-content.png'
@@ -6,8 +7,6 @@ import identityImage from '../assets/service-identity.png'
 import digitalImage from '../assets/service-digital.png'
 import socialImage from '../assets/service-social.png'
 import videoImage from '../assets/service-video.png'
-
-const baseUrl = import.meta.env.BASE_URL
 
 const services = [
   {
@@ -74,7 +73,7 @@ function Services() {
           {services.map((service) => (
             <a
               key={service.className}
-              href={`${baseUrl}#/${service.path}`}
+              href={`/${service.path}`}
               className={`service-card ${service.className}`}
               aria-label={`عرض خدمة ${service.title}`}
             >

@@ -1,14 +1,22 @@
+
 import './AdvertisingVideos.css'
 
 import desktopImage from '../assets/خلفية الفيديوهات الاعلانية عرض.png 3.png'
 import mobileImage from '../assets/خلفية الفيديوهات الاعلانية طول.png 2.png'
 import DynamicPortfolio from './DynamicPortfolio'
+import PageSEO from './PageSEO'
 
 const homeUrl = import.meta.env.BASE_URL
 
 function AdvertisingVideos() {
   return (
     <div className="service-page service-page--advertisingvideos">
+      <PageSEO
+        title="إنتاج الفيديو الإعلاني في عدن | إبداع ميديا"
+        description="إبداع ميديا تقدم خدمات تصوير وإنتاج الفيديو الإعلاني في عدن، اليمن، من الفكرة والتصوير إلى المونتاج والإنتاج الاحترافي."
+        canonical="https://ebdaa-media.com/advertising-videos"
+      />
+
       <section className="service-page__hero" id="home">
         <picture className="service-page__background">
           <source media="(max-width: 600px)" srcSet={mobileImage} />

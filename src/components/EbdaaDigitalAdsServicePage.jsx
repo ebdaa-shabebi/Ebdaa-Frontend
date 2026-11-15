@@ -1,4 +1,6 @@
+
 import './EbdaaDigitalAdsServicePage.css'
+import PageSEO from './PageSEO'
 
 import desktopHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية عرض.png'
 import mobileHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية طول.png'
@@ -58,6 +60,12 @@ const services = [
 function EbdaaDigitalAdsServicePage() {
   return (
     <main className="ebdaa-digital-ads-page" dir="rtl">
+      <PageSEO
+        title="تصميم الإعلانات الرقمية والمطبوعة في عدن | إبداع ميديا"
+        description="إبداع ميديا تقدم خدمات تصميم الإعلانات الرقمية والمطبوعة في عدن، اليمن، بما يشمل إعلانات السوشيال ميديا والمواد الإعلانية الجاهزة للطباعة."
+        canonical="https://ebdaa-media.com/services/digital-ads"
+      />
+
       <section className="digital-ads__hero" id="home">
         <picture className="digital-ads__hero-media">
           <source media="(max-width: 600px)" srcSet={mobileHero} />

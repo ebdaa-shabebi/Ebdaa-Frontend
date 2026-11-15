@@ -37,11 +37,27 @@ const serviceRoutes = {
   '/services/video': EbdaaVideoServicePage,
 }
 
+function getCurrentRoute() {
+  const pathname =
+    window.location.pathname.replace(/\/+$/, '') || '/'
+
+  if (pathname !== '/') {
+    return pathname
+  }
+
+  const hash = window.location.hash
+
+  if (hash.startsWith('#/')) {
+    return hash.slice(1).split('?')[0].replace(/\/+$/, '') || '/'
+  }
+
+  return '/'
+}
+
 function HomePage() {
   useEffect(() => {
     const hash = window.location.hash
 
-    // Do not treat application routes as section anchors.
     if (
       !hash ||
       hash.startsWith('#/') ||
@@ -53,10 +69,7 @@ function HomePage() {
     const targetId = decodeURIComponent(hash.slice(1))
 
     const frame = requestAnimationFrame(() => {
-      const target = document.getElementById(targetId)
-
-      // Jump directly to the requested section without animation.
-      target?.scrollIntoView({
+      document.getElementById(targetId)?.scrollIntoView({
         behavior: 'instant',
         block: 'start',
       })
@@ -81,58 +94,50 @@ function HomePage() {
   )
 }
 
-function App() {
-  const [currentHash, setCurrentHash] = useState(
-    window.location.hash
+function App({ initialRoute }) {
+  const [route, setRoute] = useState(
+    () => initialRoute ?? getCurrentRoute()
   )
 
   const previousRoute = useRef(null)
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentHash(window.location.hash)
+    const handleNavigation = () => {
+      setRoute(getCurrentRoute())
     }
 
-    window.addEventListener('hashchange', handleHashChange)
+    window.addEventListener('popstate', handleNavigation)
+    window.addEventListener('hashchange', handleNavigation)
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange)
+      window.removeEventListener('popstate', handleNavigation)
+      window.removeEventListener('hashchange', handleNavigation)
     }
   }, [])
 
-  const route = currentHash.startsWith('#/')
-    ? currentHash.slice(1).split('?')[0].replace(/\/+$/, '') || '/'
-    : '/'
-
-  // Reset scrolling only when navigating to a different route.
   useEffect(() => {
-    if (previousRoute.current === route) {
-      return
-    }
+    if (previousRoute.current === route) return
 
     previousRoute.current = route
 
-    // Let homepage section links scroll to their own target.
     const isHomeSectionLink =
       route === '/' &&
-      currentHash !== '' &&
-      !currentHash.startsWith('#/') &&
-      currentHash !== '#admin-ebdaa-2026'
+      window.location.hash !== '' &&
+      !window.location.hash.startsWith('#/') &&
+      window.location.hash !== '#admin-ebdaa-2026'
 
-    if (isHomeSectionLink) {
-      return
-    }
+    if (isHomeSectionLink) return
 
-    // Immediately jump to the top and stop any ongoing scroll animation.
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'instant',
     })
-  }, [route, currentHash])
+  }, [route])
 
   if (
-    currentHash === '#admin-ebdaa-2026' ||
+    (typeof window !== 'undefined' &&
+      window.location.hash === '#admin-ebdaa-2026') ||
     route === '/admin'
   ) {
     return <Admin />
@@ -144,11 +149,9 @@ function App() {
     return (
       <>
         <Header />
-
         <main>
           <ServiceComponent />
         </main>
-
         <Footer />
       </>
     )

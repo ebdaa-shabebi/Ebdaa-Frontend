@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 import './hero.css'
 
@@ -12,22 +13,10 @@ import mobileHero3 from '../assets/خلفية-طول-3.png'
 import mobileHero4 from '../assets/خلفية-طول-4.png'
 
 const heroImages = [
-  {
-    desktop: hero1,
-    mobile: mobileHero1,
-  },
-  {
-    desktop: hero2,
-    mobile: mobileHero2,
-  },
-  {
-    desktop: hero3,
-    mobile: mobileHero3,
-  },
-  {
-    desktop: hero4,
-    mobile: mobileHero4,
-  },
+  { desktop: hero1, mobile: mobileHero1 },
+  { desktop: hero2, mobile: mobileHero2 },
+  { desktop: hero3, mobile: mobileHero3 },
+  { desktop: hero4, mobile: mobileHero4 },
 ]
 
 function Hero() {
@@ -44,48 +33,48 @@ function Hero() {
   return (
     <section className="hero" id="home">
 
-      {/* =========================
-          HERO SLIDES
-      ========================= */}
-
       <div className="hero__slides" aria-hidden="true">
         {heroImages.map((image, index) => (
           <picture
             key={image.desktop}
-            className={`hero__slide ${index === activeSlide ? 'hero__slide--active' : ''
-              }`}
+            className={`hero__slide ${
+              index === activeSlide ? 'hero__slide--active' : ''
+            }`}
           >
             <source
               media="(max-width: 600px)"
               srcSet={image.mobile}
             />
 
-            <img
-              src={image.desktop}
-              alt=""
-            />
+            <img src={image.desktop} alt="" />
           </picture>
         ))}
       </div>
 
-      {/* =========================
-          HERO CONTENT
-      ========================= */}
-
       <div className="hero__content">
         <div className="hero__copy">
 
-          <h1>إبداع ميديا للدعاية والاعلان</h1>
+          <h1>إبداع ميديا للدعاية والإعلان</h1>
+
+          <p className="hero__subtitle">
+            إنتاج الفيديو الإعلاني والحلول التسويقية في عدن – اليمن
+          </p>
 
           <div className="hero__tagline">
-            <span>“ نحاكي الأبداع ...</span>
-            <span>ونصنع التأثير ”</span>
+            <span>نحاكي الإبداع...</span>
+            <span>ونصنع التأثير</span>
           </div>
 
-          <p>
-            تعد الدعاية والاعلان من أهم الأدوات التي تساهم في نجاح الشركات
-            والمؤسسات التجارية، يُعَدّ الترويج للمنتجات والخدمات وبناء الوعي
-            بالعلامة التجارية جزءًا لا يتجزأ من عملية النمو والازدهار.
+          <p className="hero__description">
+            في إبداع ميديا، نحول الأفكار التسويقية إلى تجارب بصرية
+            وإعلانية مؤثرة، من التخطيط الإبداعي وصناعة الفكرة إلى
+            التصوير والإنتاج والمونتاج وإطلاق الحملات.
+          </p>
+
+          <p className="hero__description">
+            نقدم خدمات إنتاج الفيديو الإعلاني، والموشن جرافيك،
+            والتصوير الاحترافي، وتصميم الهويات البصرية،
+            وإدارة الحملات التسويقية، وإعلانات الطرق والشاشات الرقمية.
           </p>
 
           <div className="hero__actions">
@@ -93,23 +82,19 @@ function Hero() {
               className="hero__button hero__button--primary"
               href="#why-us"
             >
-              اعمالنا
+              شاهد أعمالنا
             </a>
 
             <a
               className="hero__button hero__button--outline"
               href="#contact"
             >
-              تواصل معنا
+              اطلب عرض سعر
             </a>
           </div>
 
         </div>
       </div>
-
-      {/* =========================
-          HERO WAVE
-      ========================= */}
 
       <svg
         className="hero__wave"

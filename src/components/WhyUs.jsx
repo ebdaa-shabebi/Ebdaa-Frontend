@@ -1,11 +1,10 @@
+
 import './whyus.css'
 
 import experienceIcon from '../assets/1.png'
 import teamIcon from '../assets/2.png'
 import qualityIcon from '../assets/3.png'
 import speedIcon from '../assets/4.png'
-
-const baseUrl = import.meta.env.BASE_URL
 
 const features = [
   {
@@ -89,7 +88,7 @@ function WhyUs() {
           {portfolioLinks.map((item) => (
             <a
               key={item.path}
-              href={`${baseUrl}#/${item.path}`}
+              href={`/${item.path}`}
               className="why-us__button"
             >
               {item.label}

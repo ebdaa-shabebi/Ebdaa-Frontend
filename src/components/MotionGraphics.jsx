@@ -1,14 +1,23 @@
+
 import './MotionGraphics.css'
 
 import desktopImage from '../assets/خلفية الموشن عرض.png'
 import mobileImage from '../assets/خلفية الموشن طول.png 2.png'
 import DynamicPortfolio from './DynamicPortfolio'
+import PageSEO from './PageSEO'
 
 const homeUrl = import.meta.env.BASE_URL
 
 function MotionGraphics() {
   return (
     <div className="service-page service-page--motiongraphics">
+
+      <PageSEO
+        title="تصميم الموشن جرافيك في عدن | إبداع ميديا"
+        description="اكتشف خدمات تصميم الموشن جرافيك والرسوم المتحركة من إبداع ميديا في عدن، اليمن. نحول الأفكار التسويقية إلى محتوى بصري إبداعي."
+        canonical="https://ebdaa-media.com/motion-graphics"
+      />
+
       <section className="service-page__hero" id="home">
         <picture className="service-page__background">
           <source media="(max-width: 600px)" srcSet={mobileImage} />

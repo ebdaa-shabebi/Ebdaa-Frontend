@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import PageSEO from './PageSEO'
 import './AdvertisingCampaigns.css'
 
 import desktopImage from '../assets/خلفية الحملات الاعلانية عرض.png'
@@ -161,6 +162,12 @@ function AdvertisingCampaigns() {
 
   return (
     <div className="service-page service-page--advertisingcampaigns">
+
+      <PageSEO
+        title="إدارة الحملات الإعلانية في عدن | إبداع ميديا"
+        description="إبداع ميديا تقدم خدمات تخطيط وإدارة الحملات الإعلانية في عدن، اليمن، عبر الوسائط المختلفة للوصول إلى الجمهور المستهدف وتعزيز حضور العلامات التجارية."
+        canonical="https://ebdaa-media.com/advertising-campaigns"
+      />
       <section className="service-page__hero" id="home">
         <picture className="service-page__background">
           <source media="(max-width: 600px)" srcSet={mobileImage} />
@@ -282,7 +289,7 @@ function AdvertisingCampaigns() {
                 onClick={backToLogos}
               >
                 <span aria-hidden="true">→</span>
-               الرجوع الى قائمة العملاء
+                الرجوع الى قائمة العملاء
               </button>
 
               <h3 className="advertisingcampaigns__boards-title">

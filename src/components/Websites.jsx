@@ -1,8 +1,10 @@
+
 import { useEffect, useState } from 'react'
 import './Websites.css'
 
 import desktopImage from '../assets/websites-hero-desktop.png'
 import mobileImage from '../assets/websites-hero-mobile.png'
+import PageSEO from './PageSEO'
 
 const API = 'https://ebdaa-backend-zbiy.onrender.com'
 const homeUrl = import.meta.env.BASE_URL
@@ -78,6 +80,12 @@ function Websites() {
 
   return (
     <div className="websites-page">
+      <PageSEO
+        title="تصميم مواقع إلكترونية في عدن | إبداع ميديا"
+        description="إبداع ميديا تقدم خدمات تصميم وتطوير المواقع الإلكترونية في عدن، اليمن، لإنشاء تجارب رقمية احترافية تعزز حضور العلامات التجارية."
+        canonical="https://ebdaa-media.com/websites"
+      />
+
       <section className="websites-page__hero" id="home">
         <picture className="websites-page__background">
           <source media="(max-width: 600px)" srcSet={mobileImage} />

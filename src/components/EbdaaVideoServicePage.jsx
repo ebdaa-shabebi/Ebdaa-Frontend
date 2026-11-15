@@ -1,4 +1,6 @@
+
 import './EbdaaVideoServicePage.css'
+import PageSEO from './PageSEO'
 
 import desktopHero from '../assets/خدمة عمل إعلانات الفيديو/خلفية عرض.png'
 import mobileHero from '../assets/خدمة عمل إعلانات الفيديو/خلفية طول.png'
@@ -40,6 +42,12 @@ const services = [
 function EbdaaVideoServicePage() {
   return (
     <main className="service-detail service-detail--content" dir="rtl">
+      <PageSEO
+        title="إنتاج إعلانات الفيديو في عدن | إبداع ميديا"
+        description="إبداع ميديا تقدم خدمات إنتاج إعلانات الفيديو في عدن، اليمن، بما يشمل الموشن جرافيك وإعلانات المنتجات والفيديوهات الترويجية والتعليق الصوتي."
+        canonical="https://ebdaa-media.com/services/video"
+      />
+
       <section className="service-detail__hero" id="home">
         <picture className="service-detail__hero-media">
           <source media="(max-width: 600px)" srcSet={mobileHero} />
@@ -80,19 +88,19 @@ function EbdaaVideoServicePage() {
           </div>
         </div>
 
-      <svg
-        className="hero__wave"
-        viewBox="0 0 1279.5 117.04"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <g transform="translate(0 -150)">
-          <path
-            d="M1278.5 251.299C1266 242.299 1179.99 209.799 1017.5 209.799C859 209.799 533.259 266.813 291 266.799C68.5 278.299 7.5 206.299 -1 206.299V171.299C11.5 166.799 81.4576 207.071 270 195.799C574 177.623 861.5 143.484 1005.5 152.484C1163.19 162.34 1272.5 182.299 1278.5 199.299V251.299Z"
-            fill="#F0B152"
-          />
-        </g>
-      </svg>
+        <svg
+          className="hero__wave"
+          viewBox="0 0 1279.5 117.04"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g transform="translate(0 -150)">
+            <path
+              d="M1278.5 251.299C1266 242.299 1179.99 209.799 1017.5 209.799C859 209.799 533.259 266.813 291 266.799C68.5 278.299 7.5 206.299 -1 206.299V171.299C11.5 166.799 81.4576 207.071 270 195.799C574 177.623 861.5 143.484 1005.5 152.484C1163.19 162.34 1272.5 182.299 1278.5 199.299V251.299Z"
+              fill="#F0B152"
+            />
+          </g>
+        </svg>
       </section>
 
       <section className="service-detail__overview">
