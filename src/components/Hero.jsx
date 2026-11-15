@@ -2,15 +2,15 @@
 import { useEffect, useState } from 'react'
 import './hero.css'
 
-import hero1 from '../assets/hero-1.png'
-import hero2 from '../assets/hero-2.png'
-import hero3 from '../assets/hero-3.png'
-import hero4 from '../assets/hero-4.png'
+import hero1 from '../assets/hero-1.webp'
+import hero2 from '../assets/hero-2.webp'
+import hero3 from '../assets/hero-3.webp'
+import hero4 from '../assets/hero-4.webp'
 
-import mobileHero1 from '../assets/خلفية-طول-1.png'
-import mobileHero2 from '../assets/خلفية-طول-2.png'
-import mobileHero3 from '../assets/خلفية-طول-3.png'
-import mobileHero4 from '../assets/خلفية-طول-4.png'
+import mobileHero1 from '../assets/خلفية-طول-1.webp'
+import mobileHero2 from '../assets/خلفية-طول-2.webp'
+import mobileHero3 from '../assets/خلفية-طول-3.webp'
+import mobileHero4 from '../assets/خلفية-طول-4.webp'
 
 const heroImages = [
   { desktop: hero1, mobile: mobileHero1 },

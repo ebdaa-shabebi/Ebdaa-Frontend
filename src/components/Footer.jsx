@@ -1,12 +1,12 @@
 import './Footer.css'
 
-import footerBackground from '../assets/footer-background.png'
-import logo from '../assets/logo.png'
+import footerBackground from '../assets/footer-background.webp'
+import logo from '../assets/logo.webp'
 
-import webIcon from '../assets/ايقونة ويب.png'
-import phoneIcon from '../assets/ايقونة اتصال.png'
-import emailIcon from '../assets/ايقونة بريد.png'
-import whatsappIcon from '../assets/ايقونة واتس.png'
+import webIcon from '../assets/ايقونة ويب.webp'
+import phoneIcon from '../assets/ايقونة اتصال.webp'
+import emailIcon from '../assets/ايقونة بريد.webp'
+import whatsappIcon from '../assets/ايقونة واتس.webp'
 
 function Footer() {
     return (

@@ -1,10 +1,10 @@
 
 import './whyus.css'
 
-import experienceIcon from '../assets/1.png'
-import teamIcon from '../assets/2.png'
-import qualityIcon from '../assets/3.png'
-import speedIcon from '../assets/4.png'
+import experienceIcon from '../assets/1.webp'
+import teamIcon from '../assets/2.webp'
+import qualityIcon from '../assets/3.webp'
+import speedIcon from '../assets/4.webp'
 
 const features = [
   {

@@ -1,8 +1,8 @@
 
 import './AdvertisingVideos.css'
 
-import desktopImage from '../assets/خلفية الفيديوهات الاعلانية عرض.png 3.png'
-import mobileImage from '../assets/خلفية الفيديوهات الاعلانية طول.png 2.png'
+import desktopImage from '../assets/خلفية الفيديوهات الاعلانية عرض.png 3.webp'
+import mobileImage from '../assets/خلفية الفيديوهات الاعلانية طول.png 2.webp'
 import DynamicPortfolio from './DynamicPortfolio'
 import PageSEO from './PageSEO'
 

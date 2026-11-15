@@ -2,13 +2,13 @@
 import './EbdaaCampaignsServicePage.css'
 import PageSEO from './PageSEO'
 
-import desktopHero from '../assets/hero11.png'
-import mobileHero from '../assets/hero12.png'
-import overviewImage from '../assets/service.png'
-import audienceImage from '../assets/تحديد الجمهور.png'
-import launchImage from '../assets/إطلاق وإدارة الحملات.png'
-import strategyImage from '../assets/التخطيط والاستراتيجية.png'
-import monitoringImage from '../assets/المراقبة والتحسين.png'
+import desktopHero from '../assets/hero11.webp'
+import mobileHero from '../assets/hero12.webp'
+import overviewImage from '../assets/service.webp'
+import audienceImage from '../assets/تحديد الجمهور.webp'
+import launchImage from '../assets/إطلاق وإدارة الحملات.webp'
+import strategyImage from '../assets/التخطيط والاستراتيجية.webp'
+import monitoringImage from '../assets/المراقبة والتحسين.webp'
 
 const homeUrl = import.meta.env.BASE_URL
 

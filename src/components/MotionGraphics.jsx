@@ -1,8 +1,8 @@
 
 import './MotionGraphics.css'
 
-import desktopImage from '../assets/خلفية الموشن عرض.png'
-import mobileImage from '../assets/خلفية الموشن طول.png 2.png'
+import desktopImage from '../assets/خلفية الموشن عرض.webp'
+import mobileImage from '../assets/خلفية الموشن طول.png 2.webp'
 import DynamicPortfolio from './DynamicPortfolio'
 import PageSEO from './PageSEO'
 

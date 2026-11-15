@@ -2,13 +2,13 @@
 import './EbdaaContentServicePage.css'
 import PageSEO from './PageSEO'
 
-import desktopHero from '../assets/خلفية عرض.png'
-import mobileHero from '../assets/خلفية طول.png'
-import overviewImage from '../assets/خدمة ( صناعة المحتوى التسويقي ).png'
-import writingImage from '../assets/كتابة المحتوى التسويقي.png'
-import strategyImage from '../assets/استراتيجية المحتوى.png'
-import interactiveImage from '../assets/المحتوى التفاعلي.png'
-import videoImage from '../assets/محتوى الفيديو.png'
+import desktopHero from '../assets/خلفية عرض.webp'
+import mobileHero from '../assets/خلفية طول.webp'
+import overviewImage from '../assets/خدمة ( صناعة المحتوى التسويقي ).webp'
+import writingImage from '../assets/كتابة المحتوى التسويقي.webp'
+import strategyImage from '../assets/استراتيجية المحتوى.webp'
+import interactiveImage from '../assets/المحتوى التفاعلي.webp'
+import videoImage from '../assets/محتوى الفيديو.webp'
 
 const homeUrl = import.meta.env.BASE_URL
 

@@ -1,12 +1,12 @@
 
 import './services.css'
 
-import contentImage from '../assets/service-content.png'
-import campaignsImage from '../assets/service-campaigns.png'
-import identityImage from '../assets/service-identity.png'
-import digitalImage from '../assets/service-digital.png'
-import socialImage from '../assets/service-social.png'
-import videoImage from '../assets/service-video.png'
+import contentImage from '../assets/service-content.webp'
+import campaignsImage from '../assets/service-campaigns.webp'
+import identityImage from '../assets/service-identity.webp'
+import digitalImage from '../assets/service-digital.webp'
+import socialImage from '../assets/service-social.webp'
+import videoImage from '../assets/service-video.webp'
 
 const services = [
   {

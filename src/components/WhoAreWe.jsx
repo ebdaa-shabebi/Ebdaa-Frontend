@@ -1,7 +1,7 @@
 import './whoarewe.css'
 
-import aboutImage from '../assets/about-image.png'
-import aboutComputerImage from '../assets/about-computer.png'
+import aboutImage from '../assets/about-image.webp'
+import aboutComputerImage from '../assets/about-computer.webp'
 
 function WhoAreWe() {
   return (

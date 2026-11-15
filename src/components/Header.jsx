@@ -1,9 +1,9 @@
 import './Header.css'
 
-import logo from '../assets/logo.png'
-import homeIcon from '../assets/home-icon.png'
-import servicesIcon from '../assets/services-icon.png'
-import aboutIcon from '../assets/about-icon.png'
+import logo from '../assets/logo.webp'
+import homeIcon from '../assets/home-icon.webp'
+import servicesIcon from '../assets/services-icon.webp'
+import aboutIcon from '../assets/about-icon.webp'
 
 const home = import.meta.env.BASE_URL
 

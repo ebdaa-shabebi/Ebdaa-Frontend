@@ -2,15 +2,15 @@
 import './EbdaaSocialMediaServicePage.css'
 import PageSEO from './PageSEO'
 
-import desktopHero from '../assets/hero2.png'
-import mobileHero from '../assets/hero1.png'
-import overviewImage from '../assets/social1.png'
-import planningImage from '../assets/تخطيط المحتوى.png'
-import creationImage from '../assets/صناعة وتصميم المحتوى.png'
-import publishingImage from '../assets/النشر وإدارة الحسابات.png'
-import engagementImage from '../assets/التفاعل مع الجمهور.png'
-import performanceImage from '../assets/متابعة الأداء والتحليل.png'
-import reportsImage from '../assets/التقارير الشهرية.png'
+import desktopHero from '../assets/hero2.webp'
+import mobileHero from '../assets/hero1.webp'
+import overviewImage from '../assets/social1.webp'
+import planningImage from '../assets/تخطيط المحتوى.webp'
+import creationImage from '../assets/صناعة وتصميم المحتوى.webp'
+import publishingImage from '../assets/النشر وإدارة الحسابات.webp'
+import engagementImage from '../assets/التفاعل مع الجمهور.webp'
+import performanceImage from '../assets/متابعة الأداء والتحليل.webp'
+import reportsImage from '../assets/التقارير الشهرية.webp'
 
 const homeUrl = import.meta.env.BASE_URL
 

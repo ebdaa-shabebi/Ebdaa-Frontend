@@ -2,13 +2,13 @@
 import './EbdaaDigitalAdsServicePage.css'
 import PageSEO from './PageSEO'
 
-import desktopHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية عرض.png'
-import mobileHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية طول.png'
-import overviewImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خدمة ( الاعلانات الرقمية والمطبوعة ).png'
-import digitalAdsImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات الرقمية.png'
-import printAdsImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات المطبوعة.png'
-import sizingImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/تكييف التصميم لمختلف المقاسات.png'
-import brandIdentityImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/التصميم حسب هوية العلامة.png'
+import desktopHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية عرض.webp'
+import mobileHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية طول.webp'
+import overviewImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خدمة ( الاعلانات الرقمية والمطبوعة ).webp'
+import digitalAdsImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات الرقمية.webp'
+import printAdsImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/الإعلانات المطبوعة.webp'
+import sizingImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/تكييف التصميم لمختلف المقاسات.webp'
+import brandIdentityImage from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/التصميم حسب هوية العلامة.webp'
 
 const homeUrl = import.meta.env.BASE_URL
 

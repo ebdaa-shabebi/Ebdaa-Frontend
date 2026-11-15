@@ -2,14 +2,14 @@
 import './EbdaaIdentityServicePage.css'
 import PageSEO from './PageSEO'
 
-import desktopHero from '../assets/خدمة الهوية البصرية/خلفية عرض.png'
-import mobileHero from '../assets/خدمة الهوية البصرية/خلفية طول.png'
-import overviewImage from '../assets/خدمة الهوية البصرية/خدمة( تصميم الهوية البصرية ).png'
-import logoImage from '../assets/خدمة الهوية البصرية/الشعار.png'
-import colorsImage from '../assets/خدمة الهوية البصرية/الالوان.png'
-import fontsImage from '../assets/خدمة الهوية البصرية/الخطوط.png 2.png'
-import guideImage from '../assets/خدمة الهوية البصرية/دليل الهوية.png'
-import applicationImage from '../assets/خدمة الهوية البصرية/تطبيق الهوية.png'
+import desktopHero from '../assets/خدمة الهوية البصرية/خلفية عرض.webp'
+import mobileHero from '../assets/خدمة الهوية البصرية/خلفية طول.webp'
+import overviewImage from '../assets/خدمة الهوية البصرية/خدمة( تصميم الهوية البصرية ).webp'
+import logoImage from '../assets/خدمة الهوية البصرية/الشعار.webp'
+import colorsImage from '../assets/خدمة الهوية البصرية/الالوان.webp'
+import fontsImage from '../assets/خدمة الهوية البصرية/الخطوط.png 2.webp'
+import guideImage from '../assets/خدمة الهوية البصرية/دليل الهوية.webp'
+import applicationImage from '../assets/خدمة الهوية البصرية/تطبيق الهوية.webp'
 
 const homeUrl = import.meta.env.BASE_URL
 

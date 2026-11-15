@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react'
 import './Websites.css'
 
-import desktopImage from '../assets/websites-hero-desktop.png'
-import mobileImage from '../assets/websites-hero-mobile.png'
+import desktopImage from '../assets/websites-hero-desktop.webp'
+import mobileImage from '../assets/websites-hero-mobile.webp'
 import PageSEO from './PageSEO'
 
 const API = 'https://ebdaa-backend-zbiy.onrender.com'

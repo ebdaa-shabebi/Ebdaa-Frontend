@@ -2,13 +2,13 @@
 import './EbdaaVideoServicePage.css'
 import PageSEO from './PageSEO'
 
-import desktopHero from '../assets/خدمة عمل إعلانات الفيديو/خلفية عرض.png'
-import mobileHero from '../assets/خدمة عمل إعلانات الفيديو/خلفية طول.png'
-import overviewImage from '../assets/خدمة عمل إعلانات الفيديو/خدمة ( عمل إعلانات الفيديو ).png'
-import motionGraphicsImage from '../assets/خدمة عمل إعلانات الفيديو/إعلانات الموشن جرافيك.png'
-import productsServicesImage from '../assets/خدمة عمل إعلانات الفيديو/إعلانات المنتجات والخدمات.png'
-import promotionalVideosImage from '../assets/خدمة عمل إعلانات الفيديو/الفيديوهات الترويجية.png'
-import voiceoverImage from '../assets/خدمة عمل إعلانات الفيديو/التعليق الصوتي والموسيقى.png'
+import desktopHero from '../assets/خدمة عمل إعلانات الفيديو/خلفية عرض.webp'
+import mobileHero from '../assets/خدمة عمل إعلانات الفيديو/خلفية طول.webp'
+import overviewImage from '../assets/خدمة عمل إعلانات الفيديو/خدمة ( عمل إعلانات الفيديو ).webp'
+import motionGraphicsImage from '../assets/خدمة عمل إعلانات الفيديو/إعلانات الموشن جرافيك.webp'
+import productsServicesImage from '../assets/خدمة عمل إعلانات الفيديو/إعلانات المنتجات والخدمات.webp'
+import promotionalVideosImage from '../assets/خدمة عمل إعلانات الفيديو/الفيديوهات الترويجية.webp'
+import voiceoverImage from '../assets/خدمة عمل إعلانات الفيديو/التعليق الصوتي والموسيقى.webp'
 
 const homeUrl = import.meta.env.BASE_URL
 

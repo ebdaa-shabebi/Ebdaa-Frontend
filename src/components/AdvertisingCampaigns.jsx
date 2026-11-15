@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import PageSEO from './PageSEO'
 import './AdvertisingCampaigns.css'
 
-import desktopImage from '../assets/خلفية الحملات الاعلانية عرض.png'
-import mobileImage from '../assets/خلفية الحملات الاعلانية طول.png 2.png'
+import desktopImage from '../assets/خلفية الحملات الاعلانية عرض.webp'
+import mobileImage from '../assets/خلفية الحملات الاعلانية طول.png 2.webp'
 
 const API_URL = 'https://ebdaa-backend-zbiy.onrender.com'
 const BILLBOARD_LOGOS_CATEGORY = 'billboard-portfolio'
