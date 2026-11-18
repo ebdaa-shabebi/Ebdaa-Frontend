@@ -41,16 +41,9 @@ function Hero() {
               index === activeSlide ? 'hero__slide--active' : ''
             }`}
           >
-            <source
-              media="(max-device-width: 767px)"
-              srcSet={image.mobile}
-            />
-            <source
-              media="(min-width: 768px)"
-              srcSet={image.desktop}
-            />
+            <source media="(max-width: 767px)" srcSet={image.mobile} />
 
-            <img src={image.mobile} alt="" />
+            <img src={image.desktop} alt="" />
           </picture>
         ))}
       </div>

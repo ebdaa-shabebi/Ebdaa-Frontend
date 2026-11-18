@@ -68,16 +68,8 @@ function EbdaaDigitalAdsServicePage() {
 
       <section className="digital-ads__hero" id="home">
         <picture className="digital-ads__hero-media">
-          <source
-            media="(max-device-width: 767px)"
-            srcSet={mobileHero}
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet={desktopHero}
-          />
-          <img
-            src={mobileHero}
+          <source media="(max-width: 767px)" srcSet={mobileHero} />
+          <img src={desktopHero}
             alt=""
             aria-hidden="true"
             fetchPriority="high"

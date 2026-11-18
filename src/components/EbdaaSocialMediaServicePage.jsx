@@ -64,16 +64,8 @@ function EbdaaSocialMediaServicePage() {
 
       <section className="service-detail__hero" id="home">
         <picture className="service-detail__hero-media">
-          <source
-            media="(max-device-width: 767px)"
-            srcSet={mobileHero}
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet={desktopHero}
-          />
-          <img
-            src={mobileHero}
+          <source media="(max-width: 767px)" srcSet={mobileHero} />
+          <img src={desktopHero}
             alt=""
             aria-hidden="true"
             fetchPriority="high"

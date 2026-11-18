@@ -637,7 +637,7 @@
    Portrait images are the default in JSX; desktop images are
    selected only for tablet/desktop-sized devices.
 ========================================================= */
-@media (max-width: 767px), (max-device-width: 767px) {
+@media (max-width: 767px) {
   .service-detail--content .service-detail__hero {
     width: 100%;
     margin: 0 0 34px;
@@ -820,7 +820,7 @@
   }
 }
 
-@media (max-width: 380px), (max-device-width: 380px) {
+@media (max-width: 380px) {
   .service-detail--content .service-detail__feature-grid,
   .service-detail--content .service-detail__feature-grid:has(> .service-detail__feature-card:nth-child(5):last-child),
   .service-detail--content .service-detail__feature-grid:has(> .service-detail__feature-card:nth-child(6):last-child) {

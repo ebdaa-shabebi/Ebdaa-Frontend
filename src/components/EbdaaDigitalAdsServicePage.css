@@ -1798,7 +1798,7 @@
 
 
 /* FINAL MOBILE HERO + READABILITY OVERRIDES */
-@media (max-width: 767px), (max-device-width: 767px) {
+@media (max-width: 767px) {
   .ebdaa-digital-ads-page .digital-ads__hero {
     width: 100%;
     margin: 0 0 34px;
@@ -1965,7 +1965,7 @@
   }
 }
 
-@media (max-width: 380px), (max-device-width: 380px) {
+@media (max-width: 380px) {
   .ebdaa-digital-ads-page .digital-ads__feature-grid {
     grid-template-columns: 1fr;
   }
