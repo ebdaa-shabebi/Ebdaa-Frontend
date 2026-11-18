@@ -57,9 +57,16 @@ function EbdaaIdentityServicePage() {
 
       <section className="service-detail__hero" id="home">
         <picture className="service-detail__hero-media">
-          <source media="(max-width: 600px)" srcSet={mobileHero} />
+          <source
+            media="(max-device-width: 767px)"
+            srcSet={mobileHero}
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet={desktopHero}
+          />
           <img
-            src={desktopHero}
+            src={mobileHero}
             alt=""
             aria-hidden="true"
             fetchPriority="high"
@@ -97,7 +104,7 @@ function EbdaaIdentityServicePage() {
         </div>
 
         <svg
-          className="hero__wave"
+          className="service-detail__wave"
           viewBox="0 0 1279.5 117.04"
           preserveAspectRatio="none"
           aria-hidden="true"

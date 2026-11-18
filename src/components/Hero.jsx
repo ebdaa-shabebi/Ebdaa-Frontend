@@ -42,11 +42,15 @@ function Hero() {
             }`}
           >
             <source
-              media="(max-width: 600px)"
+              media="(max-device-width: 767px)"
               srcSet={image.mobile}
             />
+            <source
+              media="(min-width: 768px)"
+              srcSet={image.desktop}
+            />
 
-            <img src={image.desktop} alt="" />
+            <img src={image.mobile} alt="" />
           </picture>
         ))}
       </div>
