@@ -1,5 +1,6 @@
 
 import './EbdaaDigitalAdsServicePage.css'
+import safeSrcSet from '../utils/safeSrcSet'
 import PageSEO from './PageSEO'
 
 import desktopHero from '../assets/خدمة تصميم الإعلانات الرقمية والمطبوعة/خلفية عرض.webp'
@@ -68,7 +69,7 @@ function EbdaaDigitalAdsServicePage() {
 
       <section className="digital-ads__hero" id="home">
         <picture className="digital-ads__hero-media">
-          <source media="(max-width: 767px)" srcSet={mobileHero} />
+          <source media="(max-width: 767px)" srcSet={safeSrcSet(mobileHero)} />
           <img src={desktopHero}
             alt=""
             aria-hidden="true"
@@ -106,19 +107,19 @@ function EbdaaDigitalAdsServicePage() {
           </div>
         </div>
 
-        <svg
-          className="digital-ads__wave"
-          viewBox="0 0 1279.5 117.04"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <g transform="translate(0 -150)">
-            <path
-              d="M1278.5 251.299C1266 242.299 1179.99 209.799 1017.5 209.799C859 209.799 533.259 266.813 291 266.799C68.5 278.299 7.5 206.299 -1 206.299V171.299C11.5 166.799 81.4576 207.071 270 195.799C574 177.623 861.5 143.484 1005.5 152.484C1163.19 162.34 1272.5 182.299 1278.5 199.299V251.299Z"
-              fill="#F0B152"
-            />
-          </g>
-        </svg>
+      <svg
+        className="hero__wave"
+        viewBox="0 0 1279.5 117.04"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <g transform="translate(0 -150)">
+          <path
+            d="M1278.5 251.299C1266 242.299 1179.99 209.799 1017.5 209.799C859 209.799 533.259 266.813 291 266.799C68.5 278.299 7.5 206.299 -1 206.299V171.299C11.5 166.799 81.4576 207.071 270 195.799C574 177.623 861.5 143.484 1005.5 152.484C1163.19 162.34 1272.5 182.299 1278.5 199.299V251.299Z"
+            fill="#F0B152"
+          />
+        </g>
+      </svg>
       </section>
 
       <section className="digital-ads__overview">

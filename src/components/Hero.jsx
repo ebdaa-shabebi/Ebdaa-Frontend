@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react'
+import safeSrcSet from '../utils/safeSrcSet'
 import './hero.css'
 
 import hero1 from '../assets/hero-1.webp'
@@ -41,7 +42,7 @@ function Hero() {
               index === activeSlide ? 'hero__slide--active' : ''
             }`}
           >
-            <source media="(max-width: 767px)" srcSet={image.mobile} />
+            <source media="(max-width: 767px)" srcSet={safeSrcSet(image.mobile)} />
 
             <img src={image.desktop} alt="" />
           </picture>
