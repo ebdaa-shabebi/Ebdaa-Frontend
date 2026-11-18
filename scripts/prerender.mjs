@@ -77,6 +77,22 @@ const pages = {
   },
 };
 
+// encodeURI leaves "," "(" ")" untouched, but they are not safe inside srcset.
+function encodeAssetUrl(url) {
+  return encodeURI(decodeSafe(url))
+    .replaceAll(",", "%2C")
+    .replaceAll("(", "%28")
+    .replaceAll(")", "%29");
+}
+
+function decodeSafe(value) {
+  try {
+    return decodeURI(value);
+  } catch {
+    return value;
+  }
+}
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -179,14 +195,24 @@ async function main() {
       html = setMeta(html, "name", "twitter:description", metadata.description);
 
       // Replace ALL source asset URLs with production hashed URLs.
+      // IMPORTANT: production URLs must be percent-encoded. Asset names like
+      // "خلفية طول-abc123.webp" contain spaces, and a raw space inside
+      // <source srcset="..."> ends the URL, so the browser silently drops the
+      // mobile <source> and shows the <img> (desktop) image instead.
       for (const [source, asset] of Object.entries(manifest)) {
         if (asset.file && source.startsWith("src/assets/")) {
           const sourceUrl = `/${source}`;
-          const encodedSourceUrl = encodeURI(sourceUrl);
-          const productionUrl = `/${asset.file}`;
+          const productionUrl = encodeAssetUrl(`/${asset.file}`);
 
-          html = html.replaceAll(sourceUrl, productionUrl);
-          html = html.replaceAll(encodedSourceUrl, productionUrl);
+          const variants = new Set([
+            sourceUrl,
+            encodeURI(sourceUrl),
+            encodeAssetUrl(sourceUrl),
+          ]);
+
+          for (const variant of variants) {
+            html = html.replaceAll(variant, productionUrl);
+          }
         }
       }
 

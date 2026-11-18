@@ -1,10 +1,15 @@
-// In a <source srcSet="..."> a raw space (or comma) ends the URL.
-// Vite's production build emits asset names unencoded (e.g. "/assets/خلفية طول-abc.webp"),
-// so the browser drops the candidate and falls back to the <img>.
-// Localhost works because the dev server already returns encoded URLs.
+// A raw space or comma inside <source srcSet="..."> ends the URL, so the browser
+// drops the whole <source> and falls back to the <img>. Always emit an encoded URL.
 export default function safeSrcSet(url) {
-  return String(url)
-    .replace(/ /g, '%20')
+  const value = String(url)
+  let decoded = value
+  try {
+    decoded = decodeURI(value)
+  } catch {
+    // keep the original value
+  }
+
+  return encodeURI(decoded)
     .replace(/,/g, '%2C')
     .replace(/\(/g, '%28')
     .replace(/\)/g, '%29')
