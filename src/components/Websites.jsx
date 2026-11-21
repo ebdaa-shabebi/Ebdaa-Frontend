@@ -1,10 +1,8 @@
-
 import { useEffect, useState } from 'react'
 import './Websites.css'
 
 import desktopImage from '../assets/websites-hero-desktop.webp'
 import mobileImage from '../assets/websites-hero-mobile.webp'
-import PageSEO from './PageSEO'
 
 const API = 'https://ebdaa-backend-zbiy.onrender.com'
 const homeUrl = import.meta.env.BASE_URL
@@ -80,12 +78,6 @@ function Websites() {
 
   return (
     <div className="websites-page">
-      <PageSEO
-        title="تصميم مواقع إلكترونية في عدن | إبداع ميديا"
-        description="إبداع ميديا تقدم خدمات تصميم وتطوير المواقع الإلكترونية في عدن، اليمن، لإنشاء تجارب رقمية احترافية تعزز حضور العلامات التجارية."
-        canonical="https://ebdaa-media.com/websites"
-      />
-
       <section className="websites-page__hero" id="home">
         <picture className="websites-page__background">
           <source media="(max-width: 600px)" srcSet={mobileImage} />
@@ -109,10 +101,10 @@ function Websites() {
             <a
               className="websites-page__button websites-page__button--primary"
               href="#clients"
-              onClick={(e) => {
-                e.preventDefault()
+              onClick={(event) => {
+                event.preventDefault()
                 document.getElementById('clients')?.scrollIntoView({
-                  behavior: 'smooth',
+                  behavior: 'instant',
                   block: 'start',
                 })
               }}
@@ -128,29 +120,6 @@ function Websites() {
             </a>
           </div>
         </div>
-
-        <a
-          className="hero-scroll-arrow"
-          href="#clients"
-          aria-label="Scroll down"
-          onClick={(e) => {
-            e.preventDefault()
-            document.getElementById('clients')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            })
-          }}
-        >
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M5 9L12 16L19 9"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
 
         <svg
           className="websites-page__wave"
@@ -214,6 +183,12 @@ function Websites() {
               ))}
             </div>
           )}
+        </div>
+
+        <div className="portfolio-home-wrapper">
+          <a href={homeUrl} className="portfolio-home-button">
+            العودة إلى الرئيسية
+          </a>
         </div>
       </section>
     </div>

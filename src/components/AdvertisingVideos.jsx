@@ -98,6 +98,12 @@ function AdvertisingVideos() {
           <h2>أعمالنا في تصوير وإنتاج الفيديو الإعلاني</h2>
           <DynamicPortfolio category="video" />
         </div>
+
+        <div className="portfolio-home-wrapper">
+          <a href={homeUrl} className="portfolio-home-button">
+            العودة إلى الرئيسية
+          </a>
+        </div>
       </section>
     </div>
   )

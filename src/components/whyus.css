@@ -154,9 +154,9 @@
   width: 100%;
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   justify-content: center;
-  gap: 24px;
+  gap: 18px;
 }
 
 .why-us__button {
@@ -171,7 +171,7 @@
   border-radius: 12px;
   font-family: 'Changa', sans-serif;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 21px;
   line-height: 120%;
   text-align: center;
   color: #ffffff;
@@ -250,18 +250,22 @@
     font-size: clamp(48px, 7vw, 72px);
   }
 
-  /* 3 BUTTONS STILL ONE ROW */
+  /* Keep all five portfolio buttons in one row on tablets. */
 
   .why-us__buttons {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(12px, 3vw, 35px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
     margin-top: 20px;
   }
 
   .why-us__button {
-    height: clamp(48px, 6vw, 58px);
-    font-size: clamp(12px, 1.8vw, 19px);
-    border-radius: 10px;
+    min-height: 52px;
+    height: auto;
+    padding: 6px 4px;
+    font-size: clamp(10px, 1.35vw, 14px);
+    line-height: 1.5;
+    border-radius: 9px;
+    overflow-wrap: anywhere;
   }
 }
 

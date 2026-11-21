@@ -99,6 +99,12 @@ function MotionGraphics() {
           <h2>أعمالنا في تصميم الموشن جرافيك</h2>
           <DynamicPortfolio category="motion" />
         </div>
+
+        <div className="portfolio-home-wrapper">
+          <a href={homeUrl} className="portfolio-home-button">
+            العودة إلى الرئيسية
+          </a>
+        </div>
       </section>
     </div>
   )

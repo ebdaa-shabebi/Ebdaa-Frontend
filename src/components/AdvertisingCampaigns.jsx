@@ -362,6 +362,12 @@ function AdvertisingCampaigns() {
               ))}
             </div>
           )}
+
+          <div className="portfolio-home-wrapper">
+            <a href={homeUrl} className="portfolio-home-button">
+              العودة إلى الرئيسية
+            </a>
+          </div>
         </div>
       </section>
     </div>

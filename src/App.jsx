@@ -13,6 +13,7 @@ import MotionGraphics from './components/MotionGraphics'
 import AdvertisingVideos from './components/AdvertisingVideos'
 import AdvertisingCampaigns from './components/AdvertisingCampaigns'
 import Websites from './components/Websites'
+import VisualIdentities from './components/VisualIdentities'
 
 import Admin from './components/Admin'
 
@@ -28,6 +29,7 @@ const serviceRoutes = {
   '/advertising-videos': AdvertisingVideos,
   '/advertising-campaigns': AdvertisingCampaigns,
   '/websites': Websites,
+  '/visual-identities': VisualIdentities,
 
   '/services/content': EbdaaContentServicePage,
   '/services/campaigns': EbdaaCampaignsServicePage,

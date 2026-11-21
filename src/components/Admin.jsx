@@ -7,6 +7,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const API = "https://ebdaa-backend-zbiy.onrender.com";
 const BILLBOARD_PORTFOLIO_CATEGORY = "billboard-portfolio";
+const IDENTITY_PORTFOLIO_CATEGORY = "identity";
 const ADMIN_SESSION_STORAGE_KEY = "ebdaa_admin_session_v1";
 const DEFAULT_ADMIN_SESSION_SECONDS = 8 * 60 * 60;
 
@@ -74,6 +75,7 @@ const PANELS = [
   { id: "dashboard", label: "الرئيسية", icon: "⌂" },
   ...WORK_PANELS,
   { id: "billboardPortfolio", label: "حملات إعلانية", icon: "▤" },
+  { id: "identityPortfolio", label: "تصميم هويات بصرية", icon: "✧" },
   { id: "websiteClients", label: "تصميم مواقع إلكترونية", icon: "◎" },
   { id: "billboards", label: "مخزون اللوحات", icon: "▦" },
   { id: "rentals", label: "عقود الإيجار", icon: "▤" },
@@ -175,6 +177,16 @@ const Admin = () => {
   const [billboardPhotoLoading, setBillboardPhotoLoading] = useState(false);
   const [billboardPhotosLoading, setBillboardPhotosLoading] = useState(false);
 
+  // Visual identity portfolio: each identity card has its own image gallery.
+  const [identityImages, setIdentityImages] = useState([]);
+  const [identityImageFile, setIdentityImageFile] = useState(null);
+  const [identityImageLoading, setIdentityImageLoading] = useState(false);
+  const [selectedIdentity, setSelectedIdentity] = useState(null);
+  const [identityPhotos, setIdentityPhotos] = useState([]);
+  const [identityPhotoFile, setIdentityPhotoFile] = useState(null);
+  const [identityPhotoLoading, setIdentityPhotoLoading] = useState(false);
+  const [identityPhotosLoading, setIdentityPhotosLoading] = useState(false);
+
   // Website logo + URL records use website_clients.
   const [websiteClients, setWebsiteClients] = useState([]);
   const [websiteForm, setWebsiteForm] = useState(EMPTY_WEBSITE_CLIENT);
@@ -270,6 +282,33 @@ const Admin = () => {
     }
   }, [apiRequest]);
 
+  const fetchIdentityImages = useCallback(async () => {
+    try {
+      const data = await apiRequest(`/images/${IDENTITY_PORTFOLIO_CATEGORY}`, {}, false);
+      if (!Array.isArray(data)) throw new Error("استجابة صور الهويات غير صحيحة.");
+      setIdentityImages(data);
+    } catch (error) {
+      console.error("Fetch identity portfolio failed:", error);
+      setIdentityImages([]);
+      setGlobalError(`تعذر تحميل الهويات البصرية: ${error.message}`);
+    }
+  }, [apiRequest]);
+
+  const fetchIdentityPhotos = useCallback(async (identityId) => {
+    if (!identityId) { setIdentityPhotos([]); return; }
+    setIdentityPhotosLoading(true);
+    try {
+      const categoryName = `${IDENTITY_PORTFOLIO_CATEGORY}-${identityId}`;
+      const data = await apiRequest(`/images/${encodeURIComponent(categoryName)}`, {}, false);
+      if (!Array.isArray(data)) throw new Error("استجابة نماذج الهوية غير صحيحة.");
+      setIdentityPhotos(data);
+    } catch (error) {
+      console.error("Fetch identity photos failed:", error);
+      setIdentityPhotos([]);
+      setGlobalError(`تعذر تحميل نماذج الهوية: ${error.message}`);
+    } finally { setIdentityPhotosLoading(false); }
+  }, [apiRequest]);
+
   const fetchBillboardImages = useCallback(async () => {
     try {
       const data = await apiRequest(`/images/${BILLBOARD_PORTFOLIO_CATEGORY}`, {}, false);
@@ -341,8 +380,9 @@ const Admin = () => {
     fetchBillboards();
     fetchRentals();
     fetchBillboardImages();
+    fetchIdentityImages();
     fetchWebsiteClients();
-  }, [loggedIn, token, fetchBillboards, fetchRentals, fetchBillboardImages, fetchWebsiteClients]);
+  }, [loggedIn, token, fetchBillboards, fetchRentals, fetchBillboardImages, fetchIdentityImages, fetchWebsiteClients]);
 
   useEffect(() => {
     if (!loggedIn || !token || !activeWorkPanel) return;
@@ -503,6 +543,67 @@ const Admin = () => {
       console.error("Delete video failed:", error);
       window.alert(`لم يتم حذف الفيديو: ${error.message}`);
     }
+  };
+
+  const handleUploadIdentityImage = async (event) => {
+    event?.preventDefault();
+    if (!identityImageFile) { window.alert("اختر صورة الهوية البصرية أولاً."); return; }
+    const formData = new FormData();
+    formData.append("image", identityImageFile);
+    formData.append("category", IDENTITY_PORTFOLIO_CATEGORY);
+    try {
+      setIdentityImageLoading(true);
+      const data = await apiRequest("/upload", { method: "POST", body: formData });
+      await fetchIdentityImages();
+      setIdentityImageFile(null);
+      const input = document.getElementById("identity-image-file");
+      if (input) input.value = "";
+      window.alert(data.message || "تمت إضافة الهوية البصرية بنجاح.");
+    } catch (error) { console.error("Identity upload failed:", error); window.alert(`لم يتم حفظ الهوية: ${error.message}`); }
+    finally { setIdentityImageLoading(false); }
+  };
+
+  const handleSelectIdentity = async (identity) => {
+    setSelectedIdentity(identity);
+    setIdentityPhotos([]);
+    await fetchIdentityPhotos(identity.id);
+  };
+
+  const handleUploadIdentityPhoto = async (event) => {
+    event?.preventDefault();
+    if (!selectedIdentity || !identityPhotoFile) { window.alert("اختر صورة لإضافتها إلى الهوية المحددة."); return; }
+    const formData = new FormData();
+    formData.append("image", identityPhotoFile);
+    formData.append("category", `${IDENTITY_PORTFOLIO_CATEGORY}-${selectedIdentity.id}`);
+    try {
+      setIdentityPhotoLoading(true);
+      const data = await apiRequest("/upload", { method: "POST", body: formData });
+      await fetchIdentityPhotos(selectedIdentity.id);
+      setIdentityPhotoFile(null);
+      const input = document.getElementById("identity-photo-file");
+      if (input) input.value = "";
+      window.alert(data.message || "تمت إضافة الصورة بنجاح.");
+    } catch (error) { console.error("Identity photo upload failed:", error); window.alert(`لم يتم حفظ الصورة: ${error.message}`); }
+    finally { setIdentityPhotoLoading(false); }
+  };
+
+  const handleDeleteIdentityPhoto = async (photo) => {
+    if (!window.confirm("هل تريد حذف هذه الصورة؟")) return;
+    try { const data = await apiRequest(`/delete/${photo.id}`, { method: "DELETE" }); await fetchIdentityPhotos(selectedIdentity?.id); window.alert(data.message || "تم حذف الصورة."); }
+    catch (error) { console.error("Delete identity photo failed:", error); window.alert(`لم يتم حذف الصورة: ${error.message}`); }
+  };
+
+  const handleDeleteIdentity = async (identity) => {
+    if (!window.confirm("هل تريد حذف هذه الهوية وجميع الصور المرتبطة بها؟")) return;
+    try {
+      const categoryName = `${IDENTITY_PORTFOLIO_CATEGORY}-${identity.id}`;
+      const photos = await apiRequest(`/images/${encodeURIComponent(categoryName)}`, {}, false);
+      if (Array.isArray(photos)) for (const photo of photos) await apiRequest(`/delete/${photo.id}`, { method: "DELETE" });
+      const data = await apiRequest(`/delete/${identity.id}`, { method: "DELETE" });
+      if (selectedIdentity?.id === identity.id) { setSelectedIdentity(null); setIdentityPhotos([]); setIdentityPhotoFile(null); }
+      await fetchIdentityImages();
+      window.alert(data.message || "تم حذف الهوية وصورها بنجاح.");
+    } catch (error) { console.error("Delete identity failed:", error); window.alert(`تعذر حذف الهوية: ${error.message}`); }
   };
 
   const handleUploadBillboardImage = async (event) => {
@@ -867,6 +968,7 @@ const Admin = () => {
                     </button>
                   ))}
                   <button type="button" onClick={() => setActivePanel("billboardPortfolio")}><span>▤</span><div><strong>حملات إعلانية</strong><small>إدارة شعارات الشركات وصور اللوحات</small></div><b>←</b></button>
+                  <button type="button" onClick={() => setActivePanel("identityPortfolio")}><span>✧</span><div><strong>تصميم هويات بصرية</strong><small>إدارة صور الهويات ونماذجها</small></div><b>←</b></button>
                   <button type="button" onClick={() => setActivePanel("websiteClients")}><span>◎</span><div><strong>تصميم مواقع إلكترونية</strong><small>إدارة شعارات العملاء وروابطهم</small></div><b>←</b></button>
                 </div>
               </div>
@@ -980,6 +1082,46 @@ const Admin = () => {
                     ))}
                   </div>
                 ) : <EmptyState title="لا توجد صور لوحات لهذه الشركة" detail="ارفع أول صورة لوحة من الحقل أعلاه." />}
+              </section>
+            ) : null}
+          </>
+        )}
+
+        {activePanel === "identityPortfolio" && (
+          <>
+            <section className="admin-panel-card admin-content-panel">
+              <SectionHeading title="الهويات البصرية" description="أضف صورة لكل هوية بصرية أولاً، ثم اخترها لإضافة صور النماذج والتطبيقات التابعة لها. لا توجد روابط فيديو في هذا القسم." />
+              <form className="admin-upload-row" onSubmit={handleUploadIdentityImage}>
+                <label className="admin-field admin-file-field"><span>اختر صورة الهوية البصرية</span><input id="identity-image-file" type="file" accept="image/*" onChange={(e) => setIdentityImageFile(e.target.files?.[0] || null)} /></label>
+                <button className="admin-button admin-button--primary" type="submit" disabled={identityImageLoading}>{identityImageLoading ? "جارٍ الرفع..." : "+ إضافة هوية بصرية"}</button>
+              </form>
+              <div className="admin-grid-heading"><h3>اختر الهوية لإدارة صورها</h3><span>{identityImages.length} هوية</span></div>
+              {identityImages.length ? (
+                <div className="admin-media-grid">
+                  {identityImages.map((identity) => (
+                    <article className={`admin-media-card ${selectedIdentity?.id === identity.id ? "admin-media-card--selected" : ""}`} key={identity.id}>
+                      <button className="admin-campaign-logo-select" type="button" onClick={() => handleSelectIdentity(identity)} aria-label={`إدارة صور الهوية رقم ${identity.id}`}>
+                        <img src={identity.url} alt={`هوية بصرية ${identity.id}`} loading="lazy" />
+                        <span>{selectedIdentity?.id === identity.id ? "الهوية المحددة ✓" : `الهوية #${identity.id} — إدارة الصور`}</span>
+                      </button>
+                      <div className="admin-media-card__footer"><span>هوية #{identity.id}</span><button className="admin-button admin-button--danger admin-button--small" type="button" onClick={() => handleDeleteIdentity(identity)}>حذف الهوية</button></div>
+                    </article>
+                  ))}
+                </div>
+              ) : <EmptyState title="لا توجد هويات بصرية مضافة" detail="أضف صورة الهوية أولاً، ثم أضف الصور التابعة لها." />}
+            </section>
+            {selectedIdentity ? (
+              <section className="admin-panel-card admin-content-panel">
+                <SectionHeading title={`صور الهوية البصرية #${selectedIdentity.id}`} description="الصور المضافة هنا ستظهر عند فتح بطاقة الهوية في صفحة تصميم الهويات البصرية." action={<button className="admin-button admin-button--secondary" type="button" onClick={() => { setSelectedIdentity(null); setIdentityPhotos([]); setIdentityPhotoFile(null); }}>إلغاء تحديد الهوية</button>} />
+                <div className="admin-video-manager__title admin-campaign-selected-logo"><img src={selectedIdentity.url} alt="" /><div><h3>الهوية المحددة</h3><p>أي صورة ترفعها الآن ستُربط بهذه الهوية فقط.</p></div></div>
+                <form className="admin-upload-row" onSubmit={handleUploadIdentityPhoto}>
+                  <label className="admin-field admin-file-field"><span>اختر صورة من تطبيقات الهوية</span><input id="identity-photo-file" type="file" accept="image/*" onChange={(e) => setIdentityPhotoFile(e.target.files?.[0] || null)} /></label>
+                  <button className="admin-button admin-button--primary" type="submit" disabled={identityPhotoLoading}>{identityPhotoLoading ? "جارٍ الرفع..." : "+ إضافة صورة"}</button>
+                </form>
+                <div className="admin-grid-heading"><h3>النماذج المرتبطة بهذه الهوية</h3><span>{identityPhotos.length} صورة</span></div>
+                {identityPhotosLoading ? <p className="admin-loading-text">جارٍ تحميل الصور...</p> : identityPhotos.length ? (
+                  <div className="admin-media-grid">{identityPhotos.map((photo) => (<article className="admin-media-card" key={photo.id}><img src={photo.url} alt="نموذج من الهوية البصرية" loading="lazy" /><div className="admin-media-card__footer"><span>صورة #{photo.id}</span><button className="admin-button admin-button--danger admin-button--small" type="button" onClick={() => handleDeleteIdentityPhoto(photo)}>حذف</button></div></article>))}</div>
+                ) : <EmptyState title="لا توجد صور لهذه الهوية" detail="ارفع أول صورة من الحقل أعلاه." />}
               </section>
             ) : null}
           </>

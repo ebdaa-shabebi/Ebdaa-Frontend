@@ -50,6 +50,10 @@ const portfolioLinks = [
     label: 'تصميم مواقع إلكترونية',
     path: 'websites',
   },
+  {
+    label: 'تصميم هويات بصرية',
+    path: 'visual-identities',
+  },
 ]
 
 function WhyUs() {

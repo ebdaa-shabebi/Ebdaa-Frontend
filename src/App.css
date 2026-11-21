@@ -173,6 +173,63 @@ main {
   max-height: none !important;
 }
 
+/* Shared portfolio home button */
+.portfolio-home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 80px;
+  padding: 0 20px 30px;
+}
+
+.portfolio-home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  min-height: 50px;
+  padding: 10px 28px;
+
+  background: #459daf;
+  color: #fff;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: "Changa", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.portfolio-home-button:hover {
+  background: #317f90;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.portfolio-home-button:focus-visible {
+  outline: 3px solid #f0b152;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .portfolio-home-wrapper {
+    margin-top: 55px;
+    padding-bottom: 20px;
+  }
+
+  .portfolio-home-button {
+    min-width: 165px;
+    min-height: 46px;
+    font-size: 16px;
+  }
+}
+
+
 /* Smaller spacing on phones */
 @media (max-width: 600px) {
   .service-page .service-page__clients,
